@@ -1,21 +1,28 @@
-#variable to hold all files wish to compile
-objs = src/main.c src/window/window.h src/window/window.c src/settings.h
-
-#compiler option
-cc = gcc
-#compiler flags g(debug symbols)
-cc_flags = -g -W -Wall
-
+#Compiler flag
+CC = g++
 #linker flags LSDL2(sdl2)
-ld_flags = -lSDL2
+LDFLAGS = -lSDL2 -lX11 -lGL -lGLU
+#compiler flags
+CCFLAGS = -g -Wall
+#all object files needed
+OBJECTS = GameLoop.o main.o Window.o
+
+#g++ GameLoop.cpp GameLoop.h main.cpp sdlsrc/window.cpp sdlsrc/window.h -lSDL2 -lX11 -lGL -lGLEW
+
+GameLoop.o: ./src/GameLoop.cpp ./src/GameLoop.h
+	$(CC) -o GameLoop.o $^ 
+Window.o: ./src/sdlsrc/window.cpp ./src/sdlsrc/window.h
+	$(CC) -o Window.o  $^
+main.o: ./src/main.cpp
+	$(CC)  -o main.o $@ 
 
 #name of binary to produce
-bin_name = swag
+BINNAME = swag
 
 #Targets
-all : $(objs)
-		$(CC) $(objs) $(cc_flags) $(ld_flags) -o $(bin_name)
+all : $(OBJECTS)
+		$(CC) $(OBJECTS) $(CCFLAGS) $(LDFLAGS) -o $(BINNAME)
 
 #remove all objects
 clean : 
-	rm -f *~$(bin_name)
+	rm -f *~$(BINNAME) $(OBJECTS)

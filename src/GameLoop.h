@@ -1,6 +1,8 @@
 #ifndef _INCLUDED_GAMELOOP_H
 #define _INCLUDED_GAMELOOP_H
 
+#include "./sdlsrc/window.h"
+
 /*Main class to set up all requirements for the system, should be called
 by the entry point
 tasks: 
@@ -21,6 +23,9 @@ class GameLoop{
 		including SDL, Graphics lib, etc*/
 		void InitReq();
 
+	private:
+
+		Window_SDL* gamewindow;
 
 };
 
