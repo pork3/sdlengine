@@ -12,7 +12,7 @@ Window_SDL::Window_SDL(std::string t, int sw, int sh): title(t), screen_width(sw
 
 Window_SDL::~Window_SDL(){
 	SDL_FreeSurface(window);
-	window = null;
+	window = nullptr;
 }
 
 SDL_Window* Window_SDL::create_window(){

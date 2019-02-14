@@ -1,6 +1,12 @@
 #ifndef _INCLUDED_WINDOW_H
 #define _INCLUDED_WINDOW_H
-#include <SDL2/SDL>
+
+/*SDL is a C library so add as extern C*/
+extern "C"{
+
+	#include <SDL2/SDL.h>
+}
+
 #include <string>
 
 /*class to set up a display window using SDL, called by the main game loop
