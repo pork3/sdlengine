@@ -37,8 +37,14 @@ void GameLoop::parse_input(){
 	/*use sdl to get user input*/
 	while(SDL_PollEvent(e.GetEvent())){
 		switch(e.GetEvent()->type){
+			/*user hits the X buttons*/
 			case SDL_QUIT:
 				e.SetState(EXIT);
+				break;
+			/*sdl detects mouse motion*/
+			case SDL_MOUSEMOTION:
+				std::cout << "X: " << e.GetEvent()->motion.x << " Y: " << e.GetEvent()->motion.y << std::endl;
+				break;
 
 		}
 	}
