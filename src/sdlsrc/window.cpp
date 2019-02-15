@@ -10,7 +10,7 @@ Window_SDL::Window_SDL(std::string t): title(t), screen_width(800), screen_heigh
 		SDL_GL_SetSwapInterval(1);
 			glClearColor(0.0, 0.0, 0.0, 1.0);
 		glClear(GL_COLOR_BUFFER_BIT);
-		SDL_GL_SwapWindow(this->window);
+		SDL_GL_SwapWindow(window);
 }
 
 Window_SDL::Window_SDL(std::string t, int sw, int sh): title(t), screen_width(sw),screen_height(sh){

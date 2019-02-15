@@ -2,7 +2,7 @@
 #include <iostream>
 
 GameLoop::GameLoop(){
-
+	Event e = Event();
 
 }
 
@@ -12,19 +12,40 @@ GameLoop::~GameLoop(){
 
 void GameLoop::Start(){
 
-	InitReq();
+	init_req();
+	run();
+}
+
+void GameLoop::run(){
+
 	this->gamewindow = new Window_SDL("Test");
 	if( this->gamewindow != nullptr){
 		SDL_Delay(2000);
 
+		/*poll events*/
+		while( e.GetState() != EXIT){
+			parse_input();
+		}
+
 	} else {
 		std::cout << "Error creating game" <<std::endl;
 	}
+}
 
+void GameLoop::parse_input(){
+
+	/*use sdl to get user input*/
+	while(SDL_PollEvent(e.GetEvent())){
+		switch(e.GetEvent()->type){
+			case SDL_QUIT:
+				e.SetState(EXIT);
+
+		}
+	}
 }
 
 
-void GameLoop::InitReq(){
+void GameLoop::init_req(){
 	/*create sdl instance*/
 		SDL_Init( SDL_INIT_EVERYTHING);
 		if( SDL_INIT_VIDEO  < 0)

@@ -6,6 +6,7 @@ extern "C"{
 
 	#include <SDL2/SDL.h>
 }
+
 #include<GL/glew.h>
 #include<X11/X.h>
 #include<X11/Xlib.h>
