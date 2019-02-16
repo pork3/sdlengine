@@ -43,10 +43,10 @@ RM = /opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E rem
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zach/Desktop/CIS422/newproj
+CMAKE_SOURCE_DIR = /home/zach/Desktop/cis422
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zach/Desktop/CIS422/newproj/cmake-build-debug
+CMAKE_BINARY_DIR = /home/zach/Desktop/cis422/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/engine.dir/depend.make
@@ -59,68 +59,68 @@ include CMakeFiles/engine.dir/flags.make
 
 CMakeFiles/engine.dir/main.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/main.cpp.o -c /home/zach/Desktop/CIS422/newproj/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/main.cpp.o -c /home/zach/Desktop/cis422/main.cpp
 
 CMakeFiles/engine.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/CIS422/newproj/main.cpp > CMakeFiles/engine.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/main.cpp > CMakeFiles/engine.dir/main.cpp.i
 
 CMakeFiles/engine.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/CIS422/newproj/main.cpp -o CMakeFiles/engine.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/main.cpp -o CMakeFiles/engine.dir/main.cpp.s
 
 CMakeFiles/engine.dir/sdlfiles/Display.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/sdlfiles/Display.cpp.o: ../sdlfiles/Display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/sdlfiles/Display.cpp.o -c /home/zach/Desktop/CIS422/newproj/sdlfiles/Display.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/sdlfiles/Display.cpp.o -c /home/zach/Desktop/cis422/sdlfiles/Display.cpp
 
 CMakeFiles/engine.dir/sdlfiles/Display.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/sdlfiles/Display.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/CIS422/newproj/sdlfiles/Display.cpp > CMakeFiles/engine.dir/sdlfiles/Display.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/sdlfiles/Display.cpp > CMakeFiles/engine.dir/sdlfiles/Display.cpp.i
 
 CMakeFiles/engine.dir/sdlfiles/Display.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/sdlfiles/Display.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/CIS422/newproj/sdlfiles/Display.cpp -o CMakeFiles/engine.dir/sdlfiles/Display.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/sdlfiles/Display.cpp -o CMakeFiles/engine.dir/sdlfiles/Display.cpp.s
 
 CMakeFiles/engine.dir/GameLoop.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/GameLoop.cpp.o: ../GameLoop.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/GameLoop.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/GameLoop.cpp.o -c /home/zach/Desktop/CIS422/newproj/GameLoop.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/GameLoop.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/GameLoop.cpp.o -c /home/zach/Desktop/cis422/GameLoop.cpp
 
 CMakeFiles/engine.dir/GameLoop.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/GameLoop.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/CIS422/newproj/GameLoop.cpp > CMakeFiles/engine.dir/GameLoop.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/GameLoop.cpp > CMakeFiles/engine.dir/GameLoop.cpp.i
 
 CMakeFiles/engine.dir/GameLoop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/GameLoop.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/CIS422/newproj/GameLoop.cpp -o CMakeFiles/engine.dir/GameLoop.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/GameLoop.cpp -o CMakeFiles/engine.dir/GameLoop.cpp.s
 
 CMakeFiles/engine.dir/err/Error.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/err/Error.cpp.o: ../err/Error.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/err/Error.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/err/Error.cpp.o -c /home/zach/Desktop/CIS422/newproj/err/Error.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/err/Error.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/err/Error.cpp.o -c /home/zach/Desktop/cis422/err/Error.cpp
 
 CMakeFiles/engine.dir/err/Error.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/err/Error.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/CIS422/newproj/err/Error.cpp > CMakeFiles/engine.dir/err/Error.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/err/Error.cpp > CMakeFiles/engine.dir/err/Error.cpp.i
 
 CMakeFiles/engine.dir/err/Error.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/err/Error.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/CIS422/newproj/err/Error.cpp -o CMakeFiles/engine.dir/err/Error.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/err/Error.cpp -o CMakeFiles/engine.dir/err/Error.cpp.s
 
 CMakeFiles/engine.dir/sdlfiles/Event.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/sdlfiles/Event.cpp.o: ../sdlfiles/Event.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Event.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/sdlfiles/Event.cpp.o -c /home/zach/Desktop/CIS422/newproj/sdlfiles/Event.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Event.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/sdlfiles/Event.cpp.o -c /home/zach/Desktop/cis422/sdlfiles/Event.cpp
 
 CMakeFiles/engine.dir/sdlfiles/Event.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/sdlfiles/Event.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/CIS422/newproj/sdlfiles/Event.cpp > CMakeFiles/engine.dir/sdlfiles/Event.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/sdlfiles/Event.cpp > CMakeFiles/engine.dir/sdlfiles/Event.cpp.i
 
 CMakeFiles/engine.dir/sdlfiles/Event.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/sdlfiles/Event.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/CIS422/newproj/sdlfiles/Event.cpp -o CMakeFiles/engine.dir/sdlfiles/Event.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/sdlfiles/Event.cpp -o CMakeFiles/engine.dir/sdlfiles/Event.cpp.s
 
 # Object files for target engine
 engine_OBJECTS = \
@@ -140,7 +140,7 @@ engine: CMakeFiles/engine.dir/err/Error.cpp.o
 engine: CMakeFiles/engine.dir/sdlfiles/Event.cpp.o
 engine: CMakeFiles/engine.dir/build.make
 engine: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/engine.dir/clean:
 .PHONY : CMakeFiles/engine.dir/clean
 
 CMakeFiles/engine.dir/depend:
-	cd /home/zach/Desktop/CIS422/newproj/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zach/Desktop/CIS422/newproj /home/zach/Desktop/CIS422/newproj /home/zach/Desktop/CIS422/newproj/cmake-build-debug /home/zach/Desktop/CIS422/newproj/cmake-build-debug /home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zach/Desktop/cis422/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zach/Desktop/cis422 /home/zach/Desktop/cis422 /home/zach/Desktop/cis422/cmake-build-debug /home/zach/Desktop/cis422/cmake-build-debug /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/engine.dir/depend
 

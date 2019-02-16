@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/zach/Desktop/CIS422/newproj/cmake-build-debug"/>
+				<Option working_dir="/home/zach/Desktop/cis422/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/zach/Desktop/CIS422/newproj/cmake-build-debug"/>
+				<Option working_dir="/home/zach/Desktop/cis422/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine">
-				<Option output="/home/zach/Desktop/CIS422/newproj/cmake-build-debug/engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/zach/Desktop/CIS422/newproj/cmake-build-debug"/>
+				<Option output="/home/zach/Desktop/cis422/cmake-build-debug/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zach/Desktop/cis422/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -43,15 +43,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine/fast">
-				<Option output="/home/zach/Desktop/CIS422/newproj/cmake-build-debug/engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/zach/Desktop/CIS422/newproj/cmake-build-debug"/>
+				<Option output="/home/zach/Desktop/cis422/cmake-build-debug/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zach/Desktop/cis422/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -65,51 +65,51 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/zach/Desktop/CIS422/newproj/cmake-build-debug"/>
+				<Option working_dir="/home/zach/Desktop/cis422/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/CIS422/newproj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/Desktop/cis422/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/GameLoop.cpp">
+		<Unit filename="/home/zach/Desktop/cis422/GameLoop.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/GameLoop.h">
+		<Unit filename="/home/zach/Desktop/cis422/GameLoop.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/err/Error.cpp">
+		<Unit filename="/home/zach/Desktop/cis422/err/Error.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/err/Error.h">
+		<Unit filename="/home/zach/Desktop/cis422/err/Error.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/main.cpp">
+		<Unit filename="/home/zach/Desktop/cis422/main.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/sdlfiles/Display.cpp">
+		<Unit filename="/home/zach/Desktop/cis422/sdlfiles/Display.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/sdlfiles/Display.h">
+		<Unit filename="/home/zach/Desktop/cis422/sdlfiles/Display.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/sdlfiles/Event.cpp">
+		<Unit filename="/home/zach/Desktop/cis422/sdlfiles/Event.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/sdlfiles/Event.h">
+		<Unit filename="/home/zach/Desktop/cis422/sdlfiles/Event.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/zach/Desktop/CIS422/newproj/CMakeLists.txt">
+		<Unit filename="/home/zach/Desktop/cis422/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/zach/Desktop/CIS422/newproj/./sdlfiles/Display.h
+/home/zach/Desktop/cis422/./sdlfiles/Display.h
 string
 -
 SDL2/SDL.h
 -
 
-/home/zach/Desktop/CIS422/newproj/./sdlfiles/Event.h
+/home/zach/Desktop/cis422/./sdlfiles/Event.h
 SDL2/SDL.h
 -
 
-/home/zach/Desktop/CIS422/newproj/GameLoop.cpp
+/home/zach/Desktop/cis422/GameLoop.cpp
 GameLoop.h
-/home/zach/Desktop/CIS422/newproj/GameLoop.h
+/home/zach/Desktop/cis422/GameLoop.h
 SDL2/SDL.h
 -
 iostream
@@ -26,21 +26,27 @@ iostream
 GL/glew.h
 -
 
-/home/zach/Desktop/CIS422/newproj/GameLoop.h
+/home/zach/Desktop/cis422/GameLoop.h
 ./sdlfiles/Event.h
-/home/zach/Desktop/CIS422/newproj/./sdlfiles/Event.h
+/home/zach/Desktop/cis422/./sdlfiles/Event.h
 ./sdlfiles/Display.h
-/home/zach/Desktop/CIS422/newproj/./sdlfiles/Display.h
+/home/zach/Desktop/cis422/./sdlfiles/Display.h
 
-/home/zach/Desktop/CIS422/newproj/sdlfiles/Display.cpp
+/home/zach/Desktop/cis422/main.cpp
+iostream
+-
+GameLoop.h
+/home/zach/Desktop/cis422/GameLoop.h
+
+/home/zach/Desktop/cis422/sdlfiles/Display.cpp
 Display.h
-/home/zach/Desktop/CIS422/newproj/sdlfiles/Display.h
+/home/zach/Desktop/cis422/sdlfiles/Display.h
 iostream
 -
 GL/glew.h
 -
 
-/home/zach/Desktop/CIS422/newproj/sdlfiles/Display.h
+/home/zach/Desktop/cis422/sdlfiles/Display.h
 string
 -
 SDL2/SDL.h

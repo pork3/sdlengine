@@ -17,6 +17,8 @@ public:
 
     /*function used to swap between the double buffers*/
     void SwapDisp();
+    /*function to clear the screen and redraw to red green blue alpha*/
+    void Clear(float r, float g, float b, float a);
 
 private:
 

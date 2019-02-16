@@ -30,6 +30,11 @@ Display::Display(std::string title, int w, int h){
         SwapDisp();
 }
 
+void Display::Clear(float r, float g, float b, float a){
+    glClearColor(r,g,b,a);
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
 void Display::set_attr(){
 
     /*explicitly request open gl for at least 2^8 bits of data for

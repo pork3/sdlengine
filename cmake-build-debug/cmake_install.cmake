@@ -1,4 +1,4 @@
-# Install script for directory: /home/zach/Desktop/CIS422/newproj
+# Install script for directory: /home/zach/Desktop/cis422
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/zach/Desktop/CIS422/newproj/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zach/Desktop/cis422/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

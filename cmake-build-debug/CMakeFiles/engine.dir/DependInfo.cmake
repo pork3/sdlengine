@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zach/Desktop/CIS422/newproj/GameLoop.cpp" "/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles/engine.dir/GameLoop.cpp.o"
-  "/home/zach/Desktop/CIS422/newproj/err/Error.cpp" "/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles/engine.dir/err/Error.cpp.o"
-  "/home/zach/Desktop/CIS422/newproj/main.cpp" "/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o"
-  "/home/zach/Desktop/CIS422/newproj/sdlfiles/Display.cpp" "/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
-  "/home/zach/Desktop/CIS422/newproj/sdlfiles/Event.cpp" "/home/zach/Desktop/CIS422/newproj/cmake-build-debug/CMakeFiles/engine.dir/sdlfiles/Event.cpp.o"
+  "/home/zach/Desktop/cis422/GameLoop.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/GameLoop.cpp.o"
+  "/home/zach/Desktop/cis422/err/Error.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/err/Error.cpp.o"
+  "/home/zach/Desktop/cis422/main.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o"
+  "/home/zach/Desktop/cis422/sdlfiles/Display.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
+  "/home/zach/Desktop/cis422/sdlfiles/Event.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/sdlfiles/Event.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
