@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/sdlengine.dir/src/opengl/render.cpp.o CMakeFiles/sdlengine.dir/src/sdlsrc/Event.cpp.o CMakeFiles/sdlengine.dir/src/sdlsrc/window.cpp.o CMakeFiles/sdlengine.dir/src/GameLoop.cpp.o CMakeFiles/sdlengine.dir/src/main.cpp.o  -o sdlengine 
