@@ -1,21 +1,16 @@
 cmake_minimum_required(VERSION 3.13)
-project(sdlengine)
+#project name
+project(engine)
 
+#c++ 14 and debugsymbols
 set(CMAKE_CXX_STANDARD 14)
+add_definitions("-g -Wall")
 
-include_directories(src)
-include_directories(src/opengl)
-include_directories(src/sdlsrc)
+#create the executable
+add_executable(${PROJECT_NAME} main.cpp sdlfiles/Display.cpp sdlfiles/Display.h GameLoop.cpp GameLoop.h err/Error.cpp err/Error.h sdlfiles/Event.cpp sdlfiles/Event.h)
 
-add_executable(sdlengine
-        src/opengl/render.cpp
-        src/opengl/render.h
-        src/sdlsrc/Event.cpp
-        src/sdlsrc/Event.h
-        src/sdlsrc/window.cpp
-        src/sdlsrc/window.h
-        src/GameLoop.cpp
-        src/GameLoop.h
-        src/main.cpp
-        makefile
-        README.md)
+target_link_libraries(${PROJECT_NAME} "-lSDL2 -lGL -lGLEW")
+
+
+
+
