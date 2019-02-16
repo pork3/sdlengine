@@ -1,3 +1,0 @@
-/home/zach/Desktop/CIS422/sdlengine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/zach/Desktop/CIS422/sdlengine/cmake-build-debug/CMakeFiles/sdlengine.dir
-/home/zach/Desktop/CIS422/sdlengine/cmake-build-debug/CMakeFiles/edit_cache.dir
