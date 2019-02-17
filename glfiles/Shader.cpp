@@ -30,6 +30,13 @@ Shader::Shader(const std::string& fname){
     glValidateProgram(prog);
     verifyshader(prog, GL_VALIDATE_STATUS,true, "COMPILING");
 
+    /*Find out the location of the handle to  uniforms, takes handler to
+     * shader program, and the name of attribute in shader*/
+    nuniform[TRANSFORM] = glGetUniformLocation(prog, "transform");
+
+
+
+
 }
 
 Shader::~Shader(){
@@ -42,6 +49,14 @@ Shader::~Shader(){
     }
     glDeleteProgram(prog);
 
+}
+
+void Shader::Update(const Transform& t)  {
+
+    glm::mat4 mdl = t.MatModel();
+
+    /*update the shader with a transform*/
+    glUniformMatrix4fv(nuniform[TRANSFORM], 1, GL_FALSE,&mdl[0][0]);
 }
 
 void Shader::Bind() {

@@ -8,6 +8,7 @@
 
 #include "./glfiles/Textures.h"
 #include "./glfiles/Shader.h"
+#include "Transform.h"
 
 GameLoop::GameLoop(){
 
@@ -60,15 +61,19 @@ void GameLoop::parseinput(Event &ev){
 void GameLoop::Run(){
 
     Event e = Event();
-
+                    /*position                        texture*/
     Vertex v[] = { Vertex(glm::vec3(-0.5, -0.5, 0) , glm::vec2(0.0,0.0)),
-                    Vertex(glm::vec3(0.0, 0.5, 0) , glm::vec2(0.5,1.0)),
-                    Vertex(glm::vec3(0.5, -0.5, 0), glm::vec2(1.0,0.0))
+                    Vertex(glm::vec3(0.0, 0.5, 0) , glm::vec2(1.0,1.0)),
+                    Vertex(glm::vec3(0.5, -0.5, 0), glm::vec2(0.5,0.0))
     };
+
+    Transform transform( glm::vec3(0.0,.3,0.5), /*pos*/
+                         glm::vec3(0,0,0), /*rot*/
+                         glm::vec3(0,0,0));/*scl*/
 
     Shader shader("../glfiles/shaders/testshader");
 
-    Textures texture("../glfiles/textures/pizza.jpg");
+    Textures texture("../glfiles/textures/illuminati.jpg");
 
     Mesh m(v, sizeof(v)/sizeof(v[0]));
 
@@ -78,6 +83,7 @@ void GameLoop::Run(){
 
         m.DrawMesh();
         shader.Bind();
+        shader.Update(transform);
         texture.Bind(0);
         this->display->SwapDisp();
 

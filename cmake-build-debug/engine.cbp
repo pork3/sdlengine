@@ -88,6 +88,12 @@
 		<Unit filename="/home/zach/Desktop/cis422/GameLoop.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/Transform.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/Transform.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/zach/Desktop/cis422/err/Error.cpp">
 			<Option target="engine"/>
 		</Unit>

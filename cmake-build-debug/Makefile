@@ -150,6 +150,33 @@ GameLoop.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/GameLoop.cpp.s
 .PHONY : GameLoop.cpp.s
 
+Transform.o: Transform.cpp.o
+
+.PHONY : Transform.o
+
+# target to build an object file
+Transform.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Transform.cpp.o
+.PHONY : Transform.cpp.o
+
+Transform.i: Transform.cpp.i
+
+.PHONY : Transform.i
+
+# target to preprocess a source file
+Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Transform.cpp.i
+.PHONY : Transform.cpp.i
+
+Transform.s: Transform.cpp.s
+
+.PHONY : Transform.s
+
+# target to generate assembly for a file
+Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Transform.cpp.s
+.PHONY : Transform.cpp.s
+
 err/Error.o: err/Error.cpp.o
 
 .PHONY : err/Error.o
@@ -378,6 +405,9 @@ help:
 	@echo "... GameLoop.o"
 	@echo "... GameLoop.i"
 	@echo "... GameLoop.s"
+	@echo "... Transform.o"
+	@echo "... Transform.i"
+	@echo "... Transform.s"
 	@echo "... err/Error.o"
 	@echo "... err/Error.i"
 	@echo "... err/Error.s"

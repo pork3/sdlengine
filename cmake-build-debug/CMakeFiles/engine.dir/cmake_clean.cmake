@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
   "CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
   "CMakeFiles/engine.dir/lib/stb_image.c.o"
+  "CMakeFiles/engine.dir/Transform.cpp.o"
   "engine.pdb"
   "engine"
 )

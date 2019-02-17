@@ -7,6 +7,7 @@
 
 #include <string>
 #include <GL/glew.h>
+#include "../Transform.h"
 
 class Shader {
 
@@ -15,6 +16,8 @@ public:
     ~Shader();
 
     void Bind();
+    /*updated the values in the shader*/
+    void Update(const Transform& t);
 
 private:
 
@@ -31,9 +34,19 @@ private:
         N_SHADER
     };
 
+    enum UNIFORM{
+        TRANSFORM,
+
+        NUNIFORM
+    };
+
     /*handle of current position*/
     GLuint prog;
+    /*array of shaders*/
     GLuint nshaders[N_SHADER];
+    /*array of uniform types*/
+    GLuint nuniform[NUNIFORM];
+
 
 };
 
