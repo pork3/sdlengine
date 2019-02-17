@@ -231,6 +231,33 @@ glfiles/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/Shader.cpp.s
 .PHONY : glfiles/Shader.cpp.s
 
+glfiles/Textures.o: glfiles/Textures.cpp.o
+
+.PHONY : glfiles/Textures.o
+
+# target to build an object file
+glfiles/Textures.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/Textures.cpp.o
+.PHONY : glfiles/Textures.cpp.o
+
+glfiles/Textures.i: glfiles/Textures.cpp.i
+
+.PHONY : glfiles/Textures.i
+
+# target to preprocess a source file
+glfiles/Textures.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/Textures.cpp.i
+.PHONY : glfiles/Textures.cpp.i
+
+glfiles/Textures.s: glfiles/Textures.cpp.s
+
+.PHONY : glfiles/Textures.s
+
+# target to generate assembly for a file
+glfiles/Textures.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/Textures.cpp.s
+.PHONY : glfiles/Textures.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -333,6 +360,9 @@ help:
 	@echo "... glfiles/Shader.o"
 	@echo "... glfiles/Shader.i"
 	@echo "... glfiles/Shader.s"
+	@echo "... glfiles/Textures.o"
+	@echo "... glfiles/Textures.i"
+	@echo "... glfiles/Textures.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -9,11 +9,19 @@
 class Vertex{
 
 public:
-    Vertex(const glm::vec3& p){
+    Vertex(const glm::vec3& p, const glm::vec2& t){
         this->pos = p;
+        this->tex = t;
     }
+
+    glm::vec3* GetPos(){return &pos;}
+    glm::vec2* GetTex(){return &tex;}
+
+
+
 private:
     glm::vec3 pos;
+    glm::vec2 tex;
 };
 
 
@@ -31,6 +39,7 @@ private:
 
     enum{
         POSITION_VB,
+        TEXTURE_VB,
         NBUFF
     };
 

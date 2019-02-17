@@ -106,6 +106,12 @@
 		<Unit filename="/home/zach/Desktop/cis422/glfiles/Shader.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/glfiles/Textures.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/glfiles/Textures.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/zach/Desktop/cis422/main.cpp">
 			<Option target="engine"/>
 		</Unit>

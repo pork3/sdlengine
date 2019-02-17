@@ -22,7 +22,7 @@ private:
     std::string loadshader(const std::string fname);
     GLuint createshader(const std::string& file, GLenum type);
     /*change in final to use error class*/
-    void verifyshader(GLuint shader, GLuint flag, bool isprog);
+    void verifyshader(GLuint shader, GLuint flag, bool isprog, const std::string& error);
 
     /* enum to refer to shader types*/
     enum SHADERTYPE{

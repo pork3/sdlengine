@@ -6,6 +6,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
+#include "./glfiles/Textures.h"
 #include "./glfiles/Shader.h"
 
 GameLoop::GameLoop(){
@@ -60,12 +61,14 @@ void GameLoop::Run(){
 
     Event e = Event();
 
-    Vertex v[] = { Vertex(glm::vec3(-0.5, -0.5, 0)),
-                    Vertex(glm::vec3(0.0, 0.5, 0)),
-                    Vertex(glm::vec3(0.5, -0.5, 0))
+    Vertex v[] = { Vertex(glm::vec3(-0.5, -0.5, 0) , glm::vec2(0.0,0.0)),
+                    Vertex(glm::vec3(0.0, 0.5, 0) , glm::vec2(0.5,1.0)),
+                    Vertex(glm::vec3(0.5, -0.5, 0), glm::vec2(1.0,0.0))
     };
 
     Shader shader("../glfiles/shaders/testshader");
+
+    Textures texture("../glfiles/textures/pizza.jpg");
 
     Mesh m(v, sizeof(v)/sizeof(v[0]));
 
@@ -75,6 +78,7 @@ void GameLoop::Run(){
 
         m.DrawMesh();
         shader.Bind();
+        texture.Bind(0);
         this->display->SwapDisp();
 
         parseinput(e);

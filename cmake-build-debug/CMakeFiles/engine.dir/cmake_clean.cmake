@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/sdlfiles/Event.cpp.o"
   "CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
   "CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
+  "CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
   "engine.pdb"
   "engine"
 )

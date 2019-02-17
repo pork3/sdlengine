@@ -3,6 +3,7 @@
 
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././glfiles/Mesh.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././glfiles/Shader.h
+CMakeFiles/engine.dir/GameLoop.cpp.o: .././glfiles/Textures.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././sdlfiles/Display.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././sdlfiles/Event.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: ../GameLoop.cpp
@@ -16,6 +17,10 @@ CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: ../glfiles/Mesh.h
 
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: ../glfiles/Shader.cpp
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: ../glfiles/Shader.h
+
+CMakeFiles/engine.dir/glfiles/Textures.cpp.o: ../glfiles/Textures.cpp
+CMakeFiles/engine.dir/glfiles/Textures.cpp.o: ../glfiles/Textures.h
+CMakeFiles/engine.dir/glfiles/Textures.cpp.o: ../lib/stb_image.h
 
 CMakeFiles/engine.dir/main.cpp.o: .././glfiles/Mesh.h
 CMakeFiles/engine.dir/main.cpp.o: .././sdlfiles/Display.h

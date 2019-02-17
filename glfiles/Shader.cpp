@@ -8,10 +8,11 @@ Shader::Shader(const std::string& fname){
     /*inform opengl to create the shader program, find space, and give
      * a reference number for the program*/
     prog = glCreateProgram();
-
+                    std::string v = loadshader((fname + ".vert"));
+                    std::string f = loadshader((fname + ".frag"));
     /*load the text from the shader files, and create... load into */
-    nshaders[VERTEX] = createshader(loadshader(fname + ".vert"), GL_VERTEX_SHADER);
-    nshaders[FRAGMENT] = createshader(loadshader(fname + ".frag"), GL_FRAGMENT_SHADER);
+    nshaders[VERTEX] = createshader(v, GL_VERTEX_SHADER);
+    nshaders[FRAGMENT] = createshader(f, GL_FRAGMENT_SHADER);
 
     /*loop through shader buffer and attach to opengl flow*/
     unsigned int i;
@@ -25,10 +26,10 @@ Shader::Shader(const std::string& fname){
 
     glLinkProgram(prog);
     /*verify opengl was able to read and link the shader progs*/
-    verifyshader(prog, GL_LINK_STATUS,true);
+    verifyshader(prog, GL_LINK_STATUS,true, "LINKING");
     /*verify opengl is able to interpret shader 'no errors in the shader*/
     glValidateProgram(prog);
-    verifyshader(prog, GL_VALIDATE_STATUS,true);
+    verifyshader(prog, GL_VALIDATE_STATUS,true, "COMPILING");
 
 }
 
@@ -65,7 +66,7 @@ GLuint Shader::createshader(const std::string& file, GLenum type){
         glShaderSource(shader, 1, shaderfile, length);
         glCompileShader(shader);
 
-        verifyshader(shader, GL_COMPILE_STATUS,false);
+        verifyshader(shader, GL_COMPILE_STATUS,false, "COMPILE");
 
         return shader;
 }
@@ -89,11 +90,11 @@ std::string Shader::loadshader(const std::string fname){
 
         std::cout << "Error while loading shader data" << std::endl;
     }
-
+    return out;
 
 }
 
-void Shader::verifyshader(GLuint shader, GLuint flag, bool isprog){
+void Shader::verifyshader(GLuint shader, GLuint flag, bool isprog, const std::string& error){
 
     GLint status = 0;
     GLchar err[1024] = {0};
@@ -111,7 +112,7 @@ void Shader::verifyshader(GLuint shader, GLuint flag, bool isprog){
             glGetShaderInfoLog(shader, sizeof(err), nullptr, err);
         }
 
-        std::cout << "Shader  failed with : " << err << std::endl;
+        std::cout << "Shader  failed with : " << error << " : " << err << std::endl;
     }
 
 }
