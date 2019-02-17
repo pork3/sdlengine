@@ -258,6 +258,33 @@ glfiles/Textures.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/Textures.cpp.s
 .PHONY : glfiles/Textures.cpp.s
 
+lib/stb_image.o: lib/stb_image.c.o
+
+.PHONY : lib/stb_image.o
+
+# target to build an object file
+lib/stb_image.c.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/stb_image.c.o
+.PHONY : lib/stb_image.c.o
+
+lib/stb_image.i: lib/stb_image.c.i
+
+.PHONY : lib/stb_image.i
+
+# target to preprocess a source file
+lib/stb_image.c.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/stb_image.c.i
+.PHONY : lib/stb_image.c.i
+
+lib/stb_image.s: lib/stb_image.c.s
+
+.PHONY : lib/stb_image.s
+
+# target to generate assembly for a file
+lib/stb_image.c.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/stb_image.c.s
+.PHONY : lib/stb_image.c.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -363,6 +390,9 @@ help:
 	@echo "... glfiles/Textures.o"
 	@echo "... glfiles/Textures.i"
 	@echo "... glfiles/Textures.s"
+	@echo "... lib/stb_image.o"
+	@echo "... lib/stb_image.i"
+	@echo "... lib/stb_image.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

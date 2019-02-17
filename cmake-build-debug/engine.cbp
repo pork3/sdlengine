@@ -112,6 +112,12 @@
 		<Unit filename="/home/zach/Desktop/cis422/glfiles/Textures.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/lib/stb_image.c">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/lib/stb_image.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/zach/Desktop/cis422/main.cpp">
 			<Option target="engine"/>
 		</Unit>

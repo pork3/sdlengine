@@ -16,7 +16,7 @@ Mesh::Mesh(Vertex* vert, unsigned int nvert) {
     /*reserve the ammount of data needed*/
     poscoord.reserve(nvert);
     texcoord.reserve(nvert);
-    int i;
+    unsigned int i;
     for( i = 0; i < nvert; i++){
 
         poscoord.push_back(*vert[i].GetPos());
@@ -38,7 +38,7 @@ Mesh::Mesh(Vertex* vert, unsigned int nvert) {
                             /*3 pieces of float data*/
     glVertexAttribPointer(0,3,GL_FLOAT, GL_FALSE, 0, nullptr);
 
-    glBindVertexArray(0);
+
 
     /** TEXTURE DATA ****/
     glGenBuffers(NBUFF, vertArrBuf);
@@ -47,7 +47,9 @@ Mesh::Mesh(Vertex* vert, unsigned int nvert) {
 
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1,2,GL_FLOAT, GL_FALSE, 0, nullptr);
-    glBindVertexArray(1);
+
+
+    glBindVertexArray(0);
 
 }
 

@@ -1,8 +1,17 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "C"
   "CXX"
   )
 # The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_C
+  "/home/zach/Desktop/cis422/lib/stb_image.c" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/lib/stb_image.c.o"
+  )
+set(CMAKE_C_COMPILER_ID "GNU")
+
+# The include file search paths:
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zach/Desktop/cis422/GameLoop.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/GameLoop.cpp.o"
   "/home/zach/Desktop/cis422/err/Error.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/err/Error.cpp.o"

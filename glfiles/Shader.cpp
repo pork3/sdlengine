@@ -19,10 +19,9 @@ Shader::Shader(const std::string& fname){
     for(i = 0; i < N_SHADER; i++){
         glAttachShader( prog, nshaders[i] );
     }
-    /*tells opengl what to read*/
-    glBindAttribLocation( prog, VERTEX, "position" );
-
-
+    /*tells opengl what attribute to read from shaders*/
+    glBindAttribLocation( prog, 0, "position" );
+    glBindAttribLocation( prog, 1, "textcoord" );
 
     glLinkProgram(prog);
     /*verify opengl was able to read and link the shader progs*/

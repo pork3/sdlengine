@@ -1,10 +1,12 @@
 #version 120
 
-uniform sampler2D sam;
+uniform sampler2D samp;
+
+varying vec2 textcoord0;
 
 void main(){
 
 
-    gl_FragColor = texture2D(sam, vec2(0.5f,0.5f));
+    gl_FragColor = texture2D(samp, textcoord0);
 
 }
