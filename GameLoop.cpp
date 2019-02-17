@@ -6,6 +6,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
+#include "./glfiles/Shader.h"
 
 GameLoop::GameLoop(){
 
@@ -54,12 +55,27 @@ void GameLoop::parseinput(Event &ev){
 
 }
 
+
 void GameLoop::Run(){
 
     Event e = Event();
+
+    Vertex v[] = { Vertex(glm::vec3(-0.5, -0.5, 0)),
+                    Vertex(glm::vec3(0.0, 0.5, 0)),
+                    Vertex(glm::vec3(0.5, -0.5, 0))
+    };
+
+    Shader shader("../glfiles/shaders/testshader");
+
+    Mesh m(v, sizeof(v)/sizeof(v[0]));
+
     while(this->running){
 
+        this->display->Clear(0.0f,1.0f,0.5f,1.0f);
 
+        m.DrawMesh();
+        shader.Bind();
+        this->display->SwapDisp();
 
         parseinput(e);
     }

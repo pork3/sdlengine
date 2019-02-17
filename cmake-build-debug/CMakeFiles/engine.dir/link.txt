@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/engine.dir/main.cpp.o CMakeFiles/engine.dir/sdlfiles/Display.cpp.o CMakeFiles/engine.dir/GameLoop.cpp.o CMakeFiles/engine.dir/err/Error.cpp.o CMakeFiles/engine.dir/sdlfiles/Event.cpp.o  -o engine -lSDL2 -lGL -lGLEW 
+/usr/bin/c++  -g   CMakeFiles/engine.dir/main.cpp.o CMakeFiles/engine.dir/sdlfiles/Display.cpp.o CMakeFiles/engine.dir/GameLoop.cpp.o CMakeFiles/engine.dir/err/Error.cpp.o CMakeFiles/engine.dir/sdlfiles/Event.cpp.o CMakeFiles/engine.dir/glfiles/Mesh.cpp.o CMakeFiles/engine.dir/glfiles/Shader.cpp.o  -o engine -lSDL2 -lGL -lGLEW 

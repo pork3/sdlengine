@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/GameLoop.cpp.o"
   "CMakeFiles/engine.dir/err/Error.cpp.o"
   "CMakeFiles/engine.dir/sdlfiles/Event.cpp.o"
+  "CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
+  "CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
   "engine.pdb"
   "engine"
 )

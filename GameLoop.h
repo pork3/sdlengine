@@ -7,6 +7,8 @@
 */
 #include "./sdlfiles/Event.h"
 #include "./sdlfiles/Display.h"
+#include "./glfiles/Mesh.h"
+
 
 class GameLoop {
 
