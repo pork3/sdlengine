@@ -77,7 +77,7 @@ void GameLoop::Run(){
     float aspectratio = (display->GetWidthf()/display->GetHeightf());
     std::cout << aspectratio << "aspect ratio " <<std::endl;
 
-    Camera camera(glm::vec3(0,0,-1), 360.0f, aspectratio, 0.01f, 1000.0f);
+    Camera camera(glm::vec3(0,0,1.5), 360.0f, aspectratio, 0.01f, 1000.0f);
 
     Shader shader("../glfiles/shaders/testshader");
 

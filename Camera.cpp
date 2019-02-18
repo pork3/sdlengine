@@ -7,7 +7,7 @@ Camera::Camera(const glm::vec3 &pos, float fov, float aspect, float near, float 
     this->position = pos;
 
 
-    this->forward = glm::vec3(0,0,1);
+    this->forward = glm::vec3(0,0,-1);
     this->up = glm::vec3(0,1,0);
 }
 
