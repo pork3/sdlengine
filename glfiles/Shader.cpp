@@ -51,9 +51,9 @@ Shader::~Shader(){
 
 }
 
-void Shader::Update(const Transform& t)  {
+void Shader::Update(const Transform& t, const Camera& camera)  {
 
-    glm::mat4 mdl = t.MatModel();
+    glm::mat4 mdl = camera.GetProjection() * t.MatModel();
 
     /*update the shader with a transform*/
     glUniformMatrix4fv(nuniform[TRANSFORM], 1, GL_FALSE,&mdl[0][0]);

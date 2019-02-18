@@ -20,6 +20,9 @@ public:
     /*function to clear the screen and redraw to red green blue alpha*/
     void Clear(float r, float g, float b, float a);
 
+    float GetHeightf(){return static_cast<float>(this->sheight);}
+    float GetWidthf(){return static_cast<float>(this->swithd);}
+
 private:
 
     int swithd;

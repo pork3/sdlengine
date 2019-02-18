@@ -13,6 +13,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/zach/Desktop/cis422/Camera.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/Camera.cpp.o"
   "/home/zach/Desktop/cis422/GameLoop.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/GameLoop.cpp.o"
   "/home/zach/Desktop/cis422/Transform.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/Transform.cpp.o"
   "/home/zach/Desktop/cis422/err/Error.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/err/Error.cpp.o"

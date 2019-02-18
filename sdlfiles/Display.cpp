@@ -6,7 +6,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
-Display::Display(std::string title, int w, int h){
+Display::Display(std::string title, int w, int h) : swithd(w), sheight(h){
 
     set_attr();
     this->window = SDL_CreateWindow(title.c_str(),SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,

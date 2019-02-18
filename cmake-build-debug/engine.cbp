@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/zach/Desktop/cis422/Camera.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/Camera.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/zach/Desktop/cis422/GameLoop.cpp">
 			<Option target="engine"/>
 		</Unit>

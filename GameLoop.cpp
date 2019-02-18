@@ -9,6 +9,7 @@
 #include "./glfiles/Textures.h"
 #include "./glfiles/Shader.h"
 #include "Transform.h"
+#include "Camera.h"
 
 GameLoop::GameLoop(){
 
@@ -71,6 +72,13 @@ void GameLoop::Run(){
                          glm::vec3(0,0,0), /*rot*/
                          glm::vec3(0,0,0));/*scl*/
 
+
+    float s = 0.0f;
+    float aspectratio = (display->GetWidthf()/display->GetHeightf());
+    std::cout << aspectratio << "aspect ratio " <<std::endl;
+
+    Camera camera(glm::vec3(0,0,-1), 360.0f, aspectratio, 0.01f, 1000.0f);
+
     Shader shader("../glfiles/shaders/testshader");
 
     Textures texture("../glfiles/textures/illuminati.jpg");
@@ -81,12 +89,17 @@ void GameLoop::Run(){
 
         this->display->Clear(0.0f,1.0f,0.5f,1.0f);
 
+
+        transform.GetPos().x = sinf(s);
+        transform.SetRot(glm::vec3(cosf(s),cosf(s),cosf(s) ));
+
+
         m.DrawMesh();
         shader.Bind();
-        shader.Update(transform);
+        shader.Update(transform, camera);
         texture.Bind(0);
         this->display->SwapDisp();
-
         parseinput(e);
+        s+= .01;
     }
 }

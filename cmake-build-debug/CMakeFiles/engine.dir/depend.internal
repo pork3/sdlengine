@@ -3,13 +3,18 @@
 
 CMakeFiles/engine.dir/lib/stb_image.c.o
  /home/zach/Desktop/cis422/lib/stb_image.c
+CMakeFiles/engine.dir/Camera.cpp.o
+ /home/zach/Desktop/cis422/Camera.cpp
+ /home/zach/Desktop/cis422/Camera.h
 CMakeFiles/engine.dir/GameLoop.cpp.o
+ /home/zach/Desktop/cis422/./Camera.h
  /home/zach/Desktop/cis422/./Transform.h
  /home/zach/Desktop/cis422/./glfiles/Mesh.h
  /home/zach/Desktop/cis422/./glfiles/Shader.h
  /home/zach/Desktop/cis422/./glfiles/Textures.h
  /home/zach/Desktop/cis422/./sdlfiles/Display.h
  /home/zach/Desktop/cis422/./sdlfiles/Event.h
+ /home/zach/Desktop/cis422/Camera.h
  /home/zach/Desktop/cis422/GameLoop.cpp
  /home/zach/Desktop/cis422/GameLoop.h
  /home/zach/Desktop/cis422/Transform.h
@@ -23,6 +28,7 @@ CMakeFiles/engine.dir/glfiles/Mesh.cpp.o
  /home/zach/Desktop/cis422/glfiles/Mesh.cpp
  /home/zach/Desktop/cis422/glfiles/Mesh.h
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o
+ /home/zach/Desktop/cis422/Camera.h
  /home/zach/Desktop/cis422/Transform.h
  /home/zach/Desktop/cis422/glfiles/Shader.cpp
  /home/zach/Desktop/cis422/glfiles/Shader.h

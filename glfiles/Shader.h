@@ -1,13 +1,10 @@
-//
-// Created by zach on 2/16/19.
-//
-
 #ifndef ENGINE_SHADER_H
 #define ENGINE_SHADER_H
 
 #include <string>
 #include <GL/glew.h>
 #include "../Transform.h"
+#include "../Camera.h"
 
 class Shader {
 
@@ -17,7 +14,7 @@ public:
 
     void Bind();
     /*updated the values in the shader*/
-    void Update(const Transform& t);
+    void Update(const Transform& t, const Camera& camera);
 
 private:
 

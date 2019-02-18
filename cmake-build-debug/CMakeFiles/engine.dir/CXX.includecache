@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/zach/Desktop/cis422/./Camera.h
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+
 /home/zach/Desktop/cis422/./Transform.h
 glm/glm.hpp
 -
@@ -23,6 +29,8 @@ GL/glew.h
 -
 ../Transform.h
 /home/zach/Desktop/cis422/./Transform.h
+../Camera.h
+/home/zach/Desktop/cis422/./Camera.h
 
 /home/zach/Desktop/cis422/./glfiles/Textures.h
 string
@@ -40,6 +48,12 @@ SDL2/SDL.h
 SDL2/SDL.h
 -
 
+/home/zach/Desktop/cis422/Camera.h
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+
 /home/zach/Desktop/cis422/GameLoop.cpp
 GameLoop.h
 /home/zach/Desktop/cis422/GameLoop.h
@@ -55,6 +69,8 @@ GL/glew.h
 /home/zach/Desktop/cis422/./glfiles/Shader.h
 Transform.h
 /home/zach/Desktop/cis422/Transform.h
+Camera.h
+/home/zach/Desktop/cis422/Camera.h
 
 /home/zach/Desktop/cis422/GameLoop.h
 ./sdlfiles/Event.h

@@ -3,12 +3,17 @@
 
 CMakeFiles/engine.dir/lib/stb_image.c.o: ../lib/stb_image.c
 
+CMakeFiles/engine.dir/Camera.cpp.o: ../Camera.cpp
+CMakeFiles/engine.dir/Camera.cpp.o: ../Camera.h
+
+CMakeFiles/engine.dir/GameLoop.cpp.o: .././Camera.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././Transform.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././glfiles/Mesh.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././glfiles/Shader.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././glfiles/Textures.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././sdlfiles/Display.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: .././sdlfiles/Event.h
+CMakeFiles/engine.dir/GameLoop.cpp.o: ../Camera.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: ../GameLoop.cpp
 CMakeFiles/engine.dir/GameLoop.cpp.o: ../GameLoop.h
 CMakeFiles/engine.dir/GameLoop.cpp.o: ../Transform.h
@@ -22,6 +27,7 @@ CMakeFiles/engine.dir/err/Error.cpp.o: ../err/Error.h
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: ../glfiles/Mesh.cpp
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: ../glfiles/Mesh.h
 
+CMakeFiles/engine.dir/glfiles/Shader.cpp.o: ../Camera.h
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: ../Transform.h
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: ../glfiles/Shader.cpp
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: ../glfiles/Shader.h
