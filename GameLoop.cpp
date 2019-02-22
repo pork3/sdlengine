@@ -65,26 +65,28 @@ void GameLoop::Run(){
                     /*position                        texture*/
     Vertex v[] = { Vertex(glm::vec3(-0.5, -0.5, 0) , glm::vec2(0.0,0.0)),
                     Vertex(glm::vec3(0.0, 0.5, 0) , glm::vec2(1.0,1.0)),
-                    Vertex(glm::vec3(0.5, -0.5, 0), glm::vec2(0.5,0.0))
+                    Vertex(glm::vec3(0.5, -0.5, 0), glm::vec2(1.0,0.0))
     };
+
+    /*create index buffer*/
+    unsigned int ind[] = {0 , 1 , 2};
 
     Transform transform( glm::vec3(0.0,.3,0.5), /*pos*/
                          glm::vec3(0,0,0), /*rot*/
                          glm::vec3(0,0,0));/*scl*/
 
-
     float s = 0.0f;
     float aspectratio = (display->GetWidthf()/display->GetHeightf());
     std::cout << aspectratio << "aspect ratio " <<std::endl;
 
-    Camera camera(glm::vec3(0,0,1.5), 360.0f, aspectratio, 0.01f, 1000.0f);
+    Camera camera(glm::vec3(1,0,5), 70.0f, aspectratio, 0.01f, 1000.0f);
 
     Shader shader("../glfiles/shaders/testshader");
 
     Textures texture("../glfiles/textures/illuminati.jpg");
 
-    Mesh m(v, sizeof(v)/sizeof(v[0]));
-
+    Mesh m(v, sizeof(v)/sizeof(v[0]), ind, sizeof(ind)/sizeof(ind[0]));
+    Mesh m2("../glfiles/obj/Crate1.obj");
     while(this->running){
 
         this->display->Clear(0.0f,1.0f,0.5f,1.0f);
@@ -94,7 +96,7 @@ void GameLoop::Run(){
         transform.SetRot(glm::vec3(cosf(s),cosf(s),cosf(s) ));
 
 
-        m.DrawMesh();
+        m2.DrawMesh();
         shader.Bind();
         shader.Update(transform, camera);
         texture.Bind(0);

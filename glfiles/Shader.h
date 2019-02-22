@@ -12,6 +12,9 @@ public:
     Shader(const std::string& fname);
     ~Shader();
 
+    /*TODO add separate creation functions for
+     * vertex and fragment shaders*/
+
     void Bind();
     /*updated the values in the shader*/
     void Update(const Transform& t, const Camera& camera);
@@ -33,7 +36,6 @@ private:
 
     enum UNIFORM{
         TRANSFORM,
-
         NUNIFORM
     };
 

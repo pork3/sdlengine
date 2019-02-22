@@ -3,6 +3,8 @@
 
 #include <glm/glm.hpp>
 #include <GL/glew.h>
+#include <string>
+#include "ObjLoader.h"
 
 /* data class represented by vertex with
  * a x, y, z  * [1 , 2 , 3] */
@@ -18,7 +20,6 @@ public:
     glm::vec2* GetTex(){return &tex;}
 
 
-
 private:
     glm::vec3 pos;
     glm::vec2 tex;
@@ -29,7 +30,9 @@ private:
 class Mesh {
 
 public:
-    Mesh(Vertex* vert, unsigned int nvert);
+    Mesh(Vertex* vert, unsigned int nvert, unsigned int* indeces, unsigned int nindeces);
+    Mesh(const std::string& fname);
+
     ~Mesh();
 
     void DrawMesh();
@@ -40,8 +43,11 @@ private:
     enum{
         POSITION_VB,
         TEXTURE_VB,
+        INDEX,
         NBUFF
     };
+
+    void InitMesh(const IndexedModel& model);
 
     /*vertex array requires at least version 3.0*/
     GLuint vertArr;

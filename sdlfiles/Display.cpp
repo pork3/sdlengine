@@ -1,7 +1,3 @@
-//
-// Created by zach on 2/15/19.
-//
-
 #include "Display.h"
 #include <iostream>
 #include <GL/glew.h>
@@ -24,15 +20,22 @@ Display::Display(std::string title, int w, int h) : swithd(w), sheight(h){
         if( glok != GLEW_OK){
             std::cout << "Failed to initialized openGL :(" << std::endl;
         }
+        /*enable z/depth buffer*/
+        glEnable(GL_DEPTH_TEST);
+        /*enable back face culling open gl assistance in 'creating the illusion of 3d by not drawing
+         * items out of camera view*/
+        glEnable(GL_CULL_FACE);
+        glCullFace(GL_BACK);
 
+        /*sets up a default white background*/
         glClearColor(1.0f,1.0f,1.0f,1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         SwapDisp();
 }
 
 void Display::Clear(float r, float g, float b, float a){
     glClearColor(r,g,b,a);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Display::set_attr(){
@@ -45,6 +48,8 @@ void Display::set_attr(){
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
     /*request at least a buffer size of 8*4 for the above data*/
     SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
+    /*set up zbuffer 'depth buffer*/
+    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
     /*use double bufffer if available, with double buffer drawing a 'staging'
      * window and swapping what the user sees*/
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);

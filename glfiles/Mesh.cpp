@@ -1,27 +1,39 @@
 #include "Mesh.h"
 #include <vector>
 
-Mesh::Mesh(Vertex* vert, unsigned int nvert) {
 
-    ndraw = nvert;
-    /*have opengl do the back end vertex buffer setup*/
+Mesh::Mesh(const std::string& fname){
+    /*loads mesh from file*/
+    IndexedModel model = OBJModel(fname).ToIndexedModel();
+    InitMesh(model);
+}
+
+Mesh::Mesh(Vertex* vert, unsigned int nvert,unsigned int* indeces, unsigned int nindeces) {
+
+    IndexedModel model;
+
+    unsigned  int i;
+    for(i=0; i < nvert; i++){
+
+        model.positions.push_back(*vert[i].GetPos());
+        model.texCoords.push_back(*vert[i].GetTex());
+    }
+
+    for( i = 0; i < nindeces; i++){
+        model.indices.push_back(indeces[i]);
+    }
+
+    InitMesh(model);
+}
+
+void Mesh::InitMesh(const IndexedModel &model) {
+
+    ndraw = model.indices.size();
+
     glGenVertexArrays(1, &vertArr);
     /*bind the objects with opengl... this ties the calls to draw/update to the
      * object passed in*/
     glBindVertexArray(vertArr);
-
-    /*create vectors for the position coordinates and texture coordinates*/
-    std::vector<glm::vec3> poscoord;
-    std::vector<glm::vec2> texcoord;
-    /*reserve the ammount of data needed*/
-    poscoord.reserve(nvert);
-    texcoord.reserve(nvert);
-    unsigned int i;
-    for( i = 0; i < nvert; i++){
-
-        poscoord.push_back(*vert[i].GetPos());
-        texcoord.push_back(*vert[i].GetTex());
-    }
 
     /**POSITION DATA**/
     /*sets up space on graphics card and binds the space and sets opengl
@@ -29,13 +41,13 @@ Mesh::Mesh(Vertex* vert, unsigned int nvert) {
     glGenBuffers(NBUFF, vertArrBuf);
     glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[POSITION_VB]);
     /*moving the data from ram to gpu*/
-                /*interp as array, size of data to move, addr, glhints */
-    glBufferData(GL_ARRAY_BUFFER, nvert*sizeof(poscoord[0]), &poscoord[0], GL_STATIC_DRAW );
+    /*interp as array, size of data to move, addr, glhints */
+    glBufferData(GL_ARRAY_BUFFER, model.positions.size()*sizeof(model.positions[0]), &model.positions[0], GL_STATIC_DRAW );
     /*tell opengl how to interpret the data*/
-        /*passes the attributes of the data, the order they should be read this ensures
-        the data is read into the gpu in a sequential fashion*/
+    /*passes the attributes of the data, the order they should be read this ensures
+    the data is read into the gpu in a sequential fashion*/
     glEnableVertexAttribArray(0);
-                            /*3 pieces of float data*/
+    /*3 pieces of float data*/
     glVertexAttribPointer(0,3,GL_FLOAT, GL_FALSE, 0, nullptr);
 
 
@@ -43,14 +55,19 @@ Mesh::Mesh(Vertex* vert, unsigned int nvert) {
     /** TEXTURE DATA ****/
     glGenBuffers(NBUFF, vertArrBuf);
     glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[TEXTURE_VB]);
-    glBufferData(GL_ARRAY_BUFFER, nvert*sizeof(texcoord[0]), &texcoord[0], GL_STATIC_DRAW );
-
+    glBufferData(GL_ARRAY_BUFFER, model.positions.size()*sizeof(model.texCoords[0]), &model.texCoords[0], GL_STATIC_DRAW );
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1,2,GL_FLOAT, GL_FALSE, 0, nullptr);
 
 
-    glBindVertexArray(0);
+    /** INDEX BUFFER DATA BEGINS **/
+    /*array of access to other elements array*/
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,vertArrBuf[INDEX]);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, model.indices.size() * sizeof(model.indices[0]), &model.indices[0], GL_STATIC_DRAW );
 
+
+    /*unbind, free*/
+    glBindVertexArray(0);
 }
 
 Mesh::~Mesh() {
@@ -62,7 +79,8 @@ void Mesh::DrawMesh() {
     /*bind*/
     glBindVertexArray(vertArr);
 
-    glDrawArrays(GL_TRIANGLES, 0, this->ndraw);
+    glDrawElements(GL_TRIANGLES, this->ndraw, GL_UNSIGNED_INT, 0 );
+    //glDrawArrays(GL_TRIANGLES, 0, this->ndraw);
 
     /*unbind*/
     glBindVertexArray(0);
