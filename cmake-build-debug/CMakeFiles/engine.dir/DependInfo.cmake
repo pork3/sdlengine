@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zach/Desktop/cis422/Transform.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/Transform.cpp.o"
   "/home/zach/Desktop/cis422/err/Error.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/err/Error.cpp.o"
   "/home/zach/Desktop/cis422/glfiles/Mesh.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
+  "/home/zach/Desktop/cis422/glfiles/ObjLoader.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
   "/home/zach/Desktop/cis422/glfiles/Shader.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
   "/home/zach/Desktop/cis422/glfiles/Textures.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
   "/home/zach/Desktop/cis422/main.cpp" "/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o"

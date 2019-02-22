@@ -112,6 +112,12 @@
 		<Unit filename="/home/zach/Desktop/cis422/glfiles/Mesh.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/glfiles/ObjLoader.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/Desktop/cis422/glfiles/ObjLoader.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/zach/Desktop/cis422/glfiles/Shader.cpp">
 			<Option target="engine"/>
 		</Unit>

@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/lib/stb_image.c.o"
   "CMakeFiles/engine.dir/Transform.cpp.o"
   "CMakeFiles/engine.dir/Camera.cpp.o"
+  "CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
   "engine.pdb"
   "engine"
 )

@@ -10,6 +10,7 @@ CMakeFiles/engine.dir/GameLoop.cpp.o
  /home/zach/Desktop/cis422/./Camera.h
  /home/zach/Desktop/cis422/./Transform.h
  /home/zach/Desktop/cis422/./glfiles/Mesh.h
+ /home/zach/Desktop/cis422/./glfiles/ObjLoader.h
  /home/zach/Desktop/cis422/./glfiles/Shader.h
  /home/zach/Desktop/cis422/./glfiles/Textures.h
  /home/zach/Desktop/cis422/./sdlfiles/Display.h
@@ -27,6 +28,10 @@ CMakeFiles/engine.dir/err/Error.cpp.o
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o
  /home/zach/Desktop/cis422/glfiles/Mesh.cpp
  /home/zach/Desktop/cis422/glfiles/Mesh.h
+ /home/zach/Desktop/cis422/glfiles/ObjLoader.h
+CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o
+ /home/zach/Desktop/cis422/glfiles/ObjLoader.cpp
+ /home/zach/Desktop/cis422/glfiles/ObjLoader.h
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o
  /home/zach/Desktop/cis422/Camera.h
  /home/zach/Desktop/cis422/Transform.h
@@ -38,6 +43,7 @@ CMakeFiles/engine.dir/glfiles/Textures.cpp.o
  /home/zach/Desktop/cis422/lib/stb_image.h
 CMakeFiles/engine.dir/main.cpp.o
  /home/zach/Desktop/cis422/./glfiles/Mesh.h
+ /home/zach/Desktop/cis422/./glfiles/ObjLoader.h
  /home/zach/Desktop/cis422/./sdlfiles/Display.h
  /home/zach/Desktop/cis422/./sdlfiles/Event.h
  /home/zach/Desktop/cis422/GameLoop.h

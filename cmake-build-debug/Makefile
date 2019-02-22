@@ -258,6 +258,33 @@ glfiles/Mesh.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/Mesh.cpp.s
 .PHONY : glfiles/Mesh.cpp.s
 
+glfiles/ObjLoader.o: glfiles/ObjLoader.cpp.o
+
+.PHONY : glfiles/ObjLoader.o
+
+# target to build an object file
+glfiles/ObjLoader.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o
+.PHONY : glfiles/ObjLoader.cpp.o
+
+glfiles/ObjLoader.i: glfiles/ObjLoader.cpp.i
+
+.PHONY : glfiles/ObjLoader.i
+
+# target to preprocess a source file
+glfiles/ObjLoader.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.i
+.PHONY : glfiles/ObjLoader.cpp.i
+
+glfiles/ObjLoader.s: glfiles/ObjLoader.cpp.s
+
+.PHONY : glfiles/ObjLoader.s
+
+# target to generate assembly for a file
+glfiles/ObjLoader.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.s
+.PHONY : glfiles/ObjLoader.cpp.s
+
 glfiles/Shader.o: glfiles/Shader.cpp.o
 
 .PHONY : glfiles/Shader.o
@@ -444,6 +471,9 @@ help:
 	@echo "... glfiles/Mesh.o"
 	@echo "... glfiles/Mesh.i"
 	@echo "... glfiles/Mesh.s"
+	@echo "... glfiles/ObjLoader.o"
+	@echo "... glfiles/ObjLoader.i"
+	@echo "... glfiles/ObjLoader.s"
 	@echo "... glfiles/Shader.o"
 	@echo "... glfiles/Shader.i"
 	@echo "... glfiles/Shader.s"
