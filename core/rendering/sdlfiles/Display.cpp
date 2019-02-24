@@ -20,6 +20,7 @@ Display::Display(std::string title, int w, int h) : swithd(w), sheight(h){
         if( glok != GLEW_OK){
             std::cout << "Failed to initialized openGL :(" << std::endl;
         }
+        isfullscreen = false;
         /*enable z/depth buffer*/
         glEnable(GL_DEPTH_TEST);
         /*enable back face culling open gl assistance in 'creating the illusion of 3d by not drawing
@@ -38,8 +39,12 @@ void Display::Clear(float r, float g, float b, float a){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Display::set_attr(){
+/*called by camera class to help with rendering, returns the aspect ratio*/
+void Display::GetAspectRadio() {
+    return ( static_cast<float>(this->swithd)/ static_cast<float>(this->sheight) )
+}
 
+void Display::set_attr(){
     /*explicitly request open gl for at least 2^8 bits of data for
      * red,green,blue and alpha data*/
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
@@ -53,12 +58,15 @@ void Display::set_attr(){
     /*use double bufffer if available, with double buffer drawing a 'staging'
      * window and swapping what the user sees*/
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
 }
 
 void Display::SwapDisp(){
 
     SDL_GL_SwapWindow(this->window);
+}
+
+void Display::SetFullscreen() {
+    SDL_SetWindowFullscreen(this->window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 }
 
 
