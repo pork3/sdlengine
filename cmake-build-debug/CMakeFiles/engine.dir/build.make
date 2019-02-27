@@ -57,48 +57,178 @@ include CMakeFiles/engine.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/engine.dir/flags.make
 
-CMakeFiles/engine.dir/main.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/main.cpp.o -c /home/zach/Desktop/cis422/main.cpp
+CMakeFiles/engine.dir/Settings.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Settings.cpp.o: ../Settings.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/Settings.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Settings.cpp.o -c /home/zach/Desktop/cis422/Settings.cpp
 
-CMakeFiles/engine.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/main.cpp > CMakeFiles/engine.dir/main.cpp.i
+CMakeFiles/engine.dir/Settings.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Settings.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/Settings.cpp > CMakeFiles/engine.dir/Settings.cpp.i
 
-CMakeFiles/engine.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/main.cpp -o CMakeFiles/engine.dir/main.cpp.s
+CMakeFiles/engine.dir/Settings.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Settings.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/Settings.cpp -o CMakeFiles/engine.dir/Settings.cpp.s
 
-CMakeFiles/engine.dir/sdlfiles/Display.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/sdlfiles/Display.cpp.o: ../sdlfiles/Display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/sdlfiles/Display.cpp.o -c /home/zach/Desktop/cis422/sdlfiles/Display.cpp
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.o: CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.o   -c /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c
 
-CMakeFiles/engine.dir/sdlfiles/Display.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/sdlfiles/Display.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/sdlfiles/Display.cpp > CMakeFiles/engine.dir/sdlfiles/Display.cpp.i
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c > CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.i
 
-CMakeFiles/engine.dir/sdlfiles/Display.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/sdlfiles/Display.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/sdlfiles/Display.cpp -o CMakeFiles/engine.dir/sdlfiles/Display.cpp.s
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c -o CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.s
 
-CMakeFiles/engine.dir/GameLoop.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/GameLoop.cpp.o: ../GameLoop.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/GameLoop.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/GameLoop.cpp.o -c /home/zach/Desktop/cis422/GameLoop.cpp
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o: CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o -c /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
 
-CMakeFiles/engine.dir/GameLoop.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/GameLoop.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/GameLoop.cpp > CMakeFiles/engine.dir/GameLoop.cpp.i
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp > CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
 
-CMakeFiles/engine.dir/GameLoop.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/GameLoop.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/GameLoop.cpp -o CMakeFiles/engine.dir/GameLoop.cpp.s
+CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp -o CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.o: CMakeFiles/feature_tests.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.o   -c /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/feature_tests.c
+
+CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/feature_tests.c > CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.i
+
+CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles/feature_tests.c -o CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.s
+
+CMakeFiles/engine.dir/core/GameCore.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/GameCore.cpp.o: ../core/GameCore.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/core/GameCore.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/GameCore.cpp.o -c /home/zach/Desktop/cis422/core/GameCore.cpp
+
+CMakeFiles/engine.dir/core/GameCore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/GameCore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/GameCore.cpp > CMakeFiles/engine.dir/core/GameCore.cpp.i
+
+CMakeFiles/engine.dir/core/GameCore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/GameCore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/GameCore.cpp -o CMakeFiles/engine.dir/core/GameCore.cpp.s
+
+CMakeFiles/engine.dir/core/GameLoop.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/GameLoop.cpp.o: ../core/GameLoop.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/core/GameLoop.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/GameLoop.cpp.o -c /home/zach/Desktop/cis422/core/GameLoop.cpp
+
+CMakeFiles/engine.dir/core/GameLoop.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/GameLoop.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/GameLoop.cpp > CMakeFiles/engine.dir/core/GameLoop.cpp.i
+
+CMakeFiles/engine.dir/core/GameLoop.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/GameLoop.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/GameLoop.cpp -o CMakeFiles/engine.dir/core/GameLoop.cpp.s
+
+CMakeFiles/engine.dir/core/main.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/main.cpp.o: ../core/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/core/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/main.cpp.o -c /home/zach/Desktop/cis422/core/main.cpp
+
+CMakeFiles/engine.dir/core/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/main.cpp > CMakeFiles/engine.dir/core/main.cpp.i
+
+CMakeFiles/engine.dir/core/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/main.cpp -o CMakeFiles/engine.dir/core/main.cpp.s
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.o: ../core/rendering/glfiles/Mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.o -c /home/zach/Desktop/cis422/core/rendering/glfiles/Mesh.cpp
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/rendering/glfiles/Mesh.cpp > CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.i
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/rendering/glfiles/Mesh.cpp -o CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.s
+
+CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.o: ../core/rendering/glfiles/ObjLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.o -c /home/zach/Desktop/cis422/core/rendering/glfiles/ObjLoader.cpp
+
+CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/rendering/glfiles/ObjLoader.cpp > CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.i
+
+CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/rendering/glfiles/ObjLoader.cpp -o CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.s
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.o: ../core/rendering/glfiles/Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.o -c /home/zach/Desktop/cis422/core/rendering/glfiles/Shader.cpp
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/rendering/glfiles/Shader.cpp > CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.i
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/rendering/glfiles/Shader.cpp -o CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.s
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.o: ../core/rendering/glfiles/Textures.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.o -c /home/zach/Desktop/cis422/core/rendering/glfiles/Textures.cpp
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/rendering/glfiles/Textures.cpp > CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.i
+
+CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/rendering/glfiles/Textures.cpp -o CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.s
+
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.o: ../core/rendering/sdlfiles/Display.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.o -c /home/zach/Desktop/cis422/core/rendering/sdlfiles/Display.cpp
+
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/rendering/sdlfiles/Display.cpp > CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.i
+
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/rendering/sdlfiles/Display.cpp -o CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.s
+
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.o: ../core/rendering/sdlfiles/Event.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.o -c /home/zach/Desktop/cis422/core/rendering/sdlfiles/Event.cpp
+
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/core/rendering/sdlfiles/Event.cpp > CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.i
+
+CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/core/rendering/sdlfiles/Event.cpp -o CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.s
 
 CMakeFiles/engine.dir/err/Error.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/err/Error.cpp.o: ../err/Error.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/err/Error.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/engine.dir/err/Error.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/err/Error.cpp.o -c /home/zach/Desktop/cis422/err/Error.cpp
 
 CMakeFiles/engine.dir/err/Error.cpp.i: cmake_force
@@ -109,61 +239,35 @@ CMakeFiles/engine.dir/err/Error.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/err/Error.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/err/Error.cpp -o CMakeFiles/engine.dir/err/Error.cpp.s
 
-CMakeFiles/engine.dir/sdlfiles/Event.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/sdlfiles/Event.cpp.o: ../sdlfiles/Event.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Event.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/sdlfiles/Event.cpp.o -c /home/zach/Desktop/cis422/sdlfiles/Event.cpp
+CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: ../events/EventDispatcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/engine.dir/events/EventDispatcher.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/events/EventDispatcher.cpp.o -c /home/zach/Desktop/cis422/events/EventDispatcher.cpp
 
-CMakeFiles/engine.dir/sdlfiles/Event.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/sdlfiles/Event.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/sdlfiles/Event.cpp > CMakeFiles/engine.dir/sdlfiles/Event.cpp.i
+CMakeFiles/engine.dir/events/EventDispatcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/events/EventDispatcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/events/EventDispatcher.cpp > CMakeFiles/engine.dir/events/EventDispatcher.cpp.i
 
-CMakeFiles/engine.dir/sdlfiles/Event.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/sdlfiles/Event.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/sdlfiles/Event.cpp -o CMakeFiles/engine.dir/sdlfiles/Event.cpp.s
+CMakeFiles/engine.dir/events/EventDispatcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/events/EventDispatcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/events/EventDispatcher.cpp -o CMakeFiles/engine.dir/events/EventDispatcher.cpp.s
 
-CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: ../glfiles/Mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/Mesh.cpp.o -c /home/zach/Desktop/cis422/glfiles/Mesh.cpp
+CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.o: ../lib/json/jsoncpp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.o -c /home/zach/Desktop/cis422/lib/json/jsoncpp.cpp
 
-CMakeFiles/engine.dir/glfiles/Mesh.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/glfiles/Mesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/glfiles/Mesh.cpp > CMakeFiles/engine.dir/glfiles/Mesh.cpp.i
+CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/lib/json/jsoncpp.cpp > CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.i
 
-CMakeFiles/engine.dir/glfiles/Mesh.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/glfiles/Mesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/glfiles/Mesh.cpp -o CMakeFiles/engine.dir/glfiles/Mesh.cpp.s
-
-CMakeFiles/engine.dir/glfiles/Shader.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/glfiles/Shader.cpp.o: ../glfiles/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/Shader.cpp.o -c /home/zach/Desktop/cis422/glfiles/Shader.cpp
-
-CMakeFiles/engine.dir/glfiles/Shader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/glfiles/Shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/glfiles/Shader.cpp > CMakeFiles/engine.dir/glfiles/Shader.cpp.i
-
-CMakeFiles/engine.dir/glfiles/Shader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/glfiles/Shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/glfiles/Shader.cpp -o CMakeFiles/engine.dir/glfiles/Shader.cpp.s
-
-CMakeFiles/engine.dir/glfiles/Textures.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/glfiles/Textures.cpp.o: ../glfiles/Textures.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/Textures.cpp.o -c /home/zach/Desktop/cis422/glfiles/Textures.cpp
-
-CMakeFiles/engine.dir/glfiles/Textures.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/glfiles/Textures.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/glfiles/Textures.cpp > CMakeFiles/engine.dir/glfiles/Textures.cpp.i
-
-CMakeFiles/engine.dir/glfiles/Textures.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/glfiles/Textures.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/glfiles/Textures.cpp -o CMakeFiles/engine.dir/glfiles/Textures.cpp.s
+CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/lib/json/jsoncpp.cpp -o CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.s
 
 CMakeFiles/engine.dir/lib/stb_image.c.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/lib/stb_image.c.o: ../lib/stb_image.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/engine.dir/lib/stb_image.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/engine.dir/lib/stb_image.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/engine.dir/lib/stb_image.c.o   -c /home/zach/Desktop/cis422/lib/stb_image.c
 
 CMakeFiles/engine.dir/lib/stb_image.c.i: cmake_force
@@ -174,78 +278,83 @@ CMakeFiles/engine.dir/lib/stb_image.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/engine.dir/lib/stb_image.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zach/Desktop/cis422/lib/stb_image.c -o CMakeFiles/engine.dir/lib/stb_image.c.s
 
-CMakeFiles/engine.dir/Transform.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/Transform.cpp.o: ../Transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/engine.dir/Transform.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Transform.cpp.o -c /home/zach/Desktop/cis422/Transform.cpp
+CMakeFiles/engine.dir/rendering/Camera.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/rendering/Camera.cpp.o: ../rendering/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/engine.dir/rendering/Camera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/rendering/Camera.cpp.o -c /home/zach/Desktop/cis422/rendering/Camera.cpp
 
-CMakeFiles/engine.dir/Transform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Transform.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/Transform.cpp > CMakeFiles/engine.dir/Transform.cpp.i
+CMakeFiles/engine.dir/rendering/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/rendering/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/rendering/Camera.cpp > CMakeFiles/engine.dir/rendering/Camera.cpp.i
 
-CMakeFiles/engine.dir/Transform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Transform.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/Transform.cpp -o CMakeFiles/engine.dir/Transform.cpp.s
+CMakeFiles/engine.dir/rendering/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/rendering/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/rendering/Camera.cpp -o CMakeFiles/engine.dir/rendering/Camera.cpp.s
 
-CMakeFiles/engine.dir/Camera.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/Camera.cpp.o: ../Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/engine.dir/Camera.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Camera.cpp.o -c /home/zach/Desktop/cis422/Camera.cpp
+CMakeFiles/engine.dir/rendering/Transform.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/rendering/Transform.cpp.o: ../rendering/Transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/engine.dir/rendering/Transform.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/rendering/Transform.cpp.o -c /home/zach/Desktop/cis422/rendering/Transform.cpp
 
-CMakeFiles/engine.dir/Camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/Camera.cpp > CMakeFiles/engine.dir/Camera.cpp.i
+CMakeFiles/engine.dir/rendering/Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/rendering/Transform.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/rendering/Transform.cpp > CMakeFiles/engine.dir/rendering/Transform.cpp.i
 
-CMakeFiles/engine.dir/Camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/Camera.cpp -o CMakeFiles/engine.dir/Camera.cpp.s
-
-CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o: ../glfiles/ObjLoader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o -c /home/zach/Desktop/cis422/glfiles/ObjLoader.cpp
-
-CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zach/Desktop/cis422/glfiles/ObjLoader.cpp > CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.i
-
-CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/glfiles/ObjLoader.cpp -o CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.s
+CMakeFiles/engine.dir/rendering/Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/rendering/Transform.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zach/Desktop/cis422/rendering/Transform.cpp -o CMakeFiles/engine.dir/rendering/Transform.cpp.s
 
 # Object files for target engine
 engine_OBJECTS = \
-"CMakeFiles/engine.dir/main.cpp.o" \
-"CMakeFiles/engine.dir/sdlfiles/Display.cpp.o" \
-"CMakeFiles/engine.dir/GameLoop.cpp.o" \
+"CMakeFiles/engine.dir/Settings.cpp.o" \
+"CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.o" \
+"CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o" \
+"CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.o" \
+"CMakeFiles/engine.dir/core/GameCore.cpp.o" \
+"CMakeFiles/engine.dir/core/GameLoop.cpp.o" \
+"CMakeFiles/engine.dir/core/main.cpp.o" \
+"CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.o" \
+"CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.o" \
+"CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.o" \
+"CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.o" \
+"CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.o" \
+"CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.o" \
 "CMakeFiles/engine.dir/err/Error.cpp.o" \
-"CMakeFiles/engine.dir/sdlfiles/Event.cpp.o" \
-"CMakeFiles/engine.dir/glfiles/Mesh.cpp.o" \
-"CMakeFiles/engine.dir/glfiles/Shader.cpp.o" \
-"CMakeFiles/engine.dir/glfiles/Textures.cpp.o" \
+"CMakeFiles/engine.dir/events/EventDispatcher.cpp.o" \
+"CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.o" \
 "CMakeFiles/engine.dir/lib/stb_image.c.o" \
-"CMakeFiles/engine.dir/Transform.cpp.o" \
-"CMakeFiles/engine.dir/Camera.cpp.o" \
-"CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
+"CMakeFiles/engine.dir/rendering/Camera.cpp.o" \
+"CMakeFiles/engine.dir/rendering/Transform.cpp.o"
 
 # External object files for target engine
 engine_EXTERNAL_OBJECTS =
 
-engine: CMakeFiles/engine.dir/main.cpp.o
-engine: CMakeFiles/engine.dir/sdlfiles/Display.cpp.o
-engine: CMakeFiles/engine.dir/GameLoop.cpp.o
+engine: CMakeFiles/engine.dir/Settings.cpp.o
+engine: CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c.o
+engine: CMakeFiles/engine.dir/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+engine: CMakeFiles/engine.dir/CMakeFiles/feature_tests.c.o
+engine: CMakeFiles/engine.dir/core/GameCore.cpp.o
+engine: CMakeFiles/engine.dir/core/GameLoop.cpp.o
+engine: CMakeFiles/engine.dir/core/main.cpp.o
+engine: CMakeFiles/engine.dir/core/rendering/glfiles/Mesh.cpp.o
+engine: CMakeFiles/engine.dir/core/rendering/glfiles/ObjLoader.cpp.o
+engine: CMakeFiles/engine.dir/core/rendering/glfiles/Shader.cpp.o
+engine: CMakeFiles/engine.dir/core/rendering/glfiles/Textures.cpp.o
+engine: CMakeFiles/engine.dir/core/rendering/sdlfiles/Display.cpp.o
+engine: CMakeFiles/engine.dir/core/rendering/sdlfiles/Event.cpp.o
 engine: CMakeFiles/engine.dir/err/Error.cpp.o
-engine: CMakeFiles/engine.dir/sdlfiles/Event.cpp.o
-engine: CMakeFiles/engine.dir/glfiles/Mesh.cpp.o
-engine: CMakeFiles/engine.dir/glfiles/Shader.cpp.o
-engine: CMakeFiles/engine.dir/glfiles/Textures.cpp.o
+engine: CMakeFiles/engine.dir/events/EventDispatcher.cpp.o
+engine: CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.o
 engine: CMakeFiles/engine.dir/lib/stb_image.c.o
-engine: CMakeFiles/engine.dir/Transform.cpp.o
-engine: CMakeFiles/engine.dir/Camera.cpp.o
-engine: CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o
+engine: CMakeFiles/engine.dir/rendering/Camera.cpp.o
+engine: CMakeFiles/engine.dir/rendering/Transform.cpp.o
 engine: CMakeFiles/engine.dir/build.make
+engine: /usr/lib/libOpenGL.so
+engine: /usr/lib/libGLX.so
+engine: /usr/lib/libGLU.so
+engine: /usr/lib/libGLEW.so
 engine: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zach/Desktop/cis422/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

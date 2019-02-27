@@ -1,19 +1,56 @@
-cmake_minimum_required(VERSION 3.13)
+#use the minimum most compatible version
+cmake_minimum_required(VERSION 2.6)
+
 #project name
 project(engine)
 
-#c++ 14 and debugsymbols
-set(CMAKE_CXX_STANDARD 14)
-add_definitions("-g -Wall")
+#add compiler flags
+add_definitions(
+        -c
+        -Wall
+        -g
+)
+#find header files, for later distribution as library (.so)
+file(GLOB_RECURSE HDRS ${engine_SOURCE_DIR}/*.h
+                       ${engine_SOURCE_DIR}/*.hpp)
+#find source files
+file(GLOB_RECURSE SRCS
+        ${engine_SOURCE_DIR}/*.cpp
+        ${engine_SOURCE_DIR}/*.c
+        )
 
-#create the executable
-add_executable(${PROJECT_NAME} main.cpp sdlfiles/Display.cpp sdlfiles/Display.h GameLoop.cpp GameLoop.h err/Error.cpp err/Error.h sdlfiles/Event.cpp sdlfiles/Event.h glfiles/Mesh.cpp glfiles/Mesh.h glfiles/Shader.cpp glfiles/Shader.h glfiles/Textures.cpp glfiles/Textures.h
-        lib/stb_image.c lib/stb_image.h Transform.cpp Transform.h Camera.cpp Camera.h glfiles/ObjLoader.cpp glfiles/ObjLoader.h)
+# Define the executable
+add_executable(engine ${HDRS} ${SRCS} Settings.cpp Settings.hpp)
 
-target_link_libraries(${PROJECT_NAME} "-lSDL2 -lGL -lGLEW")
+# We need a CMAKE_DIR with some code to find external dependencies
+SET(engine_CMAKE_DIR "${engine_SOURCE_DIR}/cmake")
 
-#sdl2 opengl glm
+######################FIND REQUIRED PACKAGES
 
+#set openglpreference to get newest it finds
+set(OpenGL_GL_PREFERENCE GLVND)
+# OpenGL
+find_package(OpenGL REQUIRED)
 
+# GLEW
+INCLUDE(${engine_CMAKE_DIR}/FindGlew.cmake)
 
+# SDL2
+INCLUDE(${engine_CMAKE_DIR}/FindSDL2.cmake)
+
+# Define the include DIRs
+include_directories(
+        ${engine_SOURCE_DIR}/headers
+        ${engine_SOURCE_DIR}/sources
+        ${OPENGL_INCLUDE_DIRS}
+        ${GLEW_INCLUDE_DIRS}
+        ${SDL2_INCLUDE_DIRS}
+)
+
+# Define the link libraries
+target_link_libraries( engine
+        ${OPENGL_LIBRARIES}
+        ${GLEW_LIBRARIES}
+        ${SDL2_LIBRARIES}
+        )
 

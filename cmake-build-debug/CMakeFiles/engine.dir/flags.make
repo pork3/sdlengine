@@ -3,15 +3,15 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_FLAGS = -g   -g -Wall
+C_FLAGS = -g   -c -Wall -g
 
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/home/zach/Desktop/cis422/headers -I/home/zach/Desktop/cis422/sources 
 
-CXX_FLAGS = -g   -g -Wall -std=gnu++14
+CXX_FLAGS = -g   -c -Wall -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/zach/Desktop/cis422/headers -I/home/zach/Desktop/cis422/sources 
 

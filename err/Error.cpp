@@ -30,7 +30,7 @@ void Error::WriteError(std::string message){
 /*error.log format
  *
  * dd/mm/yyy - HH:MM
- * Error Message 
+ * Error Message
  *
  *
  * */
