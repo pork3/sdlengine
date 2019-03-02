@@ -1,4 +1,4 @@
-#include "./lib/json/json.h"
+#include "../lib/json/json.h"
 #include "Settings.hpp"
 
 

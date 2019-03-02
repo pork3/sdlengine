@@ -1,5 +1,6 @@
+
 #ifndef GAME_LISTENERS_H_
-#define GAME_LISTeNERS_H_
+#define GAME_LISTENERS_H_
 
 // All comments shall be less than 110 characters, as displayed from the line below.
 // 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -24,9 +25,9 @@
 
 // General includes
 #include <string>
-
+#include <chrono>
 namespace Events{
-    enum Priority {HIGHEST, HIGH, MEDIUM, LOW, LOWEST};
+    enum Priority {HIGHEST=5, HIGH=4, MEDIUM=3, LOW=2, LOWEST=1};
     class EventDetails{
     protected:
         // Note: Sections below are redundant as the events are seperated into group
@@ -34,9 +35,16 @@ namespace Events{
         std::string event_name; // Name of event (semi-redundant)
         int event_id; // The ID of the event (semi-redundant)
         bool is_cancellable; // Can the event be cancelled
+        std::chrono::high_resolution_clock::time_point currentGameTime; // The current game time
+        std::chrono::high_resolution_clock::time_point startGameTime; // The
     public:
+        EventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime ) :
+                is_cancelled(false),  event_name(event_n), event_id(id),is_cancellable(is_canc), currentGameTime(currentTime), startGameTime(startTime) {}
         bool isCancelled(){return this->is_cancelled;}
         bool isCancellable(){return this->is_cancellable;}
+
+        std::string getName(){return this->event_name;}
+        int getID(){return this->event_id;}
 
         // Tries to cancel the event, returns success, fails if not cancellable
         bool cancel(){
@@ -52,27 +60,33 @@ namespace Events{
         // NOTE: Events cancelled will not execute beyond the current event's priority
         // 	level. Hence, it must be uncancelled by an event in the same priority
         // 	level as the event that cancelled it.
-        bool uncancel(){
+        void uncancel(){
             this->is_cancelled = false;
+
         }
 
-    }
+    };
+
+    class TimedEventDetails : public EventDetails{
+    protected:
+        long long eventTimeDelta;
+        long long eventTimeDeltaExact;
+    public:
+        TimedEventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+                          long long timeDelta,long long timeDeltaNow): EventDetails(event_n, id, is_canc, currentTime, startTime), eventTimeDelta(timeDelta),
+                                                                       eventTimeDeltaExact(timeDeltaNow){}
+        void setEventTimeDeltaExact(long long eTDE){this->eventTimeDeltaExact = eTDE;}
+
+
+    };
 }
 
 namespace Listener{
     class GameListener{
     public:
-        /*
-         *	This function will be called upon this class either:
-         *		being register to an event (registered = true)
-         *		(or)
-         *		being removed from an event (registered = false)
-         *
-         *	The eventID is the event in question, below is a list of ID's possible
-         *		(may be updated in future revisions)
-         */
-        virtual void debugRegistry(int eventID, bool registered)=0;
-
+        // An event for when the listener is registered. Useful for loading essential
+        //  	resources.
+        virtual void listenerInit(Events::EventDetails* events)=0;
         // This function exists purely for allowing for casting checks. Has to be
         // 	public.
         virtual void __notcalled(){}
@@ -85,24 +99,20 @@ namespace Listener{
         /*
             This function will be called whenever a user-defined event is told to execute.
         */
-        virtual void eventExecuted(const ListenerEvent::EventDetails& events)=0;
+        virtual void eventExecuted(const Events::EventDetails& events)=0;
     };
 
 
     class GameEventsListener : virtual public GameListener{
     public:
-        // An event for when the listener is registered. Useful for loading essential
-        //  	resources.
-        virtual void gameInit(const ListenerEvent::EventDetails& events)=0;
-
         // An event for when the game engine starts the game (window is created)
         // Guarenteed that this is called after the window is created and peripherals are
         // 	existant.
-        virtual void gameStart(const ListenerEvent::EventDetails& events)=0;
+        virtual void gameStart(Events::EventDetails* events)=0;
 
         // An event for when the game engine is ending the game (window is closed) Use for
         // 	cleaning up the listener.
-        virtual void gameEnd(const ListenerEvent::EventDetails& events)=0;
+        virtual void gameEnd(Events::EventDetails* events)=0;
     };
 
     class GameTickListener : virtual public GameListener{
@@ -115,7 +125,7 @@ namespace Listener{
         //
         // 	ms_delay is the number of milliseconds between the current and previous call
         // 		to this function.
-        virtual void gameTick(long ms_delay, const ListenerEvent::EventDetails& events)=0;
+        virtual void gameTick(Events::TimedEventDetails* events)=0;
     };
 
     class GameGUIListener : virtual public GameListener {
@@ -129,7 +139,7 @@ namespace Listener{
         //
         //	ms_delay is the number of milliseconds between the current and previous
         //		call to this function.
-        virtual void gameGUI(long ms_delay, const ListenerEvent::EventDetails& events)=0;
+        virtual void gameGUI(Events::TimedEventDetails* events)=0;
     };
 
 

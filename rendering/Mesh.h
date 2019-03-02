@@ -4,7 +4,7 @@
 #include <glm/glm.hpp>
 #include <GL/glew.h>
 #include <string>
-#include "ObjLoader.h"
+#include "../lib/ObjLoader.h"
 
 /* data class represented by vertex with
  * a x, y, z  * [1 , 2 , 3] */
