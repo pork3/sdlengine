@@ -23,8 +23,8 @@
 #include <chrono>
 #include <thread>
 #include <iostream>
-#include "../utils/utils.hpp"
-#include "../utils/gameOptions.hpp"
+#include "../utils/Utils.hpp"
+#include "../utils/GameOptions.hpp"
 #include "../events/EventDispatcher.hpp"
 
 

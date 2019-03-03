@@ -1,6 +1,5 @@
-//
-// Created by zach on 2/15/19.
-//
+/*
+
 #include "GameLoop.h"
 #include <SDL2/SDL.h>
 #include <iostream>
@@ -24,7 +23,7 @@ GameLoop::~GameLoop(){
 
 void GameLoop::initback(){
 
-    /*initialize SDL with everything, maybe change to select items*/
+
     SDL_Init(SDL_INIT_EVERYTHING);
         if( SDL_INIT_VIDEO < 0 ) {
             std::cout << "Error creating video " << SDL_GetError() << std::endl;
@@ -33,7 +32,7 @@ void GameLoop::initback(){
 }
 
 void GameLoop::CreateWindow(std::string title, int w, int h){
-    /* TODO define defaults width and height */
+
     (w == 0) ?w=800: w;
     (h == 0) ?h=600: h;
     this->display = new Display(title,w,h);
@@ -44,7 +43,7 @@ void GameLoop::parseinput(Event &ev){
     while(SDL_PollEvent(ev.GetEvent())){
 
         switch(ev.GetEvent()->type){
-            /*User hits the x button on window*/
+
                 case SDL_QUIT:
                     this->running = false;
                     break;
@@ -62,18 +61,18 @@ void GameLoop::parseinput(Event &ev){
 void GameLoop::Run(){
 
     Event e = Event();
-                    /*position                        texture*/
+                    //position                        texture
     Vertex v[] = { Vertex(glm::vec3(-0.5, -0.5, 0) , glm::vec2(0.0,0.0)),
                     Vertex(glm::vec3(0.0, 0.5, 0) , glm::vec2(1.0,1.0)),
                     Vertex(glm::vec3(0.5, -0.5, 0), glm::vec2(1.0,0.0))
     };
 
-    /*create index buffer*/
+    //create index buffer
     unsigned int ind[] = {0 , 1 , 2};
 
-    Transform transform( glm::vec3(0.0,.3,0.5), /*pos*/
-                         glm::vec3(0,0,0), /*rot*/
-                         glm::vec3(0,0,0));/*scl*/
+    Transform transform( glm::vec3(0.0,.3,0.5), //pos
+                         glm::vec3(0,0,0), //rot
+                         glm::vec3(0,0,0));//scl
 
     float s = 0.0f;
     float aspectratio = (display->GetWidthf()/display->GetHeightf());
@@ -105,3 +104,4 @@ void GameLoop::Run(){
         s+= .01;
     }
 }
+*/

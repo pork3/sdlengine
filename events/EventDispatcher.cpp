@@ -1,8 +1,8 @@
-
-
 #include "Listeners.hpp"
 #include "EventDispatcher.hpp"
 #include <iostream>
+
+
 using namespace Listener;
 void Events::EventDispatcher::RegisterEventListener(GameEventsListener* l,Priority p){
 

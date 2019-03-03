@@ -14,7 +14,7 @@
  *
  *
  */
-#include "../utils/utils.hpp"
+#include "../utils/Utils.hpp"
 namespace Management{
     class GameOptions : public OnlyOne{
     public:

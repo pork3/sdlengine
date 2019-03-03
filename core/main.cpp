@@ -4,9 +4,6 @@
 
 int main() {
 
-    GameLoop gl = GameLoop();
-    gl.CreateWindow("Test2", 1000, 600);
-
-    gl.Run();
+    return  0;
 
 }

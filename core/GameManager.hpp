@@ -26,7 +26,7 @@
 #include <mutex> // For creation of "lockable"/"only-one-user-at-a-time" objects.
 #include <thread> // For creation of threads (sub-programs running independently to each other but same code.
 #include <string>
-#include "../utils/gameOptions.hpp"
+#include "../utils/GameOptions.hpp"
 namespace Events{
     class EventDispatcher;
 }
