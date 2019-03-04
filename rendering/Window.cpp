@@ -3,7 +3,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
-Window::Window(std::string title, int w, int h) : swidth(w), sheight(h){
+Window::Window(std::string title, int w, int h) : swidth(w), sheight(h), closerequested(false){
 
     set_attr();
     this->window = SDL_CreateWindow(title.c_str(),SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
@@ -21,6 +21,7 @@ Window::Window(std::string title, int w, int h) : swidth(w), sheight(h){
     if( glok != GLEW_OK){
         std::cout << "Failed to initialized openGL :(" << std::endl;
     }
+
     isfullscreen = false;
     /*enable z/depth buffer*/
     glEnable(GL_DEPTH_TEST);
@@ -42,7 +43,7 @@ void Window::Clear(float r, float g, float b, float a){
 
 /*called by camera class to help with rendering, returns the aspect ratio*/
 float Window::GetAspectRatio() {
-    return ( static_cast<float>(this->swidth)/ static_cast<float>(this->sheight) )
+    return ( static_cast<float>(this->swidth)/ static_cast<float>(this->sheight) );
 }
 
 void Window::set_attr(){
@@ -64,6 +65,7 @@ void Window::set_attr(){
 void Window::Update(){
 
     SDL_GL_SwapWindow(this->window);
+
 }
 
 void Window::SetFullscreen() {

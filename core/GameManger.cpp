@@ -70,7 +70,7 @@ void Engine::GameManager::Run(void){
             if(tickDelta >= Engine::Utilities::instance()->getMillisWaitTime(Management::GameOptions::instance()->getTickRateTarget())){
                 Events::TimedEventDetails evd("Tick", 3, false, startTickTime, this->startingTime, tickDelta, tickDelta);
                 //std::cout << "Tick Tick! Delta: " << tickDelta << std::endl;
-                ed->ExecuteTickEvent(&evd);
+//                ed->ExecuteTickEvent(&evd);
                 this->lastTick = high_resolution_clock::now();
             }
         }else{
