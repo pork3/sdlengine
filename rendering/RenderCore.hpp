@@ -21,12 +21,15 @@
  */
 #include "Window.hpp"
 #include "Camera.h"
+#include "../core/Transform.h"
 
 class RenderCore {
 
 public:
                 /*the main window we wish to draw on*/
     RenderCore(const Window& window);
+
+    ~RenderCore();
 
     /*Note this will take an entity * later on*/
     void Render();
@@ -38,14 +41,11 @@ private:
     /*matrix used during lighting and texture mapping to change -1 and 1 values to
      * 0 and 1 values used by opengl
      * http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#using-the-shadow-map*/
-    const glm::mat4 biasMatrix(
-    0.5, 0.0, 0.0, 0.0,
-    0.0, 0.5, 0.0, 0.0,
-    0.0, 0.0, 0.5, 0.0,
-    0.5, 0.5, 0.5, 1.0
-    );
+    const glm::mat4 biasMatrix = glm::mat4(0.5, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.5, 0.5, 0.5, 1.0);
 
     Camera* camera;
+
+    Transform* transform;
 
 };
 
