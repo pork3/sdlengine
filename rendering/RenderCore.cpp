@@ -4,6 +4,6 @@
 
 RenderCore::RenderCore(const Window &window) {
 
-    this->transform = Transform();
+    //this->transform = Transform();
 }
 
