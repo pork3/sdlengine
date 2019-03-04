@@ -7,7 +7,6 @@ project(engine)
 #add compiler flags
 add_definitions(
         -c
-        -Wall
         -g
 )
 #find header files, for later distribution as library (.so)
@@ -15,12 +14,12 @@ file(GLOB_RECURSE HDRS ${engine_SOURCE_DIR}/*.h
                        ${engine_SOURCE_DIR}/*.hpp)
 #find source files
 file(GLOB_RECURSE SRCS
-        ${engine_SOURCE_DIR}/*.cpp
-        ${engine_SOURCE_DIR}/*.c
+        ${engine_SOURCE_DIR}/*.CXX
+
         )
 
 # Define the executable
-add_executable(engine ${HDRS} ${SRCS} utils/Settings.cpp utils/Settings.hpp rendering/Window.cpp rendering/Window.hpp core/GameManger.cpp utils/GameOptions.hpp utils/Utils.hpp)
+add_executable(engine ${HDRS} ${SRCS} utils/Settings.cpp utils/Settings.hpp rendering/Window.cpp rendering/Window.hpp core/GameManger.cpp utils/GameOptions.hpp utils/Utils.hpp main.cpp events/InputHandler.cpp events/InputHandler.hpp events/InputEvent.cpp events/InputEvent.h rendering/RenderCore.cpp rendering/RenderCore.hpp core/EntityShared.hpp)
 
 # We need a CMAKE_DIR with some code to find external dependencies
 SET(engine_CMAKE_DIR "${engine_SOURCE_DIR}/cmake")
@@ -38,6 +37,10 @@ INCLUDE(${engine_CMAKE_DIR}/FindGlew.cmake)
 # SDL2
 INCLUDE(${engine_CMAKE_DIR}/FindSDL2.cmake)
 
+#pthread
+find_package (Threads)
+
+
 # Define the include DIRs
 include_directories(
         ${engine_SOURCE_DIR}/headers
@@ -52,5 +55,6 @@ target_link_libraries( engine
         ${OPENGL_LIBRARIES}
         ${GLEW_LIBRARIES}
         ${SDL2_LIBRARIES}
+        ${CMAKE_THREAD_LIBS_INIT}
         )
 

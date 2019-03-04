@@ -39,6 +39,9 @@ public:
     /*function used to set fullscreen or to remove fullscreen*/
     void SetFullscreen();
 
+    /*function used to set up opengl preferences*/
+    void set_attr();
+
     /** GETTERS**/
     float GetAspectRatio();
     SDL_Window* GetWindow(){return this->window ;}
@@ -58,6 +61,9 @@ private:
     int sheight;
     std::string title;
     bool isfullscreen;
+
+    /*handle sdlquit event with a close request from event manager*/
+    bool closerequested;
 
 };
 

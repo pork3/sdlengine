@@ -1,6 +1,6 @@
 #include "../lib/json/json.h"
 #include "Settings.hpp"
-
+/*
 
 void GetVal(Json::Value &config, int* setting){
 
@@ -24,3 +24,4 @@ void GetVal(Json::Value &config, float* setting)
 
     *setting = config.asFloat();
 }
+*/

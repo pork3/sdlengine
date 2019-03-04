@@ -3,8 +3,8 @@
 
 #include <string>
 #include <GL/glew.h>
-#include "../Transform.h"
-#include "../Camera.h"
+#include "../core/Transform.h"
+#include "Camera.h"
 
 class Shader {
 

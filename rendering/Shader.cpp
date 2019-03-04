@@ -22,6 +22,7 @@ Shader::Shader(const std::string& fname){
     /*tells opengl what attribute to read from shaders*/
     glBindAttribLocation( prog, 0, "position" );
     glBindAttribLocation( prog, 1, "textcoord" );
+    glBindAttribLocation( prog, 2, "normal" );
 
     glLinkProgram(prog);
     /*verify opengl was able to read and link the shader progs*/
