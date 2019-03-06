@@ -7,21 +7,20 @@
 
 /*
  *
- *	Last updated by: Chase Craig
- *	Last updated on: Feb. 23, 2019
+ *	Last updated by: Zachary Bower
+ *	Last updated on: Mar 6, 2019
  *
  *	Purpose:
- *		This header class is to provide base classes for managing the game.
- *
+ *		This header class is to provide base classes for managing the game, added support for initializing
+ *      libraries used, and access to n number of windows
  *
  *
  *
  */
 
-
 // Includes other files
 #include "../events/Listeners.hpp"
-
+#include "../rendering/Window.hpp"
 // Different c libraries needed
 #include <mutex> // For creation of "lockable"/"only-one-user-at-a-time" objects.
 #include <thread> // For creation of threads (sub-programs running independently to each other but same code.
@@ -63,6 +62,12 @@ namespace Engine{
             mainGameThread->join();
         };
 
+        /*function to initialized all OS specific libraries*/
+        void InitSystems();
+
+        /*wrapper function to initialized window*/
+        bool CreateWindow(std::string title, int height, int width);
+
         static std::mutex* io_mutex;
     protected:
         std::thread* mainGameThread;
@@ -70,8 +75,9 @@ namespace Engine{
         void Run(); // A function that is called internally for running the game. Note: this function should be only called from a thread.
         bool gamePaused = false; // A bool stating whether the game is paused or not.
         GameManager():startingTime(std::chrono::high_resolution_clock::now()), lastFrame(std::chrono::high_resolution_clock::now()), lastTick(std::chrono::high_resolution_clock::now()){}; // Default constructor. Protected so that this class can not be created multiple times, therefore enforcing a "create once" policy.
-        ~GameManager(){}; // Default deconstructor.
+        ~GameManager(); // Default deconstructor.
 
+        GameManager(const GameManager &gm){}
 
         bool gameRunning = false;
     private:
@@ -80,6 +86,8 @@ namespace Engine{
         high_resolution_clock::time_point lastFrame;
         high_resolution_clock::time_point lastTick;
         Management::GameOptions* options;
+
+        Window* window;
     };
     void jumperThread(GameManager* gm);
 }

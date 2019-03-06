@@ -1,22 +1,21 @@
-//
-// Created by zach on 3/3/19.
-//
+#include "./core/GameManager.hpp"
+#include "./rendering/Window.hpp"
 
-#include "rendering/Window.hpp"
-#include "Application.h"
 #include <iostream>
+class test : public  Engine::GameManager{
+public:
+    test(){};
 
-int main(int argc, char** argv){
+};
 
-    Application a;
+
+int main(int argc , char** argv){
+
+    test t = test();
+    t.CreateWindow("Test", 800, 600);
+
     int r;
-
-    Window w = Window("test", 800,600);
-    while(a.IsRunning()){
-
-        a.Process();
-
-    }
+    std::cin >> r ;
 
     return 0;
 }
