@@ -15,11 +15,21 @@ file(GLOB_RECURSE HDRS ${engine_SOURCE_DIR}/*.h
 #find source files
 file(GLOB_RECURSE SRCS
         ${engine_SOURCE_DIR}/*.CXX
+        ${engine_SOURCE_DIR}/core/*.cpp
+        ${engine_SOURCE_DIR}/err/*.cpp
+        ${engine_SOURCE_DIR}/events/*.cpp
+        ${engine_SOURCE_DIR}/lib/*.cpp
+        ${engine_SOURCE_DIR}/rendering/*.cpp
+        ${engine_SOURCE_DIR}/utils/*.cpp
+        ${engine_SOURCE_DIR}/lib/*.c
 
         )
 
 # Define the executable
-add_executable(engine ${HDRS} ${SRCS} utils/Settings.cpp utils/Settings.hpp rendering/Window.cpp rendering/Window.hpp core/GameManger.cpp utils/GameOptions.hpp utils/Utils.hpp main.cpp events/InputHandler.cpp events/InputHandler.hpp events/InputEvent.cpp events/InputEvent.h rendering/RenderCore.cpp rendering/RenderCore.hpp core/EntityShared.hpp)
+add_executable(engine ${HDRS} ${SRCS} utils/Settings.cpp utils/Settings.hpp rendering/Window.cpp
+ rendering/Window.hpp core/GameManger.cpp utils/GameOptions.hpp utils/Utils.hpp main.cpp events/InputHandler.cpp
+  events/InputHandler.hpp events/InputEvent.cpp events/InputEvent.h rendering/RenderCore.cpp
+   rendering/RenderCore.hpp core/EntityShared.hpp)
 
 # We need a CMAKE_DIR with some code to find external dependencies
 SET(engine_CMAKE_DIR "${engine_SOURCE_DIR}/cmake")

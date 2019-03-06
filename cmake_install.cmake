@@ -1,4 +1,4 @@
-# Install script for directory: /home/linshu/Documents/4_2CIS422/sdlengine
+# Install script for directory: /home/mylife/sdlengine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/linshu/Documents/4_2CIS422/sdlengine/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mylife/sdlengine/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,6 +1,7 @@
 #include "Listeners.hpp"
 #include "EventDispatcher.hpp"
 #include <iostream>
+#include <chrono>
 
 
 using namespace Listener;
@@ -15,8 +16,9 @@ void Events::EventDispatcher::RegisterGUIListener(GameGUIListener* l,Priority p)
 void Events::EventDispatcher::RegisterTickListener(GameTickListener* l,Priority p){
     std::unordered_set<GameTickListener*>* uuo = gameTickListeners.at(p);
     uuo->insert(l);
-    Events::TimedEventDetails evd("Tick", 3, false, startTickTime, this->startingTime, tickDelta, tickDelta);
-    l->listenerInit()
+    auto gm = Engine::GameManager::instance();
+    Events::EventDetails evd("Reg_Tick", 3, false, gm->startingTime, gm->startingTime);
+    l->listenerInit(&evd);
 }
 
 bool Events::EventDispatcher::ExecuteUserDefinedEvents(string eventName, bool cancellable, Events::EventDetails* e){
@@ -52,6 +54,7 @@ void Events::EventDispatcher::RegisterListener(GameListener* listener, Priority 
 }
 
 void Events::EventDispatcher::ExecuteTickEvent(TimedEventDetails* details){
+    auto utilRef = Engine::Utilities::instance();
     std::cout << "Ticked!" << std::endl;
     for(int i = 5; i > 0; i--){
         std::unordered_set<GameTickListener*>* uuo = gameTickListeners.at(static_cast<Events::Priority>(i));
@@ -59,11 +62,14 @@ void Events::EventDispatcher::ExecuteTickEvent(TimedEventDetails* details){
         auto ends = uuo->end();
         for(; ends != start; start++){
             (*start)->gameTick(details);
+            std::chrono::high_resolution_clock::time_point new_time = high_resolution_clock::now();
+            details->eventTimeDeltaExact = utilRef->getMillisFrom(&new_time, &details->currentGameTime);
         }
     }
 }
 
 void Events::EventDispatcher::ExecuteGUIEvent(TimedEventDetails* details){
+    auto utilRef = Engine::Utilities::instance();
     std::cout << "Framed!" << std::endl;
     for(int i = 5; i > 0; i--){
         std::unordered_set<GameGUIListener*>* uuo = gameGUIListeners.at(static_cast<Events::Priority>(i));
@@ -71,6 +77,8 @@ void Events::EventDispatcher::ExecuteGUIEvent(TimedEventDetails* details){
         auto ends = uuo->end();
         for(; ends != start; start++){
             (*start)->gameGUI(details);
+            std::chrono::high_resolution_clock::time_point new_time = high_resolution_clock::now();
+            details->eventTimeDeltaExact = utilRef->getMillisFrom(&new_time, &details->currentGameTime);
         }
     }
 }

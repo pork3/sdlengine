@@ -27,6 +27,7 @@
 #include <string>
 #include <chrono>
 namespace Events{
+    class EventDispatcher;
     enum Priority {HIGHEST=5, HIGH=4, MEDIUM=3, LOW=2, LOWEST=1};
     class EventDetails{
     protected:
@@ -40,11 +41,16 @@ namespace Events{
     public:
         EventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime ) :
                 is_cancelled(false),  event_name(event_n), event_id(id),is_cancellable(is_canc), currentGameTime(currentTime), startGameTime(startTime) {}
+
+        friend class Events::EventDispatcher;
         bool isCancelled(){return this->is_cancelled;}
         bool isCancellable(){return this->is_cancellable;}
 
         std::string getName(){return this->event_name;}
         int getID(){return this->event_id;}
+
+        std::chrono::high_resolution_clock::time_point getCurrentGameTime(){return this->currentGameTime;}
+        std::chrono::high_resolution_clock::time_point getStartGameTime(){return this->startGameTime;}
 
         // Tries to cancel the event, returns success, fails if not cancellable
         bool cancel(){
@@ -75,7 +81,10 @@ namespace Events{
         TimedEventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
                           long long timeDelta,long long timeDeltaNow): EventDetails(event_n, id, is_canc, currentTime, startTime), eventTimeDelta(timeDelta),
                                                                        eventTimeDeltaExact(timeDeltaNow){}
-        void setEventTimeDeltaExact(long long eTDE){this->eventTimeDeltaExact = eTDE;}
+
+        friend class EventDispatcher;
+        long long getEventTimeDeltaExact(){return this->eventTimeDeltaExact;}
+        long long getEventTimeDelta(){return this->eventTimeDelta;}
 
 
     };

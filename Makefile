@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/linshu/Documents/4_2CIS422/sdlengine
+CMAKE_SOURCE_DIR = /home/mylife/sdlengine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/linshu/Documents/4_2CIS422/sdlengine
+CMAKE_BINARY_DIR = /home/mylife/sdlengine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles /home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mylife/sdlengine/CMakeFiles /home/mylife/sdlengine/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mylife/sdlengine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ engine/fast:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
 .PHONY : engine/fast
 
+core/GameLoop.o: core/GameLoop.cpp.o
+
+.PHONY : core/GameLoop.o
+
+# target to build an object file
+core/GameLoop.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/GameLoop.cpp.o
+.PHONY : core/GameLoop.cpp.o
+
+core/GameLoop.i: core/GameLoop.cpp.i
+
+.PHONY : core/GameLoop.i
+
+# target to preprocess a source file
+core/GameLoop.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/GameLoop.cpp.i
+.PHONY : core/GameLoop.cpp.i
+
+core/GameLoop.s: core/GameLoop.cpp.s
+
+.PHONY : core/GameLoop.s
+
+# target to generate assembly for a file
+core/GameLoop.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/GameLoop.cpp.s
+.PHONY : core/GameLoop.cpp.s
+
 core/GameManger.o: core/GameManger.cpp.o
 
 .PHONY : core/GameManger.o
@@ -149,6 +176,114 @@ core/GameManger.s: core/GameManger.cpp.s
 core/GameManger.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/GameManger.cpp.s
 .PHONY : core/GameManger.cpp.s
+
+core/Transform.o: core/Transform.cpp.o
+
+.PHONY : core/Transform.o
+
+# target to build an object file
+core/Transform.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Transform.cpp.o
+.PHONY : core/Transform.cpp.o
+
+core/Transform.i: core/Transform.cpp.i
+
+.PHONY : core/Transform.i
+
+# target to preprocess a source file
+core/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Transform.cpp.i
+.PHONY : core/Transform.cpp.i
+
+core/Transform.s: core/Transform.cpp.s
+
+.PHONY : core/Transform.s
+
+# target to generate assembly for a file
+core/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Transform.cpp.s
+.PHONY : core/Transform.cpp.s
+
+err/Error.o: err/Error.cpp.o
+
+.PHONY : err/Error.o
+
+# target to build an object file
+err/Error.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/err/Error.cpp.o
+.PHONY : err/Error.cpp.o
+
+err/Error.i: err/Error.cpp.i
+
+.PHONY : err/Error.i
+
+# target to preprocess a source file
+err/Error.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/err/Error.cpp.i
+.PHONY : err/Error.cpp.i
+
+err/Error.s: err/Error.cpp.s
+
+.PHONY : err/Error.s
+
+# target to generate assembly for a file
+err/Error.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/err/Error.cpp.s
+.PHONY : err/Error.cpp.s
+
+events/Event.o: events/Event.cpp.o
+
+.PHONY : events/Event.o
+
+# target to build an object file
+events/Event.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/Event.cpp.o
+.PHONY : events/Event.cpp.o
+
+events/Event.i: events/Event.cpp.i
+
+.PHONY : events/Event.i
+
+# target to preprocess a source file
+events/Event.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/Event.cpp.i
+.PHONY : events/Event.cpp.i
+
+events/Event.s: events/Event.cpp.s
+
+.PHONY : events/Event.s
+
+# target to generate assembly for a file
+events/Event.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/Event.cpp.s
+.PHONY : events/Event.cpp.s
+
+events/EventDispatcher.o: events/EventDispatcher.cpp.o
+
+.PHONY : events/EventDispatcher.o
+
+# target to build an object file
+events/EventDispatcher.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/EventDispatcher.cpp.o
+.PHONY : events/EventDispatcher.cpp.o
+
+events/EventDispatcher.i: events/EventDispatcher.cpp.i
+
+.PHONY : events/EventDispatcher.i
+
+# target to preprocess a source file
+events/EventDispatcher.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/EventDispatcher.cpp.i
+.PHONY : events/EventDispatcher.cpp.i
+
+events/EventDispatcher.s: events/EventDispatcher.cpp.s
+
+.PHONY : events/EventDispatcher.s
+
+# target to generate assembly for a file
+events/EventDispatcher.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/EventDispatcher.cpp.s
+.PHONY : events/EventDispatcher.cpp.s
 
 events/InputEvent.o: events/InputEvent.cpp.o
 
@@ -204,6 +339,87 @@ events/InputHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputHandler.cpp.s
 .PHONY : events/InputHandler.cpp.s
 
+lib/ObjLoader.o: lib/ObjLoader.cpp.o
+
+.PHONY : lib/ObjLoader.o
+
+# target to build an object file
+lib/ObjLoader.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/ObjLoader.cpp.o
+.PHONY : lib/ObjLoader.cpp.o
+
+lib/ObjLoader.i: lib/ObjLoader.cpp.i
+
+.PHONY : lib/ObjLoader.i
+
+# target to preprocess a source file
+lib/ObjLoader.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/ObjLoader.cpp.i
+.PHONY : lib/ObjLoader.cpp.i
+
+lib/ObjLoader.s: lib/ObjLoader.cpp.s
+
+.PHONY : lib/ObjLoader.s
+
+# target to generate assembly for a file
+lib/ObjLoader.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/ObjLoader.cpp.s
+.PHONY : lib/ObjLoader.cpp.s
+
+lib/json/jsoncpp.o: lib/json/jsoncpp.cpp.o
+
+.PHONY : lib/json/jsoncpp.o
+
+# target to build an object file
+lib/json/jsoncpp.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.o
+.PHONY : lib/json/jsoncpp.cpp.o
+
+lib/json/jsoncpp.i: lib/json/jsoncpp.cpp.i
+
+.PHONY : lib/json/jsoncpp.i
+
+# target to preprocess a source file
+lib/json/jsoncpp.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.i
+.PHONY : lib/json/jsoncpp.cpp.i
+
+lib/json/jsoncpp.s: lib/json/jsoncpp.cpp.s
+
+.PHONY : lib/json/jsoncpp.s
+
+# target to generate assembly for a file
+lib/json/jsoncpp.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/json/jsoncpp.cpp.s
+.PHONY : lib/json/jsoncpp.cpp.s
+
+lib/stb_image.o: lib/stb_image.c.o
+
+.PHONY : lib/stb_image.o
+
+# target to build an object file
+lib/stb_image.c.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/stb_image.c.o
+.PHONY : lib/stb_image.c.o
+
+lib/stb_image.i: lib/stb_image.c.i
+
+.PHONY : lib/stb_image.i
+
+# target to preprocess a source file
+lib/stb_image.c.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/stb_image.c.i
+.PHONY : lib/stb_image.c.i
+
+lib/stb_image.s: lib/stb_image.c.s
+
+.PHONY : lib/stb_image.s
+
+# target to generate assembly for a file
+lib/stb_image.c.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/lib/stb_image.c.s
+.PHONY : lib/stb_image.c.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -231,6 +447,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+rendering/Camera.o: rendering/Camera.cpp.o
+
+.PHONY : rendering/Camera.o
+
+# target to build an object file
+rendering/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Camera.cpp.o
+.PHONY : rendering/Camera.cpp.o
+
+rendering/Camera.i: rendering/Camera.cpp.i
+
+.PHONY : rendering/Camera.i
+
+# target to preprocess a source file
+rendering/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Camera.cpp.i
+.PHONY : rendering/Camera.cpp.i
+
+rendering/Camera.s: rendering/Camera.cpp.s
+
+.PHONY : rendering/Camera.s
+
+# target to generate assembly for a file
+rendering/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Camera.cpp.s
+.PHONY : rendering/Camera.cpp.s
+
+rendering/Mesh.o: rendering/Mesh.cpp.o
+
+.PHONY : rendering/Mesh.o
+
+# target to build an object file
+rendering/Mesh.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Mesh.cpp.o
+.PHONY : rendering/Mesh.cpp.o
+
+rendering/Mesh.i: rendering/Mesh.cpp.i
+
+.PHONY : rendering/Mesh.i
+
+# target to preprocess a source file
+rendering/Mesh.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Mesh.cpp.i
+.PHONY : rendering/Mesh.cpp.i
+
+rendering/Mesh.s: rendering/Mesh.cpp.s
+
+.PHONY : rendering/Mesh.s
+
+# target to generate assembly for a file
+rendering/Mesh.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Mesh.cpp.s
+.PHONY : rendering/Mesh.cpp.s
+
 rendering/RenderCore.o: rendering/RenderCore.cpp.o
 
 .PHONY : rendering/RenderCore.o
@@ -257,6 +527,60 @@ rendering/RenderCore.s: rendering/RenderCore.cpp.s
 rendering/RenderCore.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/RenderCore.cpp.s
 .PHONY : rendering/RenderCore.cpp.s
+
+rendering/Shader.o: rendering/Shader.cpp.o
+
+.PHONY : rendering/Shader.o
+
+# target to build an object file
+rendering/Shader.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Shader.cpp.o
+.PHONY : rendering/Shader.cpp.o
+
+rendering/Shader.i: rendering/Shader.cpp.i
+
+.PHONY : rendering/Shader.i
+
+# target to preprocess a source file
+rendering/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Shader.cpp.i
+.PHONY : rendering/Shader.cpp.i
+
+rendering/Shader.s: rendering/Shader.cpp.s
+
+.PHONY : rendering/Shader.s
+
+# target to generate assembly for a file
+rendering/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Shader.cpp.s
+.PHONY : rendering/Shader.cpp.s
+
+rendering/Textures.o: rendering/Textures.cpp.o
+
+.PHONY : rendering/Textures.o
+
+# target to build an object file
+rendering/Textures.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Textures.cpp.o
+.PHONY : rendering/Textures.cpp.o
+
+rendering/Textures.i: rendering/Textures.cpp.i
+
+.PHONY : rendering/Textures.i
+
+# target to preprocess a source file
+rendering/Textures.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Textures.cpp.i
+.PHONY : rendering/Textures.cpp.i
+
+rendering/Textures.s: rendering/Textures.cpp.s
+
+.PHONY : rendering/Textures.s
+
+# target to generate assembly for a file
+rendering/Textures.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Textures.cpp.s
+.PHONY : rendering/Textures.cpp.s
 
 rendering/Window.o: rendering/Window.cpp.o
 
@@ -321,21 +645,57 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... engine"
 	@echo "... edit_cache"
+	@echo "... core/GameLoop.o"
+	@echo "... core/GameLoop.i"
+	@echo "... core/GameLoop.s"
 	@echo "... core/GameManger.o"
 	@echo "... core/GameManger.i"
 	@echo "... core/GameManger.s"
+	@echo "... core/Transform.o"
+	@echo "... core/Transform.i"
+	@echo "... core/Transform.s"
+	@echo "... err/Error.o"
+	@echo "... err/Error.i"
+	@echo "... err/Error.s"
+	@echo "... events/Event.o"
+	@echo "... events/Event.i"
+	@echo "... events/Event.s"
+	@echo "... events/EventDispatcher.o"
+	@echo "... events/EventDispatcher.i"
+	@echo "... events/EventDispatcher.s"
 	@echo "... events/InputEvent.o"
 	@echo "... events/InputEvent.i"
 	@echo "... events/InputEvent.s"
 	@echo "... events/InputHandler.o"
 	@echo "... events/InputHandler.i"
 	@echo "... events/InputHandler.s"
+	@echo "... lib/ObjLoader.o"
+	@echo "... lib/ObjLoader.i"
+	@echo "... lib/ObjLoader.s"
+	@echo "... lib/json/jsoncpp.o"
+	@echo "... lib/json/jsoncpp.i"
+	@echo "... lib/json/jsoncpp.s"
+	@echo "... lib/stb_image.o"
+	@echo "... lib/stb_image.i"
+	@echo "... lib/stb_image.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... rendering/Camera.o"
+	@echo "... rendering/Camera.i"
+	@echo "... rendering/Camera.s"
+	@echo "... rendering/Mesh.o"
+	@echo "... rendering/Mesh.i"
+	@echo "... rendering/Mesh.s"
 	@echo "... rendering/RenderCore.o"
 	@echo "... rendering/RenderCore.i"
 	@echo "... rendering/RenderCore.s"
+	@echo "... rendering/Shader.o"
+	@echo "... rendering/Shader.i"
+	@echo "... rendering/Shader.s"
+	@echo "... rendering/Textures.o"
+	@echo "... rendering/Textures.i"
+	@echo "... rendering/Textures.s"
 	@echo "... rendering/Window.o"
 	@echo "... rendering/Window.i"
 	@echo "... rendering/Window.s"

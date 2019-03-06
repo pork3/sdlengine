@@ -36,8 +36,9 @@ using namespace std;
 namespace Events{
     enum GameEvent {INIT, START, STOP};
     class EventDispatcher{
-        friend class Engine::GameManager;
+
     public:
+        friend class Engine::GameManager;
         static EventDispatcher* &instance(){static EventDispatcher* e_d = new EventDispatcher(); return e_d;}
 
         void RegisterListener(GameListener* listener, Priority p);
@@ -49,6 +50,7 @@ namespace Events{
         void RegisterUserDefinedListener(GenericEventListener* lis, string eventName, Priority p);
 
         void UnregisterUserdefinedListener(GenericEventListener* lis, string eventName);
+
 
         bool ExecuteUserDefinedEvents(string eventName, bool cancellable, EventDetails* details);
     protected:
