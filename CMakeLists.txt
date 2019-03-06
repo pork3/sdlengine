@@ -19,7 +19,7 @@ file(GLOB_RECURSE SRCS
         )
 
 # Define the executable
-add_executable(engine ${HDRS} ${SRCS} utils/Settings.cpp utils/Settings.hpp rendering/Window.cpp rendering/Window.hpp core/GameManger.cpp utils/GameOptions.hpp utils/Utils.hpp main.cpp events/InputHandler.cpp events/InputHandler.hpp events/InputEvent.cpp events/InputEvent.h rendering/RenderCore.cpp rendering/RenderCore.hpp core/EntityShared.hpp)
+add_executable(engine ${HDRS} ${SRCS} utils/Settings.cpp utils/Settings.hpp rendering/Window.cpp rendering/Window.hpp core/GameManger.cpp utils/GameOptions.hpp utils/Utils.hpp main.cpp events/InputHandler.cpp events/InputHandler.hpp events/InputEvent.cpp events/InputEvent.h rendering/RenderCore.cpp rendering/RenderCore.hpp core/EntityShared.hpp Application.cpp Application.h)
 
 # We need a CMAKE_DIR with some code to find external dependencies
 SET(engine_CMAKE_DIR "${engine_SOURCE_DIR}/cmake")
