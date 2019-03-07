@@ -1,15 +1,17 @@
-
-
 // All comments shall be less than 110 characters, as displayed from the line below.
 // 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 
 /*
  *
- *	Last updated by: Chase Craig
- *	Last updated on: Feb. 24, 2019
+ *	Last updated by: Zachary Bower
+ *	Last updated on: Mar 6, 2019
  *
  *	Purpose:
- *		This file is to define base classes for managing the game.
+ *		This header class is to provide base classes for managing the game, added support for initializing
+ *      libraries used, and access to n number of windows
+ *
+ *
+ *
  */
 
  // Standard includes
@@ -113,3 +115,31 @@ void Engine::GameManager::StartGame(bool startPaused){
         this->mainGameThread = new std::thread(jumperThread, Engine::GameManager::instance());
     }
 }
+
+bool Engine::GameManager::CreateWindow(std::string title, int height, int width) {
+
+    this->window = new Window(title, height, width);
+    if( this-> window == nullptr) {
+        std::cout << "Error creating window named" << title << std::endl;
+        return false;
+    }
+    return true;
+
+}
+
+void Engine::GameManager::InitSystems(){
+
+    SDL_Init(SDL_INIT_EVERYTHING);
+    if( SDL_INIT_VIDEO < 0 ) {
+        std::cout << "Error creating video " << SDL_GetError() << std::endl;
+    }
+
+}
+
+Engine::GameManager::~GameManager(){
+
+    delete this->window;
+
+    SDL_Quit();
+}
+
