@@ -2,10 +2,11 @@
 #include <iostream>
 
 
-RenderCore::RenderCore(Window &w) : window(w) {
+RenderCore::RenderCore(Window &w) : window(w) , texture(Textures("../res/textures/illuminati.jpg")){
 
     this->context = SDL_GL_CreateContext(w.GetContext());
     this->defshader = new Shader("../res/shaders/shader");
+
     //this->transform = Transform();
 
 
@@ -17,6 +18,7 @@ void RenderCore::Render() {
 
     m->Draw();
     defshader->Bind();
+    texture.Bind(0);
 
     this->window.Update();
 
@@ -30,9 +32,6 @@ RenderCore::~RenderCore() {
 
 void RenderCore::SetVert(Vertex v[]) {
 
-    int r = sizeof(*v);
-    int l = sizeof(v[0]);
-
-    m = new Mesh(v , 3);
+    m = new Mesh(v , 3 );
 }
 

@@ -38,9 +38,14 @@ private:
 int main(int argc , char** argv){
 
     Vertex ve[] = {
-            glm::vec3(-.5, .5, 0),
-            glm::vec3(0, .5, 0),
-            glm::vec3(.5, -.5, 0), };
+                    Vertex(glm::vec3(-.5, .5, 0), glm::vec2(0,0)),
+                    Vertex(glm::vec3(0, .5, 0),glm::vec2(.5,1)),
+                    Vertex(glm::vec3(.5, -.5, 0), glm::vec2(.5,0)),};
+
+    Vertex v[] = {
+            Vertex(glm::vec3(-1, 1, 0),glm::vec2(0,0)),
+            Vertex(glm::vec3(0, .5, 0),glm::vec2(.5,1)),
+            Vertex(glm::vec3(.5, -.5, 0), glm::vec2(.5,0)),};
 
 
     Application a = Application();
@@ -53,9 +58,10 @@ int main(int argc , char** argv){
 
 
     while( a.IsRunning() ){
-
+        r.Render();
         a.Process(t);
         if(t.GetDown()){
+            r.SetVert(v);
             std::cout << "swag" << std::endl;
             r.Render();
         }

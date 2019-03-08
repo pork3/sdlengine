@@ -1,4 +1,4 @@
-#include "Textures.h"
+#include "Textures.hpp"
 #include "../lib/stb_image.h"
 #include <iostream>
 
@@ -11,8 +11,6 @@ Textures::Textures(const std::string &fname){
     if( imagedata == NULL){
         std::cout << "Unable to load texture : " << std::endl;
     }
-
-
 
     /*allocate space for text and bind the texture to the allocated space*/
     glGenTextures(1, &texturehandle);
@@ -29,6 +27,8 @@ Textures::Textures(const std::string &fname){
     /*      type of texture, vary texture depending on how far away*, store data as Red Green
      * Blue Alpha*, img width, img height,  format of data, how the data is stored , the actual data*/
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, iwidth, iheight, 0, GL_RGBA, GL_UNSIGNED_BYTE,imagedata);
+                        /*check this ^ depending on the image*/
+
 
     stbi_image_free(imagedata);
 
@@ -40,9 +40,9 @@ Textures::~Textures(){
 }
 
 void Textures::Bind(unsigned int textnum){
+    /*check bounds*/
 
     if ( textnum >=0 || textnum < 32 ){
-
         /*set the active texture and bind*/
         glActiveTexture(GL_TEXTURE0 + textnum);
         glBindTexture(GL_TEXTURE_2D, texturehandle);

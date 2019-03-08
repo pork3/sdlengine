@@ -17,6 +17,7 @@ Shader::Shader(const std::string& fname){
 
     /*tells opengl which part of data to read as variable*/
     glBindAttribLocation(prog, 0, "position");
+    glBindAttribLocation(prog, 1, "texturecoord");
 
     glLinkProgram(prog);
     verifyshader(prog, GL_LINK_STATUS, true, "Error  shader failed to link");

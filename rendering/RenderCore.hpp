@@ -21,6 +21,7 @@
  */
 #include "Window.hpp"
 #include "Camera.h"
+#include "Textures.hpp"
 #include "../core/Transform.h"
 #include "Mesh.h"
 #include "Shader.h"
@@ -57,6 +58,9 @@ private:
     SDL_GLContext context;
 
     Transform* transform;
+
+    Textures texture;
+
 
 };
 

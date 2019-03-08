@@ -8,14 +8,17 @@ class Vertex{
 
 public:
 
-    Vertex(const glm::vec3& pos){
+    Vertex(const glm::vec3& pos, const glm::vec2(texture)){
         this->pos = pos;
+        this->text = text;
     };
 
-    glm::vec3 GetPos(){ return this->pos; }
+    glm::vec3* GetPos(){ return &pos; }
+    glm::vec2* GetTexture(){return &text;}
 
 private:
     glm::vec3 pos;
+    glm::vec2 text;
 
 
 };
@@ -32,6 +35,7 @@ private:
 
     enum{
         POSVERT,
+        TEXTCOORD,
         NBUFF
     };
 
