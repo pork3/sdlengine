@@ -5,8 +5,8 @@
 
 /*
  *
- *	Last updated by: Zachary Bower
- *	Last updated on: Mar 2, 2019
+ *	Last updated by: Chase Craig
+ *	Last updated on: Mar 7, 2019
  *
  *	Purpose:
  *		This class provides interaction for creating a display window
@@ -16,43 +16,107 @@
  *      Added aspect ratio support
  *  Update 3/2
  *      Renamed ambiguous function names to be more specific
+ *  Update 3/7
+ *      Added window options (settings) and added a mark dirty function.
+ *      Modified comments.
  *
- *  This file creates a window for the user, the main interface between the game and
- *  the end user of the game
  */
 
 #include <string>
 #include <SDL2/SDL.h>
+#include "../utils/GameOptions.hpp"
+#include "../events/Listeners.hpp"
+#include <map>
+#include <unordered_set>
+#include <chrono>
+
+namespace Engine{
+    class GameManager;
+}
 
 class Window {
 
 public:
+    friend class Engine::GameManager;
     Window(std::string title, int w, int h);
     ~Window();
 
-    /*used to update the double buffer*/
+    /*
+        Used to update the double buffer
+    */
     void Update();
-    /*function used to clear the screen... takes a red, green, blue and alpha
-     * value, sets the screen color to value passed in*/
+
+    /*
+        Function used to clear the screen... takes a red, green, blue and alpha
+            value, sets the screen color to value passed in
+
+        This function will mark the window as dirty.
+    */
     void Clear(float r, float g, float b, float a);
 
-    /*function used to set fullscreen or to remove fullscreen*/
+    /*
+        Function used to set fullscreen or to remove fullscreen
+    */
     void SetFullscreen();
 
-    /*function used to set up opengl preferences*/
+    /*
+        Function used to set up opengl preferences
+    */
     void set_attr();
+
+    /*
+        Function used to make the frame as "dirty" and hence needs to be redrawn.
+        This is automatically called if the window has a non-negative frame rate.
+        If the window has a negative frame rate, it only refreshes (redraws) the window
+            if this function is called. This function will be called if an interaction
+            (such as left-clicking on the window) happens.
+    */
+    void markDirty(){this->isDirty = true;};
+
+    /*
+        Function that shows the window to the user.
+     */
+    void ShowWindow();
+
+    /*
+        Function that hides the window from the user (does not destroy it).
+     */
+    void HideWindow();
+
+    /*
+        Registers a window listener to receive window events (render and window changed).
+     */
+    void RegisterWindowListener(Listener::GameGUIListener* list, Events::Priority p);
+
+    /*
+        Unregisters a window listener, unsubscribing it from receiving window events.
+     */
+    void UnregisterWindowListener(Listener::GameGUIListener* list);
+
+
+
 
     /** GETTERS**/
     float GetAspectRatio();
     SDL_Window* GetWindow(){return this->window ;}
     int GetHeight() {return this->sheight; }
     int GetWidth() {return this->swidth; }
+    Management::WindowOptions* GetWindowOptions(){return this->windOpts;}
+
 
     /**SETTERS**/
     void SetHeight(int h){this->sheight = h; }
     void SetWidth(int w){this->swidth = w; }
     void SetTitle(std::string s){this->title = s; }
+protected:
 
+    void ExecuteGUIEvent(Events::WindowEventDetails* details);
+
+    std::map<Events::Priority, std::unordered_set<Listener::GameGUIListener*>* > gameGUIListeners{};
+    bool isDirty;
+    bool isShown;
+    high_resolution_clock::time_point lastFrame;
+    Management::WindowOptions* windOpts;
 private:
 
     SDL_GLContext  glcontext;

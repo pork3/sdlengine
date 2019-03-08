@@ -26,6 +26,9 @@
 // General includes
 #include <string>
 #include <chrono>
+
+#include "../math/EngineMath.hpp"
+class Window;
 namespace Events{
     class EventDispatcher;
     enum Priority {HIGHEST=5, HIGH=4, MEDIUM=3, LOW=2, LOWEST=1};
@@ -88,6 +91,21 @@ namespace Events{
 
 
     };
+
+    class WindowEventDetails : public TimedEventDetails{
+    protected:
+        Window* win;
+    public:
+        WindowEventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+        long long timeDelta,long long timeDeltaNow, Window* w): TimedEventDetails(event_n, id, is_canc, currentTime, startTime, timeDelta,timeDeltaNow), win(w){}
+
+    };
+
+    class MouseButtionEventDetails : public EventDetails {
+    protected:
+        int mouseButton;
+        Math::Vector2Int mousePos;
+    };
 }
 
 namespace Listener{
@@ -149,6 +167,25 @@ namespace Listener{
         //	ms_delay is the number of milliseconds between the current and previous
         //		call to this function.
         virtual void gameGUI(Events::TimedEventDetails* events)=0;
+    };
+
+    class GameKeyboardListener : virtual public GameListener {
+    public:
+
+        virtual void gameKeyPressed()=0;
+
+        virtual void gameKeyReleased()=0;
+    };
+
+    class GameMouseListener : virtual public GameListener {
+    public:
+        virtual void gameMouseButtonPressed()=0;
+
+        virtual void gameMouseButtonReleased()=0;
+
+        virtual void gameMouseMoved()=0;
+
+
     };
 
 

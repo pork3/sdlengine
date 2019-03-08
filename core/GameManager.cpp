@@ -22,10 +22,21 @@
 #include <iostream>
 #include "../utils/Utils.hpp"
 #include "../utils/GameOptions.hpp"
-#include "../events/EventDispatcher.hpp"
+#include "../rendering/Window.hpp"
+
+
+// Defines the function that allows for the creation of new windows.
+Window* Engine::GameManager::CreateWindow(std::string title, int width, int height){
+// Does nothing.
+    Window* window = new Window(title, width, height);
+    this->windows.insert(window);
+    return window;
+}
 
 
 
+// Define the deconstructor, which should handle the cleanup from this object.
+Engine::GameManager::~GameManager(){}
 
 // A function to request stopping of the game. A stopping event will be dispatched, however it is
 // 		cancellable based on if this was not forced.
@@ -64,10 +75,10 @@ void Engine::GameManager::Run(void){
 
         if(runTick){
             auto tickDelta = Engine::Utilities::instance()->getMillisFrom(&this->lastTick, &startTickTime);
-            if(tickDelta >= Engine::Utilities::instance()->getMillisWaitTime(Management::GameOptions::instance()->getTickRateTarget())){
-                Events::TimedEventDetails evd("Tick", 3, false, startTickTime, this->startingTime, tickDelta, tickDelta);
+            if(tickDelta >= Engine::Utilities::instance()->getMillisWaitTime(this->options->getTickRateTarget())){
+                Events::TimedEventDetails eventD("Tick", 3, false, startTickTime, this->startingTime, tickDelta, tickDelta);
                 //std::cout << "Tick Tick! Delta: " << tickDelta << std::endl;
-                ed->ExecuteTickEvent(&evd);
+                ed->ExecuteTickEvent(&eventD);
                 this->lastTick = high_resolution_clock::now();
             }
         }else{
@@ -75,17 +86,35 @@ void Engine::GameManager::Run(void){
             this->lastTick = high_resolution_clock::now();
         }
 
-        // Secondly run the GUI if enough time has passed.
+        // Go through all registered windows (assuming they still exist)
         high_resolution_clock::time_point startFrameTime = high_resolution_clock::now();
-        auto frameDelta =Engine::Utilities::instance()->getMillisFrom(&this->lastFrame, &startFrameTime);
-        if(frameDelta >=
-           Engine::Utilities::instance()->getMillisWaitTime(Management::GameOptions::instance()->getFrameRateTarget())){
+        auto endpntr = this->windows.end();
+        for(auto vpntr = this->windows.begin(); vpntr != endpntr; vpntr++){
+            if(!((*vpntr)->isShown)) {
+                (*vpntr)->lastFrame = high_resolution_clock::now();
+            }else {
+                auto frameDelta = Engine::Utilities::instance()->getMillisFrom(&((*vpntr)->lastFrame),
+                                                                               &startFrameTime);
+                if ((*vpntr)->isDirty || frameDelta >= Engine::Utilities::instance()->getMillisWaitTime((*vpntr)->windOpts->getFrameRateTarget())){
+                    // The frame has requested to render.
+                    // Call the frame listeners registered to this window, may include world renderers
+                    Events::WindowEventDetails eventD("Frame", 2, false, startFrameTime, this->startingTime, frameDelta, frameDelta, *vpntr);
+                    (*vpntr)->ExecuteGUIEvent(&eventD);
+                    (*vpntr)->Update();
+                    (*vpntr)->lastFrame = high_resolution_clock::now();
+                }
+            }
+        }
+
+        //auto frameDelta =Engine::Utilities::instance()->getMillisFrom(&this->lastFrame, &startFrameTime);
+        /*if(frameDelta >= 0){
+            Engine::Utilities::instance()->getMillisWaitTime(Management::GameOptions::instance()->getFrameRateTarget())){
             std::cout << "Frame Tick! Delta: " << frameDelta <<std::endl;
             Events::TimedEventDetails evd("Frame", 2, false, startTickTime, this->startingTime, frameDelta, frameDelta);
 
             this->lastFrame = high_resolution_clock::now();
 
-        }
+        }*/
 
         // Actually dispatch rendering to the window...
 
@@ -108,7 +137,7 @@ void Engine::GameManager::StartGame(bool startPaused){
     }else{
         this->gameSetup = true;
         this->gamePaused = !startPaused;
-        this->options = Management::GameOptions::instance();
+        this->options = new Management::GameOptions;
         this->startingTime = high_resolution_clock::now();
         this->mainGameThread = new std::thread(jumperThread, Engine::GameManager::instance());
     }

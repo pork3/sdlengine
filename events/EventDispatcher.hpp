@@ -25,12 +25,13 @@
 
 
 #include "Listeners.hpp"
-#include "../core/GameManager.hpp"
 #include <string>
 #include <map>
 #include <unordered_set>
 #include <iostream>
-
+namespace Engine{
+    class GameManager;
+}
 using namespace Listener;
 using namespace std;
 namespace Events{
@@ -41,34 +42,32 @@ namespace Events{
         friend class Engine::GameManager;
         static EventDispatcher* &instance(){static EventDispatcher* e_d = new EventDispatcher(); return e_d;}
 
-        void RegisterListener(GameListener* listener, Priority p);
+        void UnregisterEventListener( GameEventsListener* listener);
 
-        void Unregister(GameListener* listener);
+        void UnregisterTickListener( GameTickListener* listener);
 
         int RegisterUserDefinedEvent(string eventName);
 
-        void RegisterUserDefinedListener(GenericEventListener* lis, string eventName, Priority p);
+        void RegisterUserDefinedListener( GenericEventListener* lis, string eventName, Priority p);
 
         void UnregisterUserdefinedListener(GenericEventListener* lis, string eventName);
 
+        void RegisterEventListener( GameEventsListener* l,Priority p);
 
-        bool ExecuteUserDefinedEvents(string eventName, bool cancellable, EventDetails* details);
-    protected:
-        void RegisterEventListener(GameEventsListener* l,Priority p);
         void RegisterTickListener(GameTickListener* l,Priority p);
-        void RegisterGUIListener(GameGUIListener* l,Priority p);
+
+        bool ExecuteUserDefinedEvents( string eventName, bool cancellable, EventDetails* details);
+    protected:
+
         void ExecuteTickEvent(TimedEventDetails* details);
-        void ExecuteGUIEvent(TimedEventDetails* details);
         void ExecuteGameEvent(GameEvent event, EventDetails* details);
     private:
         std::map<Priority, std::unordered_set<GameEventsListener*>* > gameEventListeners{};
         std::map<Priority, std::unordered_set<GameTickListener*>* > gameTickListeners{};
-        std::map<Priority, std::unordered_set<GameGUIListener*>* > gameGUIListeners{};
 
         EventDispatcher(){
             for(int i = 5; i > 0; i--){
                 gameEventListeners.insert(pair<Priority, std::unordered_set<GameEventsListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameEventsListener*>{}});
-                gameGUIListeners.insert(pair<Priority, std::unordered_set<GameGUIListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameGUIListener*>{}});
                 gameTickListeners.insert(pair<Priority, std::unordered_set<GameTickListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameTickListener*>{}});
             }
         }
