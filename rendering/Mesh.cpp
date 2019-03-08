@@ -1,95 +1,49 @@
 #include "Mesh.h"
-#include <vector>
-
-
-Mesh::Mesh(const std::string& fname){
-    /*loads mesh from file*/
-    IndexedModel model = OBJModel(fname).ToIndexedModel();
-    InitMesh(model);
-}
-
-Mesh::Mesh(Vertex* vert, unsigned int nvert,unsigned int* indeces, unsigned int nindeces) {
-
-    IndexedModel model;
-
-    unsigned  int i;
-    for(i=0; i < nvert; i++){
-
-        model.positions.push_back(*vert[i].GetPos());
-        model.texCoords.push_back(*vert[i].GetTex());
-        model.normals.push_back(*vert[i].GetNorm());
-    }
-
-    for( i = 0; i < nindeces; i++){
-        model.indices.push_back(indeces[i]);
-    }
-
-    InitMesh(model);
-}
-
-void Mesh::InitMesh(const IndexedModel &model) {
-
-    ndraw = model.indices.size();
-
-    glGenVertexArrays(1, &vertArr);
-    /*bind the objects with opengl... this ties the calls to draw/update to the
-     * object passed in*/
-    glBindVertexArray(vertArr);
-
-    /**POSITION DATA**/
-    /*sets up space on graphics card and binds the space and sets opengl
-     * interpretation of data as an array/buffer*/
-    glGenBuffers(NBUFF, vertArrBuf);
-    glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[POSITION_VB]);
-    /*moving the data from ram to gpu*/
-    /*interp as array, size of data to move, addr, glhints */
-    glBufferData(GL_ARRAY_BUFFER, model.positions.size()*sizeof(model.positions[0]), &model.positions[0], GL_STATIC_DRAW );
-    /*tell opengl how to interpret the data*/
-    /*passes the attributes of the data, the order they should be read this ensures
-    the data is read into the gpu in a sequential fashion*/
-    glEnableVertexAttribArray(0);
-    /*3 pieces of float data*/
-    glVertexAttribPointer(0,3,GL_FLOAT, GL_FALSE, 0, nullptr);
-
-
-
-    /** TEXTURE DATA ****/
-    glGenBuffers(NBUFF, vertArrBuf);
-    glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[TEXTURE_VB]);
-    glBufferData(GL_ARRAY_BUFFER, model.positions.size()*sizeof(model.texCoords[0]), &model.texCoords[0], GL_STATIC_DRAW );
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,2,GL_FLOAT, GL_FALSE, 0, nullptr);
-
-
-    /** INDEX BUFFER DATA BEGINS **/
-    /*array of access to other elements array*/
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,vertArrBuf[INDEX]);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, model.indices.size() * sizeof(model.indices[0]), &model.indices[0], GL_STATIC_DRAW );
-
-
-    /**NORMAL DATA BEGINS HERE**/
-    glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[NORMAL_VB]);
-    glBufferData(GL_ARRAY_BUFFER, model.normals.size()*sizeof(model.normals[0]), &model.normals[0], GL_STATIC_DRAW );
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(1,2,GL_FLOAT, GL_FALSE, 0, nullptr);
-
-    /*unbind, free*/
-    glBindVertexArray(0);
-}
+#include <iostream>
 
 Mesh::~Mesh() {
+    std::cout << "$$$$$$$$$$$$$" << std::endl;
+    glDeleteVertexArrays(1,&vertexarray);
 
-    glDeleteVertexArrays(1, &vertArr);
 }
 
-void Mesh::DrawMesh() {
-    /*bind*/
-    glBindVertexArray(vertArr);
+void Mesh::Draw() {
 
-    glDrawElements(GL_TRIANGLES, this->ndraw, GL_UNSIGNED_INT, 0 );
-    //glDrawArrays(GL_TRIANGLES, 0, this->ndraw);
+    glBindVertexArray(vertexarray);
+                /*draw mode, where to start, how much to read */
+    glDrawArrays(GL_TRIANGLES,0, todraw);
 
-    /*unbind*/
     glBindVertexArray(0);
+}
 
+Mesh::Mesh(Vertex *vert, unsigned int nvert) {
+
+    this->todraw = nvert;
+
+    glGenVertexArrays(1, &vertexarray);
+    /*bind the vertext array to begin drawing*/
+    glBindVertexArray(vertexarray);
+
+    /*generate the buffers*/
+    /*gives blocks of data on gpu*/
+    glGenBuffers(NBUFF, vertexarraybufer);
+    /*interpret bufer as an array*/
+    glBindBuffer(GL_ARRAY_BUFFER, vertexarraybufer[POSVERT]);
+
+    /*put data into the array*/
+    /*moving from ram to gpu memory put all vertex data in    draw hint  static means it shouldnt be changed where to store data*/
+    glBufferData( GL_ARRAY_BUFFER, nvert* sizeof(vert[0]), vert, GL_STATIC_DRAW);
+
+    /*how to interpret data, divides data into attributes
+     * all pieces*/
+    /*gpu needs to look as a sequential array of data*/
+    /*this is based on shader*/
+    glEnableVertexAttribArray(0);
+
+    /*how to look at the data, what it needs to do*/
+    /*which part, how much data, type, normalize?, data to skip, how much to find next*/
+    glVertexAttribPointer(0, 3 , GL_FLOAT, GL_FALSE, 0, 0);
+
+
+    glBindVertexArray(0);
 }

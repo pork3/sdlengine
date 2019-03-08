@@ -15,9 +15,11 @@ public:
     /*TODO add separate creation functions for
      * vertex and fragment shaders*/
 
+    /*binds a shader to an object in game*/
     void Bind();
+
     /*updated the values in the shader*/
-    void Update(const Transform& t, const Camera& camera);
+   // void Update(const Transform& t, const Camera& camera);
 
 private:
 
@@ -39,7 +41,7 @@ private:
         NUNIFORM
     };
 
-    /*handle of current position*/
+    /*handle of current position, where the program is*/
     GLuint prog;
     /*array of shaders*/
     GLuint nshaders[N_SHADER];

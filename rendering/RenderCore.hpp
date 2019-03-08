@@ -22,17 +22,22 @@
 #include "Window.hpp"
 #include "Camera.h"
 #include "../core/Transform.h"
+#include "Mesh.h"
+#include "Shader.h"
+#include <SDL2/SDL.h>
 
 class RenderCore {
 
 public:
                 /*the main window we wish to draw on*/
-    RenderCore(const Window& w);
+    RenderCore(Window& w);
 
     ~RenderCore();
 
     /*Note this will take an entity * later on*/
     void Render();
+
+    void SetVert(Vertex v[]);
 
     void SetCamer(const Camera& camera);
 
@@ -44,7 +49,12 @@ private:
     const glm::mat4 biasMatrix = glm::mat4(0.5, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.5, 0.5, 0.5, 1.0);
 
     Camera* camera;
-    const Window& window;
+    Window& window;
+
+    Shader*  defshader = nullptr;
+
+    Mesh* m;
+    SDL_GLContext context;
 
     Transform* transform;
 

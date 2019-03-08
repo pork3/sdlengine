@@ -5,36 +5,24 @@
                 /*filename of the shader*/
 Shader::Shader(const std::string& fname){
 
-    /*inform opengl to create the shader program, find space, and give
-     * a reference number for the program*/
     prog = glCreateProgram();
-                    std::string v = loadshader((fname + ".vert"));
-                    std::string f = loadshader((fname + ".frag"));
-    /*load the text from the shader files, and create... load into */
-    nshaders[VERTEX] = createshader(v, GL_VERTEX_SHADER);
-    nshaders[FRAGMENT] = createshader(f, GL_FRAGMENT_SHADER);
 
-    /*loop through shader buffer and attach to opengl flow*/
-    unsigned int i;
-    for(i = 0; i < N_SHADER; i++){
-        glAttachShader( prog, nshaders[i] );
+    nshaders[VERTEX] = createshader(loadshader(fname + ".vert"), GL_VERTEX_SHADER);
+    nshaders[FRAGMENT] = createshader(loadshader(fname + ".frag"), GL_FRAGMENT_SHADER);
+
+    /*adding shader to shader program*/
+    for(unsigned int i = 0; i < N_SHADER; i++){
+        glAttachShader(prog, nshaders[i]);
     }
-    /*tells opengl what attribute to read from shaders*/
-    glBindAttribLocation( prog, 0, "position" );
-    glBindAttribLocation( prog, 1, "textcoord" );
-    glBindAttribLocation( prog, 2, "normal" );
+
+    /*tells opengl which part of data to read as variable*/
+    glBindAttribLocation(prog, 0, "position");
 
     glLinkProgram(prog);
-    /*verify opengl was able to read and link the shader progs*/
-    verifyshader(prog, GL_LINK_STATUS,true, "LINKING");
-    /*verify opengl is able to interpret shader 'no errors in the shader*/
+    verifyshader(prog, GL_LINK_STATUS, true, "Error  shader failed to link");
+
     glValidateProgram(prog);
-    verifyshader(prog, GL_VALIDATE_STATUS,true, "COMPILING");
-
-    /*Find out the location of the handle to  uniforms, takes handler to
-     * shader program, and the name of attribute in shader*/
-    nuniform[TRANSFORM] = glGetUniformLocation(prog, "transform");
-
+    verifyshader(prog, GL_VALIDATE_STATUS, true, "Error in shader failed validation");
 
 
 
@@ -42,23 +30,24 @@ Shader::Shader(const std::string& fname){
 
 Shader::~Shader(){
 
+    std::cout << "FJFJJFFJJJJJJJJJJJJJJJ" << std::endl;
     /*removes all instances of shaders*/
     unsigned int i;
     for(i = 0; i < N_SHADER; i++){
-        glDetachShader( prog, nshaders[i] );
+        glDetachShader(prog, nshaders[i] );
         glDeleteShader(nshaders[i]);
     }
     glDeleteProgram(prog);
 
 }
-
+/*
 void Shader::Update(const Transform& t, const Camera& camera)  {
 
     glm::mat4 mdl = camera.GetProjection() * t.MatModel();
 
     /*update the shader with a transform*/
-    glUniformMatrix4fv(nuniform[TRANSFORM], 1, GL_FALSE,&mdl[0][0]);
-}
+  //  glUniformMatrix4fv(nuniform[TRANSFORM], 1, GL_FALSE,&mdl[0][0]);
+//}
 
 void Shader::Bind() {
     /*binds the shader to opengl*/
@@ -127,7 +116,7 @@ void Shader::verifyshader(GLuint shader, GLuint flag, bool isprog, const std::st
             glGetShaderInfoLog(shader, sizeof(err), nullptr, err);
         }
 
-        std::cout << "Shader  failed with : " << error << " : " << err << std::endl;
+        std::cout << "Shader  failed with : " << error << " : "<< status  << err << std::endl;
     }
 
 }

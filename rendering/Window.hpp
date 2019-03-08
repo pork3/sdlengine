@@ -39,6 +39,8 @@ public:
     /*function used to set fullscreen or to remove fullscreen*/
     void SetFullscreen();
 
+
+
     /*function used to set up opengl preferences*/
     void set_attr();
 
@@ -47,6 +49,7 @@ public:
     SDL_Window* GetWindow(){return this->window ;}
     int GetHeight() {return this->sheight; }
     int GetWidth() {return this->swidth; }
+    SDL_Window*  GetContext() {return this->window;}
 
     /**SETTERS**/
     void SetHeight(int h){this->sheight = h; }
