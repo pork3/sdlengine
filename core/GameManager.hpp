@@ -70,6 +70,8 @@ namespace Engine{
         /*wrapper function to initialized window*/
         Window* CreateWindow(std::string title, int height, int width);
 
+        Management::GameOptions* GetOptions();
+
         static std::mutex* io_mutex;
     protected:
         std::thread* mainGameThread;

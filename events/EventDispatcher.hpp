@@ -35,7 +35,7 @@ namespace Engine{
 using namespace Listener;
 using namespace std;
 namespace Events{
-    enum GameEvent {INIT, START, STOP};
+    enum GameEvent {START, STOP};
     class EventDispatcher{
 
     public:
@@ -46,7 +46,7 @@ namespace Events{
 
         void UnregisterTickListener( GameTickListener* listener);
 
-        int RegisterUserDefinedEvent(string eventName);
+        bool RegisterUserDefinedEvent(const string eventName);
 
         void RegisterUserDefinedListener( GenericEventListener* lis, string eventName, Priority p);
 
@@ -64,7 +64,8 @@ namespace Events{
     private:
         std::map<Priority, std::unordered_set<GameEventsListener*>* > gameEventListeners{};
         std::map<Priority, std::unordered_set<GameTickListener*>* > gameTickListeners{};
-
+        std::unordered_set<std::string> userEventNames{};
+        std::map<std::string, std::map<Priority, std::unordered_set<GenericEventListener*>* >* > userEventListeners;
         EventDispatcher(){
             for(int i = 5; i > 0; i--){
                 gameEventListeners.insert(pair<Priority, std::unordered_set<GameEventsListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameEventsListener*>{}});

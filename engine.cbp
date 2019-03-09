@@ -8,212 +8,228 @@
 		<Option virtualFolders="CMake Files\;CMake Files\cmake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/mylife/sdlengine"/>
+				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/mylife/sdlengine"/>
+				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine">
-				<Option output="/home/mylife/sdlengine/engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mylife/sdlengine"/>
+				<Option output="/home/mylife/dd/sdlengine/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/mylife/sdlengine/headers"/>
-					<Add directory="/home/mylife/sdlengine/sources"/>
+					<Add directory="/home/mylife/dd/sdlengine/headers"/>
+					<Add directory="/home/mylife/dd/sdlengine/sources"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 engine"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 engine"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine/fast">
-				<Option output="/home/mylife/sdlengine/engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mylife/sdlengine"/>
+				<Option output="/home/mylife/dd/sdlengine/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/mylife/sdlengine/headers"/>
-					<Add directory="/home/mylife/sdlengine/sources"/>
+					<Add directory="/home/mylife/dd/sdlengine/headers"/>
+					<Add directory="/home/mylife/dd/sdlengine/sources"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 engine/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 engine/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/mylife/sdlengine"/>
+				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/mylife/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mylife/sdlengine/Application.h">
+		<Unit filename="/home/mylife/dd/sdlengine/Application.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/core/EntityShared.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/core/EntityShared.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/core/GameLoop.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/core/GameLoop.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/core/GameLoop.h">
+		<Unit filename="/home/mylife/dd/sdlengine/core/GameLoop.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/core/GameManager.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/core/GameManager.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/core/GameManager.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/core/GameManager.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/core/Transform.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/core/Transform.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/core/Transform.h">
+		<Unit filename="/home/mylife/dd/sdlengine/core/Transform.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/err/Error.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/err/Error.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/err/Error.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/err/Error.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/Event.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/events/Event.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/Event.h">
+		<Unit filename="/home/mylife/dd/sdlengine/events/Event.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/EventDispatcher.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/events/EventDispatcher.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/EventDispatcher.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/events/EventDispatcher.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/InputEvent.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/events/InputEvent.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/InputEvent.h">
+		<Unit filename="/home/mylife/dd/sdlengine/events/InputEvent.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/InputHandler.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/events/InputHandler.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/InputHandler.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/events/InputHandler.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/events/Listeners.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/events/Listeners.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/lib/ObjLoader.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/lib/ObjLoader.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/lib/ObjLoader.h">
+		<Unit filename="/home/mylife/dd/sdlengine/lib/ObjLoader.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/lib/json/json-forwards.h">
+		<Unit filename="/home/mylife/dd/sdlengine/lib/json/json-forwards.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/lib/json/json.h">
+		<Unit filename="/home/mylife/dd/sdlengine/lib/json/json.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/lib/json/jsoncpp.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/lib/json/jsoncpp.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/lib/stb_image.c">
+		<Unit filename="/home/mylife/dd/sdlengine/lib/stb_image.c">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/lib/stb_image.h">
+		<Unit filename="/home/mylife/dd/sdlengine/lib/stb_image.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/main.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/main.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/math/EngineMath.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/math/EngineMath.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/objloader.h">
+		<Unit filename="/home/mylife/dd/sdlengine/objloader.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Camera.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Camera.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Camera.h">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Camera.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Mesh.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Mesh.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Mesh.h">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Mesh.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/RenderCore.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/RenderCore.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/RenderCore.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/RenderCore.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Shader.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Shader.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Shader.h">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Shader.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Textures.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Textures.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Textures.h">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Textures.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Window.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Window.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/rendering/Window.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Window.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/utils/GameOptions.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/utils/GameOptions.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/utils/Settings.cpp">
+		<Unit filename="/home/mylife/dd/sdlengine/utils/Settings.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/utils/Settings.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/utils/Settings.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/utils/Utils.hpp">
+		<Unit filename="/home/mylife/dd/sdlengine/utils/Utils.hpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/CMakeLists.txt">
+		<Unit filename="/home/mylife/dd/sdlengine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/cmake/FindGlew.cmake">
+		<Unit filename="/home/mylife/dd/sdlengine/cmake/FindGlew.cmake">
 			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
-		<Unit filename="/home/mylife/sdlengine/cmake/FindSDL2.cmake">
+		<Unit filename="/home/mylife/dd/sdlengine/cmake/FindSDL2.cmake">
 			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
 	</Project>

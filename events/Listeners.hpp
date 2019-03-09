@@ -99,6 +99,9 @@ namespace Events{
         WindowEventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
         long long timeDelta,long long timeDeltaNow, Window* w): TimedEventDetails(event_n, id, is_canc, currentTime, startTime, timeDelta,timeDeltaNow), win(w){}
 
+
+
+
     };
 
     class MouseButtionEventDetails : public EventDetails {
@@ -126,7 +129,7 @@ namespace Listener{
         /*
             This function will be called whenever a user-defined event is told to execute.
         */
-        virtual void eventExecuted(const Events::EventDetails& events)=0;
+        virtual void eventExecuted(Events::EventDetails* events)=0;
     };
 
 
@@ -166,7 +169,7 @@ namespace Listener{
         //
         //	ms_delay is the number of milliseconds between the current and previous
         //		call to this function.
-        virtual void gameGUI(Events::TimedEventDetails* events)=0;
+        virtual void gameGUI(Events::WindowEventDetails* events)=0;
     };
 
     class GameKeyboardListener : virtual public GameListener {

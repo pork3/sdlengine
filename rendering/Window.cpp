@@ -89,7 +89,31 @@ Window::Window(std::string title, int w, int h) : swidth(w), sheight(h), closere
 
 void Window::ExecuteGUIEvent(Events::WindowEventDetails* eventDetails){
     // Do nothing...well actually...
-    std::cout << eventDetails->getEventTimeDelta() <<" "<< eventDetails->getStartGameTime()<< std::endl;
+    // TODO
+    auto utilRef = Engine::Utilities::instance();
+    for(int i = 5; i > 0; i--){
+        std::unordered_set<Listener::GameGUIListener*>* uuo =  this->gameGUIListeners.at(static_cast<Events::Priority>(i));
+        auto start= uuo->begin();
+        auto ends = uuo->end();
+        for(; ends != start; start++){
+            (*start)->gameGUI(eventDetails);
+            //std::chrono::high_resolution_clock::time_point new_time = high_resolution_clock::now();
+            //eventDetails->eventTimeDeltaExact = utilRef->getMillisFrom(&new_time, &eventDetails->currentGameTime);
+        }
+    }
+
+
+    //std::cout << eventDetails->getEventTimeDelta() <<std::endl;
+}
+
+void Window::UnregisterWindowListener(Listener::GameGUIListener* list){
+    //TODO
+
+}
+
+void Window::RegisterWindowListener(Listener::GameGUIListener* list, Events::Priority p) {
+
+//TODO
 }
 
 void Window::ShowWindow() {

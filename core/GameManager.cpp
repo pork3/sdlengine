@@ -6,7 +6,7 @@
 /*
  *
  *	Last updated by: Chase Craig
- *	Last updated on: Feb. 24, 2019
+ *	Last updated on: Mar. 8, 2019
  *
  *	Purpose:
  *		This file is to define base classes for managing the game.
@@ -36,7 +36,9 @@ Window* Engine::GameManager::CreateWindow(std::string title, int width, int heig
 
 
 // Define the deconstructor, which should handle the cleanup from this object.
-Engine::GameManager::~GameManager(){}
+Engine::GameManager::~GameManager(){
+    //TODO
+};
 
 // A function to request stopping of the game. A stopping event will be dispatched, however it is
 // 		cancellable based on if this was not forced.
@@ -60,8 +62,15 @@ void Engine::GameManager::ResumeGame(){
 
 // A function to handle aborting the game (critical error), a reason to be logged should be supplied.
 void Engine::GameManager::Abort(std::string reason){
-
+    this->gameRunning = false;
+    //TODO: LOG ERROR!
 }
+
+Management::GameOptions* Engine::GameManager::GetOptions() {
+    return this->options;
+}
+
+
 std::mutex* Engine::GameManager::io_mutex = new std::mutex; // Cheating?
 
 void Engine::GameManager::Run(void){
@@ -77,7 +86,6 @@ void Engine::GameManager::Run(void){
             auto tickDelta = Engine::Utilities::instance()->getMillisFrom(&this->lastTick, &startTickTime);
             if(tickDelta >= Engine::Utilities::instance()->getMillisWaitTime(this->options->getTickRateTarget())){
                 Events::TimedEventDetails eventD("Tick", 3, false, startTickTime, this->startingTime, tickDelta, tickDelta);
-                //std::cout << "Tick Tick! Delta: " << tickDelta << std::endl;
                 ed->ExecuteTickEvent(&eventD);
                 this->lastTick = high_resolution_clock::now();
             }
@@ -90,6 +98,7 @@ void Engine::GameManager::Run(void){
         high_resolution_clock::time_point startFrameTime = high_resolution_clock::now();
         auto endpntr = this->windows.end();
         for(auto vpntr = this->windows.begin(); vpntr != endpntr; vpntr++){
+
             if(!((*vpntr)->isShown)) {
                 (*vpntr)->lastFrame = high_resolution_clock::now();
             }else {
@@ -105,19 +114,6 @@ void Engine::GameManager::Run(void){
                 }
             }
         }
-
-        //auto frameDelta =Engine::Utilities::instance()->getMillisFrom(&this->lastFrame, &startFrameTime);
-        /*if(frameDelta >= 0){
-            Engine::Utilities::instance()->getMillisWaitTime(Management::GameOptions::instance()->getFrameRateTarget())){
-            std::cout << "Frame Tick! Delta: " << frameDelta <<std::endl;
-            Events::TimedEventDetails evd("Frame", 2, false, startTickTime, this->startingTime, frameDelta, frameDelta);
-
-            this->lastFrame = high_resolution_clock::now();
-
-        }*/
-
-        // Actually dispatch rendering to the window...
-
 
     }
 
