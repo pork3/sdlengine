@@ -474,6 +474,33 @@ rendering/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Camera.cpp.s
 .PHONY : rendering/Camera.cpp.s
 
+rendering/Drawing.o: rendering/Drawing.cpp.o
+
+.PHONY : rendering/Drawing.o
+
+# target to build an object file
+rendering/Drawing.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Drawing.cpp.o
+.PHONY : rendering/Drawing.cpp.o
+
+rendering/Drawing.i: rendering/Drawing.cpp.i
+
+.PHONY : rendering/Drawing.i
+
+# target to preprocess a source file
+rendering/Drawing.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Drawing.cpp.i
+.PHONY : rendering/Drawing.cpp.i
+
+rendering/Drawing.s: rendering/Drawing.cpp.s
+
+.PHONY : rendering/Drawing.s
+
+# target to generate assembly for a file
+rendering/Drawing.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/rendering/Drawing.cpp.s
+.PHONY : rendering/Drawing.cpp.s
+
 rendering/Mesh.o: rendering/Mesh.cpp.o
 
 .PHONY : rendering/Mesh.o
@@ -684,6 +711,9 @@ help:
 	@echo "... rendering/Camera.o"
 	@echo "... rendering/Camera.i"
 	@echo "... rendering/Camera.s"
+	@echo "... rendering/Drawing.o"
+	@echo "... rendering/Drawing.i"
+	@echo "... rendering/Drawing.s"
 	@echo "... rendering/Mesh.o"
 	@echo "... rendering/Mesh.i"
 	@echo "... rendering/Mesh.s"

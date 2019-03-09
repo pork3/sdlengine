@@ -127,7 +127,7 @@ void Window::ShowWindow() {
 
     this->ExecuteGUIEvent(&eventD);
 
-    SDL_Delay(1);
+    //SDL_Delay(1);
     this->lastFrame = high_resolution_clock::now();
     SDL_ShowWindow(this->window);
     this->Update();
@@ -143,7 +143,6 @@ void Window::HideWindow() {
 void Window::Clear(float r, float g, float b, float a){
     glClearColor(r,g,b,a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    std::cout << "Cleared!" << " " << this << std::endl;
     this->isDirty = true;
 }
 

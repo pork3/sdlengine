@@ -93,12 +93,12 @@ public:
      */
     void UnregisterWindowListener(Listener::GameGUIListener* list);
 
-    SDL_Window*  GetContext() {return this->window;}
 
 
     /** GETTERS**/
     float GetAspectRatio();
     SDL_Window* GetWindow(){return this->window ;}
+    SDL_GLContext*  GetContext() {return &(this->glcontext);}
     int GetHeight() {return this->sheight; }
     int GetWidth() {return this->swidth; }
     Management::WindowOptions* GetWindowOptions(){return this->windOpts;}

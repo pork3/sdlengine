@@ -11,20 +11,20 @@
 				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine">
@@ -36,20 +36,12 @@
 				<Compiler>
 					<Add directory="/home/mylife/dd/sdlengine/headers"/>
 					<Add directory="/home/mylife/dd/sdlengine/sources"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 engine"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 engine"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine/fast">
@@ -61,30 +53,22 @@
 				<Compiler>
 					<Add directory="/home/mylife/dd/sdlengine/headers"/>
 					<Add directory="/home/mylife/dd/sdlengine/sources"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 engine/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 engine/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/mylife/dd/sdlengine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/mylife/dd/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -181,6 +165,12 @@
 		<Unit filename="/home/mylife/dd/sdlengine/rendering/Camera.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Drawing.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Drawing.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/mylife/dd/sdlengine/rendering/Mesh.cpp">
 			<Option target="engine"/>
 		</Unit>
@@ -203,6 +193,9 @@
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/mylife/dd/sdlengine/rendering/Textures.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/mylife/dd/sdlengine/rendering/Textures.hpp">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/mylife/dd/sdlengine/rendering/Window.cpp">

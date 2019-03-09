@@ -112,7 +112,7 @@ void Engine::GameManager::Run(void){
                     (*vpntr)->Update();
 
                     (*vpntr)->lastFrame = high_resolution_clock::now();
-                    SDL_Delay(1);
+                    //SDL_Delay(1);
                 }
             }
         }

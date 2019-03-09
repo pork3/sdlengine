@@ -14,17 +14,19 @@ public:
     int fc = 0;
     void gameGUI(Events::WindowEventDetails* e){
         fc++;
-        cout << fc << endl;
+        //out << fc << endl;
         Window* ww = e->getWindow();
         //ww->Clear(1.0f,1.0f,1.0f,1.0f);
-        ww->Clear((static_cast<float>(fc % 10)+1.0f)/10.0f,0.2f,1.0f,1.0f);
-        /*glColor3f(1.0f, 1.0f, 1.0f);
+        ww->Clear((static_cast<float>(fc % 10)+1.0f)/10.0f,0,0,1.0f);
+        if(fc % 2 == 0) {
+            glColor3f(1.0f, 1.0f, 1.0f);
 
-        glBegin(GL_TRIANGLES);
+            glBegin(GL_TRIANGLES);
             glVertex3f(0.0f, 1.0f, 0.0f);
             glVertex3f(-1.0f, -1.0f, 0.0f);
             glVertex3f(1.0f, -1.0f, 0.0f);
-        glEnd();*/
+            glEnd();
+        }
     }
 
 };
@@ -41,7 +43,7 @@ int main(int argc , char** argv){
     windHand ww;
     w->RegisterWindowListener(&ww, Events::Priority::HIGHEST);
     Management::WindowOptions* windOpts = w->GetWindowOptions();
-    windOpts->setFrameRateTarget(60);
+    windOpts->setFrameRateTarget(20);
     t->StartGame(false);
     w->ShowWindow();
     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
@@ -49,7 +51,7 @@ int main(int argc , char** argv){
     w->HideWindow();
     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     w->ShowWindow();
-    windOpts->setFrameRateTarget(60);
+    windOpts->setFrameRateTarget(20);
     std::this_thread::sleep_for(std::chrono::milliseconds(200000));
     t->StopGame(true);
     t->WaitForGameEnd();

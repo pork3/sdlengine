@@ -15,10 +15,12 @@ public:
     /*TODO add separate creation functions for
      * vertex and fragment shaders*/
 
+    /*binds a shader to an object in game*/
     void Bind();
-    /*updated the values in the shader*/
-    void Update(const Transform& t, const Camera& camera);
 
+    /*updated the values in the shader*/
+   // void Update(const Transform& t, const Camera& camera);
+   void Update(const Transform& transform);
 private:
 
     /** HELPER FUNCTIONS FOR CREATING AND VERIFYING SHADERS*/
@@ -26,6 +28,8 @@ private:
     GLuint createshader(const std::string& file, GLenum type);
     /*change in final to use error class*/
     void verifyshader(GLuint shader, GLuint flag, bool isprog, const std::string& error);
+
+
 
     /* enum to refer to shader types*/
     enum SHADERTYPE{
@@ -39,7 +43,7 @@ private:
         NUNIFORM
     };
 
-    /*handle of current position*/
+    /*handle of current position, where the program is*/
     GLuint prog;
     /*array of shaders*/
     GLuint nshaders[N_SHADER];

@@ -1,95 +1,56 @@
 #include "Mesh.h"
+#include <iostream>
 #include <vector>
 
+Mesh::~Mesh() {
+    glDeleteVertexArrays(1,&vertexarray);
 
-Mesh::Mesh(const std::string& fname){
-    /*loads mesh from file*/
-    IndexedModel model = OBJModel(fname).ToIndexedModel();
-    InitMesh(model);
 }
 
-Mesh::Mesh(Vertex* vert, unsigned int nvert,unsigned int* indeces, unsigned int nindeces) {
+void Mesh::Draw() {
 
-    IndexedModel model;
+    glBindVertexArray(vertexarray);
+                /*draw mode, where to start, how much to read */
+    glDrawArrays(GL_TRIANGLES,0, todraw);
 
-    unsigned  int i;
-    for(i=0; i < nvert; i++){
-
-        model.positions.push_back(*vert[i].GetPos());
-        model.texCoords.push_back(*vert[i].GetTex());
-        model.normals.push_back(*vert[i].GetNorm());
-    }
-
-    for( i = 0; i < nindeces; i++){
-        model.indices.push_back(indeces[i]);
-    }
-
-    InitMesh(model);
+    glBindVertexArray(0);
 }
 
-void Mesh::InitMesh(const IndexedModel &model) {
+Mesh::Mesh(Vertex *vert, unsigned int nvert) {
 
-    ndraw = model.indices.size();
+    this->todraw = nvert;
 
-    glGenVertexArrays(1, &vertArr);
-    /*bind the objects with opengl... this ties the calls to draw/update to the
-     * object passed in*/
-    glBindVertexArray(vertArr);
+    glGenVertexArrays(1, &vertexarray);
+    /*bind the vertext array to begin drawing*/
+    glBindVertexArray(vertexarray);
 
-    /**POSITION DATA**/
-    /*sets up space on graphics card and binds the space and sets opengl
-     * interpretation of data as an array/buffer*/
-    glGenBuffers(NBUFF, vertArrBuf);
-    glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[POSITION_VB]);
-    /*moving the data from ram to gpu*/
-    /*interp as array, size of data to move, addr, glhints */
-    glBufferData(GL_ARRAY_BUFFER, model.positions.size()*sizeof(model.positions[0]), &model.positions[0], GL_STATIC_DRAW );
-    /*tell opengl how to interpret the data*/
-    /*passes the attributes of the data, the order they should be read this ensures
-    the data is read into the gpu in a sequential fashion*/
+
+    std::vector<glm::vec3>positions;
+    std::vector<glm::vec2>texturecoordinates;
+    positions.reserve(nvert);
+    texturecoordinates.reserve(nvert);
+
+    for(unsigned int i = 0; i < nvert; i++){
+
+        positions.push_back(*vert[i].GetPos());
+        texturecoordinates.push_back(*vert[i].GetTexture());
+    }
+
+    glGenBuffers(NBUFF, vertexarraybufer);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexarraybufer[POSVERT]);
+    glBufferData( GL_ARRAY_BUFFER, nvert* sizeof(positions[0]), &positions[0], GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
-    /*3 pieces of float data*/
-    glVertexAttribPointer(0,3,GL_FLOAT, GL_FALSE, 0, nullptr);
+    glVertexAttribPointer(0, 3 , GL_FLOAT, GL_FALSE, 0, nullptr);
 
 
-
-    /** TEXTURE DATA ****/
-    glGenBuffers(NBUFF, vertArrBuf);
-    glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[TEXTURE_VB]);
-    glBufferData(GL_ARRAY_BUFFER, model.positions.size()*sizeof(model.texCoords[0]), &model.texCoords[0], GL_STATIC_DRAW );
+    glBindBuffer(GL_ARRAY_BUFFER,vertexarraybufer[TEXTCOORD]);
+    glBufferData( GL_ARRAY_BUFFER, nvert* sizeof(texturecoordinates[0]), &texturecoordinates[0], GL_STATIC_DRAW);
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1,2,GL_FLOAT, GL_FALSE, 0, nullptr);
 
 
-    /** INDEX BUFFER DATA BEGINS **/
-    /*array of access to other elements array*/
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,vertArrBuf[INDEX]);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, model.indices.size() * sizeof(model.indices[0]), &model.indices[0], GL_STATIC_DRAW );
-
-
-    /**NORMAL DATA BEGINS HERE**/
-    glBindBuffer(GL_ARRAY_BUFFER,vertArrBuf[NORMAL_VB]);
-    glBufferData(GL_ARRAY_BUFFER, model.normals.size()*sizeof(model.normals[0]), &model.normals[0], GL_STATIC_DRAW );
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(1,2,GL_FLOAT, GL_FALSE, 0, nullptr);
-
-    /*unbind, free*/
     glBindVertexArray(0);
-}
 
-Mesh::~Mesh() {
 
-    glDeleteVertexArrays(1, &vertArr);
-}
-
-void Mesh::DrawMesh() {
-    /*bind*/
-    glBindVertexArray(vertArr);
-
-    glDrawElements(GL_TRIANGLES, this->ndraw, GL_UNSIGNED_INT, 0 );
-    //glDrawArrays(GL_TRIANGLES, 0, this->ndraw);
-
-    /*unbind*/
-    glBindVertexArray(0);
 
 }
