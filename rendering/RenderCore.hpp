@@ -38,7 +38,7 @@ public:
     /*Note this will take an entity * later on*/
     void Render();
 
-    void SetVert(Vertex v[]);
+    void SetVert(Vertex v[], unsigned int size);
 
     bool ChangeWindow(Window& w);
 
@@ -54,15 +54,16 @@ private:
     Camera* camera;
     Window& window;
 
-    Shader*  defshader = nullptr;
+    Shader defshader;
 
     Mesh* m;
     SDL_GLContext context;
 
-    Transform* transform;
+    Transform transform;
 
     Textures texture;
 
+    float count = 0.0f;
 
 };
 

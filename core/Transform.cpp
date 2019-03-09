@@ -7,12 +7,8 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/transform.hpp>
 
-Transform::Transform(const glm::vec3& pos, const glm::vec3 rot, const glm::vec3 scl){
-
-        this->pos = pos;
-        this->rot = rot;
-        this->scl = scl;
-}
+Transform::Transform(const glm::vec3& pos, const glm::vec3 rot, const glm::vec3 scl):
+pos(pos),rot(rot), scl(scl){}
 
 glm::mat4 Transform::MatModel() const {
 

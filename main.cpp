@@ -38,14 +38,16 @@ private:
 int main(int argc , char** argv){
 
     Vertex ve[] = {
-                    Vertex(glm::vec3(-.5, .5, 0), glm::vec2(0,0)),
-                    Vertex(glm::vec3(0, .5, 0),glm::vec2(.5,1)),
-                    Vertex(glm::vec3(.5, -.5, 0), glm::vec2(.5,0)),};
+                    Vertex(glm::vec3(-.5, .5, 0), glm::vec2(1,0)),
+                    Vertex(glm::vec3(0, .5, 0),glm::vec2(1,1)),
+                    Vertex(glm::vec3(.5, -.5, 0), glm::vec2(1,0)),};
 
     Vertex v[] = {
             Vertex(glm::vec3(-1, 1, 0),glm::vec2(0,0)),
             Vertex(glm::vec3(0, .5, 0),glm::vec2(.5,1)),
             Vertex(glm::vec3(.5, -.5, 0), glm::vec2(.5,0)),};
+
+    unsigned int p = sizeof(v)/sizeof(v[0]);
 
 
     Application a = Application();
@@ -54,14 +56,14 @@ int main(int argc , char** argv){
     Window w = Window("tttt", 800, 800);
    //hader s = Shader("res/shaders/shader");
     RenderCore r = RenderCore(w);
-    r.SetVert(ve);
+    r.SetVert(ve,p);
 
 
     while( a.IsRunning() ){
         r.Render();
         a.Process(t);
         if(t.GetDown()){
-            r.SetVert(v);
+            r.SetVert(v,p);
             std::cout << "swag" << std::endl;
             r.Render();
         }

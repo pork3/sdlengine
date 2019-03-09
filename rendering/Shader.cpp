@@ -17,7 +17,7 @@ Shader::Shader(const std::string& fname){
 
     /*tells opengl which part of data to read as variable*/
     glBindAttribLocation(prog, 0, "position");
-    glBindAttribLocation(prog, 1, "texturecoord");
+    glBindAttribLocation(prog, 1, "textcoord");
 
     glLinkProgram(prog);
     verifyshader(prog, GL_LINK_STATUS, true, "Error  shader failed to link");
@@ -25,7 +25,7 @@ Shader::Shader(const std::string& fname){
     glValidateProgram(prog);
     verifyshader(prog, GL_VALIDATE_STATUS, true, "Error in shader failed validation");
 
-
+    nuniform[TRANSFORM] = glGetUniformLocation(prog, "transform");
 
 }
 
@@ -41,6 +41,14 @@ Shader::~Shader(){
     glDeleteProgram(prog);
 
 }
+
+void Shader::Update(const Transform &transform) {
+
+    glm::mat4 mdl = transform.MatModel();
+
+    glUniformMatrix4fv(nuniform[TRANSFORM], 1 , GL_FALSE, &mdl[0][0] );
+}
+
 /*
 void Shader::Update(const Transform& t, const Camera& camera)  {
 

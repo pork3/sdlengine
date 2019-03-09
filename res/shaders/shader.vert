@@ -5,8 +5,10 @@ attribute vec2 texturecoord;
 
 varying vec2 textcoord;
 
+uniform mat4 transform;
+
 void main(){
 
-   gl_Position = vec4(position, 1.0);
-   textcoord= texturecoord ;
+   gl_Position = transform * vec4(position , 1.0);
+   textcoord = texturecoord;
 }
