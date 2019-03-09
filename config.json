@@ -1,0 +1,32 @@
+{
+    "Window": {
+        "window_width": 800,
+        "window_height":800,
+        "is_fullscreen":false,
+        "is_center":true },
+    
+    "Shader": {
+        "default_dir":"res/shaders"
+    },
+
+    "Sound":{
+        "volume":40
+    },
+
+    "Multimedia" : {
+        "texture_dir":"res/textures",
+        "model_dir":"res/obj",
+        "music_dir":"res/"
+    },
+
+    "Logging" : {
+        "error_dir":"err/",
+        "is_time":true
+    },
+
+    "Debug":{
+        "display_fps":true,
+        "console_write":true
+    }
+
+}

@@ -20,16 +20,19 @@ namespace Settings {
 
     /*settings for window creation*/
     namespace Window{
-
         int window_width;
         int window_height;
         bool is_fullscreen;
         bool is_center;
+        void SetWidth();
+        void SetHeight();
+
     }
 
     namespace Shader{
 
         std::string default_dir;
+        // what is default_dir?
 
     }
 
@@ -58,7 +61,6 @@ namespace Settings {
         bool console_write;
 
     }
-
 };
 
 
