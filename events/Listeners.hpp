@@ -100,7 +100,7 @@ namespace Events{
         long long timeDelta,long long timeDeltaNow, Window* w): TimedEventDetails(event_n, id, is_canc, currentTime, startTime, timeDelta,timeDeltaNow), win(w){}
 
 
-
+        Window* getWindow(){return this->win;}
 
     };
 
@@ -114,9 +114,6 @@ namespace Events{
 namespace Listener{
     class GameListener{
     public:
-        // An event for when the listener is registered. Useful for loading essential
-        //  	resources.
-        virtual void listenerInit(Events::EventDetails* events)=0;
         // This function exists purely for allowing for casting checks. Has to be
         // 	public.
         virtual void __notcalled(){}

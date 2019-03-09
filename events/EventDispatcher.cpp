@@ -16,6 +16,24 @@ void Events::EventDispatcher::RegisterTickListener(GameTickListener* l,Priority 
     uuo->insert(l);
 }
 
+void Events::EventDispatcher::UnregisterTickListener(GameTickListener *list) {
+    for(int i = 5; i > 0; i--){
+        if(this->gameTickListeners.at(static_cast<Events::Priority>(i))->find(list) != this->gameTickListeners.at(static_cast<Events::Priority>(i))->end()){
+            this->gameTickListeners.at(static_cast<Events::Priority>(i))->erase(list);
+        }
+    }
+}
+
+void Events::EventDispatcher::UnregisterEventListener(GameEventsListener *list) {
+
+    for(int i = 5; i > 0; i--){
+        if(this->gameEventListeners.at(static_cast<Events::Priority>(i))->find(list) != this->gameEventListeners.at(static_cast<Events::Priority>(i))->end()){
+            this->gameEventListeners.at(static_cast<Events::Priority>(i))->erase(list);
+        }
+    }
+}
+
+
 bool Events::EventDispatcher::ExecuteUserDefinedEvents(string eventName, bool cancellable, Events::EventDetails* e){
     // If the event does not exist, return false and log an error.
     // TODO: LOG ERROR!
@@ -39,10 +57,11 @@ bool Events::EventDispatcher::ExecuteUserDefinedEvents(string eventName, bool ca
 }
 
 void Events::EventDispatcher::UnregisterUserdefinedListener(GenericEventListener* lis, string eventName){
-    auto enamePointer = this->userEventNames.find(eventName);
-    if(enamePointer != this->userEventNames.end()){
+    if(this->userEventNames.find(eventName) != this->userEventNames.end()){
         for(int i = 5; i > 0; i--){
-            this->userEventListeners.at(eventName)->at(static_cast<Priority>(i))->erase(lis);
+            if(this->userEventListeners.at(eventName)->at(static_cast<Priority>(i))->find(lis) != this->userEventListeners.at(eventName)->at(static_cast<Priority>(i))->end()){
+                this->userEventListeners.at(eventName)->at(static_cast<Priority>(i))->erase(lis);
+            }
         }
     }else {
         // Silently ignore the call if the event does not exist.

@@ -88,8 +88,6 @@ Window::Window(std::string title, int w, int h) : swidth(w), sheight(h), closere
 
 
 void Window::ExecuteGUIEvent(Events::WindowEventDetails* eventDetails){
-    // Do nothing...well actually...
-    // TODO
     auto utilRef = Engine::Utilities::instance();
     for(int i = 5; i > 0; i--){
         std::unordered_set<Listener::GameGUIListener*>* uuo =  this->gameGUIListeners.at(static_cast<Events::Priority>(i));
@@ -101,19 +99,20 @@ void Window::ExecuteGUIEvent(Events::WindowEventDetails* eventDetails){
             //eventDetails->eventTimeDeltaExact = utilRef->getMillisFrom(&new_time, &eventDetails->currentGameTime);
         }
     }
-
-
-    //std::cout << eventDetails->getEventTimeDelta() <<std::endl;
 }
 
 void Window::UnregisterWindowListener(Listener::GameGUIListener* list){
-    //TODO
+    for(int i = 5; i > 0; i--){
+        if(this->gameGUIListeners.at(static_cast<Events::Priority>(i))->find(list) != this->gameGUIListeners.at(static_cast<Events::Priority>(i))->end()){
+            this->gameGUIListeners.at(static_cast<Events::Priority>(i))->erase(list);
+        }
+    }
 
 }
 
 void Window::RegisterWindowListener(Listener::GameGUIListener* list, Events::Priority p) {
-
-//TODO
+    std::unordered_set<Listener::GameGUIListener*>* uuo = this->gameGUIListeners.at(p);
+    uuo->insert(list);
 }
 
 void Window::ShowWindow() {

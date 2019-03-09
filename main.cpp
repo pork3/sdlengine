@@ -3,13 +3,33 @@
 #include <chrono>
 #include <thread>
 #include <iostream>
+#include "./events/Listeners.hpp"
+
+
+
+class windHand : public Listener::GameGUIListener {
+public:
+    int fc = 0;
+    void gameGUI(Events::WindowEventDetails* e){
+        fc++;
+        cout << fc << endl;
+        Window* ww = e->getWindow();
+        ww->Clear(1.0f,1.0f,1.0f,1.0f);
+        //ww->Clear((static_cast<float>(fc % 10)+1.0f)/10.0f,0.2f,1.0f,1.0f);
+    }
+
+};
+
+
+
 
 int main(int argc , char** argv){
 
     Engine::GameManager* t = Engine::GameManager::instance();
 
     Window* w = t->CreateWindow("Test", 800, 600); // Window IS INITIALLY HIDDEN
-
+    windHand ww;
+    w->RegisterWindowListener(&ww, Events::Priority::HIGHEST);
     Management::WindowOptions* windOpts = w->GetWindowOptions();
     windOpts->setFrameRateTarget(2);
     t->StartGame(false);
