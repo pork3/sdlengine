@@ -3,6 +3,8 @@
 // All comments shall be less than 110 characters, as displayed from the line below.
 // 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 #include "Transform.h"
+#include "../rendering/Mesh.h"
+#include "../rendering/Textures.hpp"
 
 /*
  *
@@ -15,17 +17,17 @@
  *
  */
 
-class EntityShared {
+class ObjectShared {
 
 public:
 
-    EntityShared() = 0;
-
-    virtual void ProcessInput(const Event& e, float d);
+    ObjectShared() {};
 
     virtual void Update();
 
-    virtual Transform* GetTransform()
+    virtual Transform* GetTransform();
+
+    virtual void Render(const Textures& t, const Mesh& m);
 
 
 

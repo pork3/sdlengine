@@ -8,9 +8,9 @@ class Vertex{
 
 public:
 
-    Vertex(const glm::vec3& pos, const glm::vec2(texture)){
+    Vertex(const glm::vec3& pos, const glm::vec2& texture){
         this->pos = pos;
-        this->text = text;
+        this->text = texture;
     };
 
     glm::vec3* GetPos(){ return &pos; }

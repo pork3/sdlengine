@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-RenderCore::RenderCore(Window &w) : window(w) , texture(Textures("../res/textures/illuminati.jpg")){
+RenderCore::RenderCore(Window &w) : window(w ) , texture(Textures("../res/textures/pizza.jpg")){
 
     this->context = SDL_GL_CreateContext(w.GetContext());
     this->defshader = new Shader("../res/shaders/shader");
@@ -33,5 +33,16 @@ RenderCore::~RenderCore() {
 void RenderCore::SetVert(Vertex v[]) {
 
     m = new Mesh(v , 3 );
+}
+
+
+/*changes the current window the user is using*/
+bool RenderCore::ChangeWindow(Window &w) {
+
+    delete this->context;
+
+    this->window = w;
+    this->context = SDL_GL_CreateContext(w.GetContext());
+    return true;
 }
 

@@ -40,6 +40,8 @@ public:
 
     void SetVert(Vertex v[]);
 
+    bool ChangeWindow(Window& w);
+
     void SetCamer(const Camera& camera);
 
 private:
