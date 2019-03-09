@@ -117,8 +117,21 @@ void Window::RegisterWindowListener(Listener::GameGUIListener* list, Events::Pri
 
 void Window::ShowWindow() {
     this->isDirty = true; // Need to re-draw the window
+    /*
+     * To prevent the screen from being black due to being a new window, request rendering before showing the window.
+     */
+    high_resolution_clock::time_point startFrameTime = high_resolution_clock::now();
+    auto frameDelta = Engine::Utilities::instance()->getMillisFrom(&(this->lastFrame),
+                                                                   &startFrameTime);
+    Events::WindowEventDetails eventD("Frame", 2, false, startFrameTime, this->startingTime, frameDelta, frameDelta,this);
+
+    this->ExecuteGUIEvent(&eventD);
+
+    SDL_Delay(1);
+    this->lastFrame = high_resolution_clock::now();
     SDL_ShowWindow(this->window);
-    this->isShown = true;
+    this->Update();
+    this->isShown = true; // Need to re-draw the window
 }
 
 void Window::HideWindow() {
@@ -130,6 +143,7 @@ void Window::HideWindow() {
 void Window::Clear(float r, float g, float b, float a){
     glClearColor(r,g,b,a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    std::cout << "Cleared!" << " " << this << std::endl;
     this->isDirty = true;
 }
 
@@ -170,6 +184,8 @@ void Window::Update(){
     */
     SDL_GL_SwapWindow(this->window);
     this->isDirty = false;
+    SDL_GL_DeleteContext(this->glcontext);
+    this->glcontext = SDL_GL_CreateContext(this->window);
 }
 
 void Window::SetFullscreen() {

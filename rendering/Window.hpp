@@ -93,7 +93,7 @@ public:
      */
     void UnregisterWindowListener(Listener::GameGUIListener* list);
 
-
+    SDL_Window*  GetContext() {return this->window;}
 
 
     /** GETTERS**/
@@ -116,6 +116,7 @@ protected:
     bool isDirty;
     bool isShown;
     high_resolution_clock::time_point lastFrame;
+    high_resolution_clock::time_point startingTime;
     Management::WindowOptions* windOpts;
 private:
 

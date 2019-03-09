@@ -110,7 +110,9 @@ void Engine::GameManager::Run(void){
                     Events::WindowEventDetails eventD("Frame", 2, false, startFrameTime, this->startingTime, frameDelta, frameDelta, *vpntr);
                     (*vpntr)->ExecuteGUIEvent(&eventD);
                     (*vpntr)->Update();
+
                     (*vpntr)->lastFrame = high_resolution_clock::now();
+                    SDL_Delay(1);
                 }
             }
         }
