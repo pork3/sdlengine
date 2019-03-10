@@ -69,8 +69,42 @@ namespace Math{
 
 
     // A useful class of Vector2's that store only ints.
-    class Vector2Int : Vector2<int>{};
-    class Vector2Float : Vector2<float>{};
+    class Vector2Int : public Vector2<int>{
+    public:
+        Vector2Int():Vector2<int>(){}
+        Vector2Int(int x, int y):Vector2<int>(x,y){}
+
+        Vector2Int(Vector2<int>& A){
+            this->x = A.getX();
+            this->y = A.getY();
+        }
+        Vector2Int(Vector2<int>&& A){
+            this->x = A.getX();
+            this->y = A.getY();
+        }
+    };
+    class Vector2Float : public Vector2<float>{
+    public:
+        Vector2Float():Vector2<float>(){}
+        Vector2Float(float x, float y):Vector2<float>(x,y){}
+
+        Vector2Float(Vector2<float>& A){
+            this->x = A.getX();
+            this->y = A.getY();
+        }
+        Vector2Float(Vector2<int>& A){
+            this->x = A.getX();
+            this->y = A.getY();
+        }
+        Vector2Float(Vector2<float>&& A){
+            this->x = A.getX();
+            this->y = A.getY();
+        }
+        Vector2Float(Vector2<int>&& A){
+            this->x = A.getX();
+            this->y = A.getY();
+        }
+    };
 }
 
 #endif /* ENGINE_MATH_HPP_ */

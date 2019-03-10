@@ -22,16 +22,6 @@
 #include <iostream>
 #include "../utils/Utils.hpp"
 #include "../utils/GameOptions.hpp"
-#include "../rendering/Window.hpp"
-
-
-// Defines the function that allows for the creation of new windows.
-Window* Engine::GameManager::CreateWindow(std::string title, int width, int height){
-// Does nothing.
-    Window* window = new Window(title, width, height);
-    this->windows.insert(window);
-    return window;
-}
 
 
 
@@ -76,7 +66,7 @@ std::mutex* Engine::GameManager::io_mutex = new std::mutex; // Cheating?
 void Engine::GameManager::Run(void){
     Events::EventDispatcher* ed = Events::EventDispatcher::instance();
     while(this->gameRunning){
-        bool runTick = false;
+        /*bool runTick = false;
         Engine::GameManager::io_mutex->lock();
         runTick = this->gamePaused;
         this->io_mutex->unlock();
@@ -92,10 +82,10 @@ void Engine::GameManager::Run(void){
         }else{
             //Always set the lastTick
             this->lastTick = high_resolution_clock::now();
-        }
+        }*/
 
         // Go through all registered windows (assuming they still exist)
-        high_resolution_clock::time_point startFrameTime = high_resolution_clock::now();
+        /*high_resolution_clock::time_point startFrameTime = high_resolution_clock::now();
         auto endpntr = this->windows.end();
         for(auto vpntr = this->windows.begin(); vpntr != endpntr; vpntr++){
 
@@ -115,7 +105,7 @@ void Engine::GameManager::Run(void){
                     //SDL_Delay(1);
                 }
             }
-        }
+        }*/
 
     }
 

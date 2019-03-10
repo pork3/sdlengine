@@ -11,6 +11,16 @@ void Events::EventDispatcher::RegisterEventListener( GameEventsListener* l,Prior
     uuo->insert(l);
 }
 
+void Events::EventDispatcher::RegisterKeyListener( GameKeyboardListener* l,Priority p){
+    std::unordered_set<GameKeyboardListener*>* uuo = gameKeyListeners.at(p);
+    uuo->insert(l);
+}
+void Events::EventDispatcher::RegisterMouseListener( GameMouseListener* l,Priority p){
+    std::unordered_set<GameMouseListener*>* uuo = gameMouseListeners.at(p);
+    uuo->insert(l);
+}
+
+
 void Events::EventDispatcher::RegisterTickListener(GameTickListener* l,Priority p){
     std::unordered_set<GameTickListener*>* uuo = gameTickListeners.at(p);
     uuo->insert(l);
@@ -23,6 +33,24 @@ void Events::EventDispatcher::UnregisterTickListener(GameTickListener *list) {
         }
     }
 }
+
+
+void Events::EventDispatcher::UnregisterMouseListener(GameMouseListener *list) {
+    for(int i = 5; i > 0; i--){
+        if(this->gameMouseListeners.at(static_cast<Events::Priority>(i))->find(list) != this->gameMouseListeners.at(static_cast<Events::Priority>(i))->end()){
+            this->gameMouseListeners.at(static_cast<Events::Priority>(i))->erase(list);
+        }
+    }
+}
+
+void Events::EventDispatcher::UnregisterKeyListener(GameKeyboardListener *list) {
+    for(int i = 5; i > 0; i--){
+        if(this->gameKeyListeners.at(static_cast<Events::Priority>(i))->find(list) != this->gameKeyListeners.at(static_cast<Events::Priority>(i))->end()){
+            this->gameKeyListeners.at(static_cast<Events::Priority>(i))->erase(list);
+        }
+    }
+}
+
 
 void Events::EventDispatcher::UnregisterEventListener(GameEventsListener *list) {
 
@@ -107,6 +135,60 @@ void Events::EventDispatcher::ExecuteTickEvent(TimedEventDetails* details){
             std::chrono::high_resolution_clock::time_point new_time = high_resolution_clock::now();
             details->eventTimeDeltaExact = utilRef->getMillisFrom(&new_time, &details->currentGameTime);
         }
+        if(details->isCancelled()){
+            break;
+        }
+    }
+}
+
+void Events::EventDispatcher::ExecuteMouseEvent(MouseButtonEventDetails* details){
+    auto utilRef = Engine::Utilities::instance();
+    for(int i = 5; i > 0; i--){
+        std::unordered_set<GameMouseListener*>* uuo = gameMouseListeners.at(static_cast<Events::Priority>(i));
+        auto start= uuo->begin();
+        auto ends = uuo->end();
+        for(; ends != start; start++){
+            switch(details->getID()){
+            case 6:
+                    (*start)->gameMouseButtonPressed(details);
+                    break;
+            case 7:
+                    (*start)->gameMouseButtonReleased(details);
+                    break;
+            case 8:
+                    (*start)->gameMouseMoved(details);
+                    break;
+            default:
+                std::cerr << "Unknown id" << details->getID() << std::endl;
+            }
+        }
+        if(details->isCancelled()){
+            break;
+        }
+    }
+}
+
+void Events::EventDispatcher::ExecuteKeyEvent(KeyboardEventDetails* details){
+    auto utilRef = Engine::Utilities::instance();
+    for(int i = 5; i > 0; i--){
+        std::unordered_set<GameKeyboardListener*>* uuo = gameKeyListeners.at(static_cast<Events::Priority>(i));
+        auto start= uuo->begin();
+        auto ends = uuo->end();
+        for(; ends != start; start++){
+            switch(details->getID()){
+            case 4:
+                    (*start)->gameKeyPressed(details);
+                    break;
+            case 5:
+                    (*start)->gameKeyReleased(details);
+                    break;
+            default:
+                std::cerr << "Unknown id" << details->getID() << std::endl;
+            }
+        }
+        if(details->isCancelled()){
+            break;
+        }
     }
 }
 
@@ -128,6 +210,9 @@ void Events::EventDispatcher::ExecuteGameEvent( GameEvent event,EventDetails* de
                 default:
                     break;
             }
+        }
+        if(details->isCancelled() && event != GameEvent::START){
+            break;
         }
     }
 }

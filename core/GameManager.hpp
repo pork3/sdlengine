@@ -20,7 +20,7 @@
 
 // Includes other files
 #include "../events/Listeners.hpp"
-#include "../rendering/Window.hpp"
+
 #include "../events/EventDispatcher.hpp"
 // Different c libraries needed
 #include <mutex> // For creation of "lockable"/"only-one-user-at-a-time" objects.
@@ -64,12 +64,6 @@ namespace Engine{
             mainGameThread->join();
         };
 
-        /*function to initialized all OS specific libraries*/
-        void InitSystems();
-
-        /*wrapper function to initialized window*/
-        Window* CreateWindow(std::string title, int height, int width);
-
         Management::GameOptions* GetOptions();
 
         static std::mutex* io_mutex;
@@ -91,9 +85,7 @@ namespace Engine{
         high_resolution_clock::time_point lastTick;
         Management::GameOptions* options;
 
-        std::unordered_set<Window*> windows;
 
-        //Window* window;
     };
     void jumperThread(GameManager* gm);
 }
