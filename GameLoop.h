@@ -5,7 +5,7 @@
   init sdl
 
 */
-#include "./sdlfiles/Event.h"
+
 #include "./core/GameManager.hpp"
 #include "./sdlfiles/Display.h"
 #include "./glfiles/Mesh.h"
