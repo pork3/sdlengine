@@ -152,5 +152,22 @@ void Engine::GameLoop::Run(){
                     break;
             }
         }
+	high_resolution_clock::time_point startFrameTime = high_resolution_clock::now();
+        auto vpntr = this->display;
+        if(!((vpntr)->isShown)) {
+            (vpntr)->lastFrame = high_resolution_clock::now();
+        }else {
+            auto frameDelta = Engine::Utilities::instance()->getMillisFrom(&((vpntr)->lastFrame),
+                                                                           &startFrameTime);
+            if ((vpntr)->isDirty || frameDelta >= Engine::Utilities::instance()->getMillisWaitTime((vpntr)->windOpts->getFrameRateTarget())){
+                // The frame has requested to render.
+                // Call the frame listeners registered to this window, may include world renderers
+                Events::WindowEventDetails eventD(this, "Frame", 2, false, startFrameTime, this->startingTime, frameDelta, frameDelta, vpntr);
+                (vpntr)->ExecuteGUIEvent(&eventD);
+                (vpntr)->SwapDisp();
+
+                (vpntr)->lastFrame = high_resolution_clock::now();
+            }
+        }
     }
 }
