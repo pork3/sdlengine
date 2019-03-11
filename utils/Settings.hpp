@@ -1,8 +1,8 @@
 // All comments shall be less than 110 characters, as displayed from the line below.
 // 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 /*
- *	Last updated by: Zachary Bower
- *	Last updated on: Feb. 23, 2019
+ *	Last updated by: Linshu Huang
+ *	Last updated on: March. 11, 2019
  *
  *	Purpose:
  *		This class contains all settings for creating defaults and allowing the user to change/access defaults
@@ -14,6 +14,8 @@
 #ifndef ENGINE_SETTINGS_H
 #define ENGINE_SETTINGS_H
 #include <string>
+#include <fstream>
+
 
 namespace Settings {
 
@@ -24,8 +26,8 @@ namespace Settings {
         int window_height;
         bool is_fullscreen;
         bool is_center;
-        void SetWidth();
-        void SetHeight();
+        //void SetWidth();
+        //void SetHeight();
 
     }
 

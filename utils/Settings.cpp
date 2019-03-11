@@ -1,10 +1,24 @@
-#include "../lib/json/json.h"
+/*
+ *	Last updated by: Linshu Huang
+ *	Last updated on: March. 11, 2019
+ *
+ *	Purpose:
+ *		This class contains all settings for creating defaults and allowing the user to change/access defaults
+ *		This lass will make use of a JSON config, or some way of storing settings
+ *
+ *	Functions without comments are assumed to be a single line, set or get a single variable, and the
+ *		comment is to be found next to the respective variable definition.
+ */
+/*
+#include </home/linshu/programs/VTK-6.3.0/ThirdParty/jsoncpp/vtkjsoncpp/json/json.h>
 #include "Settings.hpp"
 #include <fstream>
 
 // credit: https://stackoverflow.com/questions/32205981/reading-json-files-in-c
 
-std::ifstream config_file("../config,json", std::ifstream::binary);
+
+
+std::ifstream config_file("../config.json", std::ifstream::binary);
 config_file >> config;
 cout<<config;
 
@@ -15,7 +29,10 @@ if (!config["Window"].isNull()) {
         }
     }
 }
+Settings setting;
+cout<<setting.window_width<<endl;
 
+/*
 // json is something like this:
 "Window": {
         "window_width": 800,
@@ -46,7 +63,7 @@ if (!config["Window"].isNull()) {
         "display_fps":true,
         "console_write":true
     }
- 
+*/
 
 /*
 

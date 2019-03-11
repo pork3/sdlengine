@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/zach/sdlengine/lib/stb_image.c" "/home/zach/sdlengine/CMakeFiles/engine.dir/lib/stb_image.c.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/lib/stb_image.c" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/lib/stb_image.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -15,20 +15,20 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "sources"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zach/sdlengine/Camera.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/Camera.cpp.o"
-  "/home/zach/sdlengine/GameLoop.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/GameLoop.cpp.o"
-  "/home/zach/sdlengine/Transform.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/Transform.cpp.o"
-  "/home/zach/sdlengine/core/GameManager.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/core/GameManager.cpp.o"
-  "/home/zach/sdlengine/err/Error.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/err/Error.cpp.o"
-  "/home/zach/sdlengine/events/EventDispatcher.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/events/EventDispatcher.cpp.o"
-  "/home/zach/sdlengine/events/InputHandler.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/events/InputHandler.cpp.o"
-  "/home/zach/sdlengine/glfiles/Mesh.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
-  "/home/zach/sdlengine/glfiles/ObjLoader.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
-  "/home/zach/sdlengine/glfiles/Shader.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
-  "/home/zach/sdlengine/glfiles/Textures.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
-  "/home/zach/sdlengine/main.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/main.cpp.o"
-  "/home/zach/sdlengine/sdlfiles/Display.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
-  "/home/zach/sdlengine/utils/Settings.cpp" "/home/zach/sdlengine/CMakeFiles/engine.dir/utils/Settings.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/Camera.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/Camera.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/GameLoop.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/GameLoop.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/Transform.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/Transform.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/core/GameManager.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/core/GameManager.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/err/Error.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/err/Error.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/events/EventDispatcher.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/events/EventDispatcher.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/events/InputHandler.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/events/InputHandler.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/glfiles/Mesh.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/glfiles/ObjLoader.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/glfiles/Shader.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/glfiles/Textures.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/main.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/main.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/sdlfiles/Display.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
+  "/home/linshu/Documents/4_2CIS422/sdlengine/utils/Settings.cpp" "/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir/utils/Settings.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

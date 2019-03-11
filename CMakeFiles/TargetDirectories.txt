@@ -1,3 +1,3 @@
-/home/zach/sdlengine/CMakeFiles/rebuild_cache.dir
-/home/zach/sdlengine/CMakeFiles/engine.dir
-/home/zach/sdlengine/CMakeFiles/edit_cache.dir
+/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/rebuild_cache.dir
+/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/engine.dir
+/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles/edit_cache.dir
