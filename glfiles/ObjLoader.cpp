@@ -3,6 +3,8 @@
 #include <iostream>
 #include <algorithm>
 #include <map>
+#include "../err/Error.hpp"
+
 
 static bool CompareOBJIndexPtr(const OBJIndex* a, const OBJIndex* b);
 static inline unsigned int FindNextChar(unsigned int start, const char* str, unsigned int length, char token);
@@ -50,7 +52,7 @@ OBJModel::OBJModel(const std::string& fileName)
     }
     else
     {
-        std::cerr << "Unable to load mesh: " << fileName << std::endl;
+        Error::WriteError("Unable to load mesh: " + fileName);
     }
 }
 

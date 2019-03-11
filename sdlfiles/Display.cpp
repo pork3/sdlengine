@@ -31,6 +31,7 @@ Display::Display(Engine::GameLoop* g, std::string title, int w, int h) : swithd(
      * items out of camera view*/
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
+    glEnable(GL_MULTISAMPLE);
 
     /*sets up a default white background*/
     glClearColor(1.0f,1.0f,1.0f,1.0f);
@@ -58,6 +59,10 @@ void Display::set_attr(){
     /*use double bufffer if available, with double buffer drawing a 'staging'
      * window and swapping what the user sees*/
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
+    /*set up anti aliasing*/
+    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
 
 }
 

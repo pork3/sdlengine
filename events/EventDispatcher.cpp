@@ -3,6 +3,7 @@
 #include <iostream>
 #include <chrono>
 #include "../utils/Utils.hpp"
+#include "../err/Error.hpp"
 
 
 using namespace Listener;
@@ -94,6 +95,7 @@ void Events::EventDispatcher::UnregisterUserdefinedListener(GenericEventListener
     }else {
         // Silently ignore the call if the event does not exist.
         // TODO: NEED TO LOG ERROR, EVENT DOES NOT EXIST
+            Error::WriteError("Error in unregistering event, dispatcher encountered error with : " + eventName);
     }
 }
 
@@ -104,6 +106,7 @@ void Events::EventDispatcher::RegisterUserDefinedListener( GenericEventListener*
     }else {
         // Silently ignore the call if the event does not exist.
         // TODO: NEED TO LOG ERROR, EVENT DOES NOT EXIST
+        Error::WriteError("Error in registering event : " + eventName);
     }
 }
 
@@ -159,7 +162,7 @@ void Events::EventDispatcher::ExecuteMouseEvent(MouseButtonEventDetails* details
                     (*start)->gameMouseMoved(details);
                     break;
             default:
-                std::cerr << "Unknown id" << details->getID() << std::endl;
+                Error::WriteError("Error in mouse event : Unknown ID with " + std::to_string(details->getID()));
             }
         }
         if(details->isCancelled()){
@@ -183,7 +186,7 @@ void Events::EventDispatcher::ExecuteKeyEvent(KeyboardEventDetails* details){
                     (*start)->gameKeyReleased(details);
                     break;
             default:
-                std::cerr << "Unknown id" << details->getID() << std::endl;
+                Error::WriteError("Error in keyboard event : Unknown ID with " + std::to_string(details->getID()));
             }
         }
         if(details->isCancelled()){

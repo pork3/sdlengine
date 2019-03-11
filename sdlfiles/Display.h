@@ -60,6 +60,13 @@ public:
 
     void ExecuteGUIEvent(Events::WindowEventDetails* details);
 
+    inline void SetRenderTarget() {
+        /*set the window as the current target and set the whole width*/
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+        glViewport(0,0,swithd,sheight);
+    }
+
+
     Management::WindowOptions* GetWindowOptions(){return this->windOpts;}
     std::map<Events::Priority, std::unordered_set<Listener::GameGUIListener*>* > gameGUIListeners{};
     bool isShown;
