@@ -34,7 +34,7 @@ add_executable(engine ${HDRS} ${SRCS}  GameLoop.cpp GameLoop.h main.cpp Transfor
 
 # We need a CMAKE_DIR with some code to find external dependencies
 SET(engine_CMAKE_DIR "${engine_SOURCE_DIR}/cmake")
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 ######################FIND REQUIRED PACKAGES
 
 #set openglpreference to get newest it finds
