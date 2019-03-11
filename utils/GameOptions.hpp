@@ -16,25 +16,44 @@
  */
 #include "../utils/Utils.hpp"
 namespace Management{
-    class GameOptions : public OnlyOne{
+    class WindowOptions{
     public:
-        /*
-            Getter's and Setter's for protected variables below.
-        */
-        static GameOptions* &instance(){static GameOptions* opts= new GameOptions; return opts;}
+        // Default constructor that sets the target frame rate to 60 frames per second
+        WindowOptions() : frameRateTarget(60) {}
 
-        void setFrameRateTarget(short fr){this->frameRateTarget = fr;}
+        // A constructor with a specified target frame rate
+        WindowOptions(short targetRate) : frameRateTarget(targetRate) {}
+
+        // Getter for the frame rate target
         short getFrameRateTarget(){return this->frameRateTarget;}
-        short getTickRateTarget(){return this->tickRateTarget;}
-        void setTickRateTarget(short tr){this->tickRateTarget = tr;}
 
-
-        // Extend functionality to allow for arbitrary options to be set/get.
+        // Setter for the frame rate target
+        void setFrameRateTarget(short target){this->frameRateTarget = target;}
 
     protected:
+        // The target frame rate for the window
         short frameRateTarget = 60;
+    };
+
+    class GameOptions{
+    public:
+        // Default constructor that sets the target tick (see latter) rate to 60 main logic loops (ticks)
+        //       per second
+        GameOptions() : tickRateTarget(60){}
+
+        // A constructor with a specified target tick rate
+        GameOptions(short targetRate) : tickRateTarget(targetRate){}
+
+        // Getter for the tick rate target
+        short getTickRateTarget(){return this->tickRateTarget;}
+
+        // Setter for the tick rate target
+        void setTickRateTarget(short tr){this->tickRateTarget = tr;}
+
+    protected:
+        // The target tick rate for the window
         short tickRateTarget = 60;
-        GameOptions(){}
+
     };
 }
 

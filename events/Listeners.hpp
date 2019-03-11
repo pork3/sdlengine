@@ -26,12 +26,22 @@
 // General includes
 #include <string>
 #include <chrono>
+#include <SDL2/SDL.h>
+#include <iostream>
+#include <GL/glew.h>
+
+#include "../math/EngineMath.hpp"
+namespace Engine{class GameLoop;}
+using namespace Engine;
+class Display;
 namespace Events{
     class EventDispatcher;
     enum Priority {HIGHEST=5, HIGH=4, MEDIUM=3, LOW=2, LOWEST=1};
     class EventDetails{
     protected:
         // Note: Sections below are redundant as the events are seperated into group
+
+        Engine::GameLoop* game;
         bool is_cancelled; // Is the event cancelled
         std::string event_name; // Name of event (semi-redundant)
         int event_id; // The ID of the event (semi-redundant)
@@ -39,10 +49,12 @@ namespace Events{
         std::chrono::high_resolution_clock::time_point currentGameTime; // The current game time
         std::chrono::high_resolution_clock::time_point startGameTime; // The
     public:
-        EventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime ) :
-                is_cancelled(false),  event_name(event_n), event_id(id),is_cancellable(is_canc), currentGameTime(currentTime), startGameTime(startTime) {}
+        EventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime,
+                std::chrono::high_resolution_clock::time_point startTime ) : game(g),is_cancelled(false),  event_name(event_n),
+                event_id(id),is_cancellable(is_canc), currentGameTime(currentTime), startGameTime(startTime) {}
 
         friend class Events::EventDispatcher;
+        GameLoop* getGame(){return game;}
         bool isCancelled(){return this->is_cancelled;}
         bool isCancellable(){return this->is_cancellable;}
 
@@ -78,9 +90,9 @@ namespace Events{
         long long eventTimeDelta;
         long long eventTimeDeltaExact;
     public:
-        TimedEventDetails(std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
-                          long long timeDelta,long long timeDeltaNow): EventDetails(event_n, id, is_canc, currentTime, startTime), eventTimeDelta(timeDelta),
-                                                                       eventTimeDeltaExact(timeDeltaNow){}
+        TimedEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+                          long long timeDelta,long long timeDeltaNow): EventDetails(g, event_n, id, is_canc, currentTime, startTime), eventTimeDelta(timeDelta),
+                                                                      eventTimeDeltaExact(timeDeltaNow){}
 
         friend class EventDispatcher;
         long long getEventTimeDeltaExact(){return this->eventTimeDeltaExact;}
@@ -88,14 +100,75 @@ namespace Events{
 
 
     };
+
+    class WindowEventDetails : public TimedEventDetails{
+    protected:
+        Display* win;
+    public:
+
+        WindowEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+        long long timeDelta,long long timeDeltaNow, Display* w): TimedEventDetails(g, event_n, id, is_canc, currentTime, startTime, timeDelta,timeDeltaNow), win(w){}
+
+
+        Display* getDisplay(){return this->win;}
+
+    };
+
+
+    class MouseButtonEventDetails : public EventDetails {
+    protected:
+        /*
+            Mouse Button ID:
+                0 = No button (mouse moved event)
+                1 = Button Left
+                2 = Button Right
+                3 = Button Middle
+                4 = Button X1
+                5 = Button X2
+        */
+        int mouseButton;
+        Math::Vector2Int mousePos;
+        Math::Vector2Int deltaMousePos;
+        SDL_Keymod keyMods;
+        int numClicks;
+    public:
+        MouseButtonEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+            int mouseB, Math::Vector2Int mouseP, Math::Vector2Int deltaMP, int numcl, SDL_Keymod keym) : EventDetails(g, event_n,id, is_canc, currentTime, startTime),mouseButton(mouseB),
+            mousePos(mouseP), deltaMousePos(deltaMP), keyMods(keym), numClicks(numcl){}
+
+        bool isButtonLDown(){return mouseButton & SDL_BUTTON_LMASK;}
+        bool isButtonRDown(){return mouseButton & SDL_BUTTON_RMASK;}
+        bool isButtonMDown(){return mouseButton & SDL_BUTTON_MMASK;}
+        bool isButtonX1Down(){return mouseButton & SDL_BUTTON_X1MASK;}
+        bool isButtonX2Down(){return mouseButton & SDL_BUTTON_X2MASK;}
+        int getAllMouseButtons(){return mouseButton;}
+        Math::Vector2Int getMousePosition(){return mousePos;}
+        Math::Vector2Int getPreviousMousePosition(){return Math::Vector2Int(mousePos - deltaMousePos);}
+        Math::Vector2Int getDeltaMousePosition(){return deltaMousePos;}
+        SDL_Keymod getKeymod(){return this->keyMods;}
+        bool isModifiedBy(SDL_Keymod modifier){return this->keyMods & modifier;}
+        int getNumClicks(){return this->numClicks;}
+    };
+
+    class KeyboardEventDetails : public EventDetails {
+    protected:
+        SDL_Keycode key;
+        bool isRepeated;
+        SDL_Keymod keyMods;
+    public:
+        KeyboardEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+            SDL_Keycode key, bool isRep, SDL_Keymod keym) : EventDetails(g, event_n,id, is_canc, currentTime, startTime), key(key), isRepeated(isRep), keyMods(keym){}
+
+        int getKey(){return key;}
+        bool getIsRepeated(){return isRepeated;}
+        SDL_Keymod getKeymod(){return this->keyMods;}
+        bool isModifiedBy(SDL_Keymod modifier){return this->keyMods & modifier;}
+    };
 }
 
 namespace Listener{
     class GameListener{
     public:
-        // An event for when the listener is registered. Useful for loading essential
-        //  	resources.
-        virtual void listenerInit(Events::EventDetails* events)=0;
         // This function exists purely for allowing for casting checks. Has to be
         // 	public.
         virtual void __notcalled(){}
@@ -108,7 +181,7 @@ namespace Listener{
         /*
             This function will be called whenever a user-defined event is told to execute.
         */
-        virtual void eventExecuted(const Events::EventDetails& events)=0;
+        virtual void eventExecuted(Events::EventDetails* events)=0;
     };
 
 
@@ -148,7 +221,26 @@ namespace Listener{
         //
         //	ms_delay is the number of milliseconds between the current and previous
         //		call to this function.
-        virtual void gameGUI(Events::TimedEventDetails* events)=0;
+        virtual void gameGUI(Events::WindowEventDetails* events)=0;
+    };
+
+    class GameKeyboardListener : virtual public GameListener {
+    public:
+
+
+        virtual void gameKeyPressed(Events::KeyboardEventDetails* event)=0;
+
+        virtual void gameKeyReleased(Events::KeyboardEventDetails* event)=0;
+    };
+
+    class GameMouseListener : virtual public GameListener {
+    public:
+
+        virtual void gameMouseButtonPressed(Events::MouseButtonEventDetails* event)=0;
+
+        virtual void gameMouseButtonReleased(Events::MouseButtonEventDetails* event)=0;
+
+        virtual void gameMouseMoved(Events::MouseButtonEventDetails* event)=0;
     };
 
 

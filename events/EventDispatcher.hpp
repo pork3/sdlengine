@@ -25,7 +25,6 @@
 
 
 #include "Listeners.hpp"
-#include "../core/GameManager.hpp"
 #include <string>
 #include <map>
 #include <unordered_set>
@@ -33,43 +32,61 @@
 
 using namespace Listener;
 using namespace std;
+namespace Engine{
+    class GameLoop;
+}
 namespace Events{
-    enum GameEvent {INIT, START, STOP};
+    enum GameEvent {START, STOP};
     class EventDispatcher{
 
     public:
-        friend class Engine::GameManager;
+        friend class Engine::GameLoop;
         static EventDispatcher* &instance(){static EventDispatcher* e_d = new EventDispatcher(); return e_d;}
 
-        void RegisterListener(GameListener* listener, Priority p);
+        void RegisterEventListener( GameEventsListener* l,Priority p);
+        void UnregisterEventListener( GameEventsListener* listener);
 
-        void Unregister(GameListener* listener);
+        void RegisterTickListener(GameTickListener* l,Priority p);
+        void UnregisterTickListener( GameTickListener* listener);
 
-        int RegisterUserDefinedEvent(string eventName);
+        void RegisterKeyListener(GameKeyboardListener* l,Priority p);
+        void UnregisterKeyListener( GameKeyboardListener* listener);
 
-        void RegisterUserDefinedListener(GenericEventListener* lis, string eventName, Priority p);
+
+        void RegisterMouseListener(GameMouseListener* l,Priority p);
+        void UnregisterMouseListener( GameMouseListener* listener);
+
+        bool RegisterUserDefinedEvent(const string eventName);
+
+        void RegisterUserDefinedListener( GenericEventListener* lis, string eventName, Priority p);
 
         void UnregisterUserdefinedListener(GenericEventListener* lis, string eventName);
 
 
-        bool ExecuteUserDefinedEvents(string eventName, bool cancellable, EventDetails* details);
+
+
+
+        bool ExecuteUserDefinedEvents( string eventName, bool cancellable, EventDetails* details);
     protected:
-        void RegisterEventListener(GameEventsListener* l,Priority p);
-        void RegisterTickListener(GameTickListener* l,Priority p);
-        void RegisterGUIListener(GameGUIListener* l,Priority p);
-        void ExecuteTickEvent(TimedEventDetails* details);
-        void ExecuteGUIEvent(TimedEventDetails* details);
         void ExecuteGameEvent(GameEvent event, EventDetails* details);
+        void ExecuteTickEvent(TimedEventDetails* details);
+        void ExecuteKeyEvent(KeyboardEventDetails* details);
+        void ExecuteMouseEvent(MouseButtonEventDetails* details);
+
+
     private:
         std::map<Priority, std::unordered_set<GameEventsListener*>* > gameEventListeners{};
         std::map<Priority, std::unordered_set<GameTickListener*>* > gameTickListeners{};
-        std::map<Priority, std::unordered_set<GameGUIListener*>* > gameGUIListeners{};
-
+        std::map<Priority, std::unordered_set<GameKeyboardListener*>* > gameKeyListeners{};
+        std::map<Priority, std::unordered_set<GameMouseListener*>* > gameMouseListeners{};
+        std::unordered_set<std::string> userEventNames{};
+        std::map<std::string, std::map<Priority, std::unordered_set<GenericEventListener*>* >* > userEventListeners;
         EventDispatcher(){
             for(int i = 5; i > 0; i--){
                 gameEventListeners.insert(pair<Priority, std::unordered_set<GameEventsListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameEventsListener*>{}});
-                gameGUIListeners.insert(pair<Priority, std::unordered_set<GameGUIListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameGUIListener*>{}});
                 gameTickListeners.insert(pair<Priority, std::unordered_set<GameTickListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameTickListener*>{}});
+                gameKeyListeners.insert(pair<Priority, std::unordered_set<GameKeyboardListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameKeyboardListener*>{}});
+                gameMouseListeners.insert(pair<Priority, std::unordered_set<GameMouseListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameMouseListener*>{}});
             }
         }
     };

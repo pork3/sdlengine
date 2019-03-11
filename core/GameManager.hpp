@@ -20,11 +20,17 @@
 
 // Includes other files
 #include "../events/Listeners.hpp"
+<<<<<<< HEAD
+
+#include "../events/EventDispatcher.hpp"
+=======
 #include "../rendering/Window.hpp"
+>>>>>>> master
 // Different c libraries needed
 #include <mutex> // For creation of "lockable"/"only-one-user-at-a-time" objects.
 #include <thread> // For creation of threads (sub-programs running independently to each other but same code.
 #include <string>
+#include <unordered_set>
 #include "../utils/GameOptions.hpp"
 namespace Events{
     class EventDispatcher;
@@ -32,7 +38,7 @@ namespace Events{
 namespace Engine{
 
     class GameManager : public Management::OnlyOne{
-        friend class Events::EventDispatcher;
+    friend class Events::EventDispatcher;
 
     public:
         friend void jumperThread(GameManager* gm); // Serves as a jump point to run.
@@ -62,11 +68,15 @@ namespace Engine{
             mainGameThread->join();
         };
 
+<<<<<<< HEAD
+        Management::GameOptions* GetOptions();
+=======
         /*function to initialized all OS specific libraries*/
         void InitSystems();
 
         /*wrapper function to initialized window*/
         bool CreateWindow(std::string title, int height, int width);
+>>>>>>> master
 
         static std::mutex* io_mutex;
     protected:
@@ -74,7 +84,11 @@ namespace Engine{
 
         void Run(); // A function that is called internally for running the game. Note: this function should be only called from a thread.
         bool gamePaused = false; // A bool stating whether the game is paused or not.
+<<<<<<< HEAD
+        GameManager() : startingTime(std::chrono::high_resolution_clock::now()), lastTick(std::chrono::high_resolution_clock::now()){}; // Default constructor. Protected so that this class can not be created multiple times, therefore enforcing a "create once" policy.
+=======
         GameManager():startingTime(std::chrono::high_resolution_clock::now()), lastFrame(std::chrono::high_resolution_clock::now()), lastTick(std::chrono::high_resolution_clock::now()){}; // Default constructor. Protected so that this class can not be created multiple times, therefore enforcing a "create once" policy.
+>>>>>>> master
         ~GameManager(); // Default deconstructor.
 
         GameManager(const GameManager &gm){}
@@ -83,11 +97,15 @@ namespace Engine{
     private:
         bool gameSetup = false;
         std::chrono::high_resolution_clock::time_point startingTime;
-        high_resolution_clock::time_point lastFrame;
+
         high_resolution_clock::time_point lastTick;
         Management::GameOptions* options;
 
+<<<<<<< HEAD
+
+=======
         Window* window;
+>>>>>>> master
     };
     void jumperThread(GameManager* gm);
 }
