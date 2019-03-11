@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="engine"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/zach/sdlengine"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/zach/sdlengine"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="engine">
+				<Option output="/home/zach/sdlengine/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zach/sdlengine"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zach/sdlengine/headers"/>
+					<Add directory="/home/zach/sdlengine/sources"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 engine"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="engine/fast">
+				<Option output="/home/zach/sdlengine/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zach/sdlengine"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zach/sdlengine/headers"/>
+					<Add directory="/home/zach/sdlengine/sources"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 engine/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/zach/sdlengine"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zach/sdlengine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/zach/sdlengine/Camera.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/Camera.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/GameLoop.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/GameLoop.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/Transform.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/Transform.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/core/GameManager.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/core/GameManager.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/err/Error.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/err/Error.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/events/EventDispatcher.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/events/EventDispatcher.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/events/Input.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/events/InputHandler.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/events/InputHandler.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/events/Listeners.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/Mesh.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/Mesh.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/ObjLoader.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/ObjLoader.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/Shader.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/Shader.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/Textures.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/glfiles/Textures.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/lib/stb_image.c">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/lib/stb_image.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/main.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/math/EngineMath.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/sdlfiles/Display.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/sdlfiles/Display.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/utils/GameOptions.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/utils/Settings.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/utils/Settings.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/utils/Utils.hpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/cmake/FindGlew.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zach/sdlengine/cmake/FindSDL2.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

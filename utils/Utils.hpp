@@ -18,6 +18,7 @@
 
 
 #include <chrono>
+#include <climits>
 using namespace std::chrono;
 namespace Engine{
     class Utilities{
@@ -43,8 +44,11 @@ namespace Engine{
             If the rate is 0 or negative, it will be treated as uncapped and hence it will return 0.
         */
         long long getMillisWaitTime(short rate){
-            if(rate <= 0){
+            if(rate == 0){
                 return 0;
+            }
+            if(rate < 0){
+                return LLONG_MAX;
             }
             double drate = rate;
             double delta = 1000.0 / drate; //1000 since rate is in ____ per second, so we need millis.

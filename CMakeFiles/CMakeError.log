@@ -1,0 +1,106 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_40325/fast"
+/usr/bin/make -f CMakeFiles/cmTC_40325.dir/build.make CMakeFiles/cmTC_40325.dir/build
+make[1]: Entering directory '/media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40325.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_40325.dir/CheckSymbolExists.c.o   -c /media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_40325
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40325.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_40325.dir/CheckSymbolExists.c.o  -o cmTC_40325 
+CMakeFiles/cmTC_40325.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_40325.dir/build.make:97: recipe for target 'cmTC_40325' failed
+make[1]: *** [cmTC_40325] Error 1
+make[1]: Leaving directory '/media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_40325/fast' failed
+make: *** [cmTC_40325/fast] Error 2
+
+File /media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_951c8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_951c8.dir/build.make CMakeFiles/cmTC_951c8.dir/build
+make[1]: Entering directory '/media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_951c8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_951c8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_951c8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_951c8.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_951c8.dir/CheckFunctionExists.c.o  -o cmTC_951c8 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_951c8.dir/build.make:97: recipe for target 'cmTC_951c8' failed
+make[1]: *** [cmTC_951c8] Error 1
+make[1]: Leaving directory '/media/sf_ubuntu/cc/sdlengine/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_951c8/fast' failed
+make: *** [cmTC_951c8/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/zach/sdlengine/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_688ee/fast"
+/usr/bin/make -f CMakeFiles/cmTC_688ee.dir/build.make CMakeFiles/cmTC_688ee.dir/build
+make[1]: Entering directory '/home/zach/sdlengine/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_688ee.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_688ee.dir/CheckSymbolExists.c.o   -c /home/zach/sdlengine/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_688ee
+/opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_688ee.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_688ee.dir/CheckSymbolExists.c.o  -o cmTC_688ee 
+/usr/bin/ld: CMakeFiles/cmTC_688ee.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_688ee.dir/build.make:87: cmTC_688ee] Error 1
+make[1]: Leaving directory '/home/zach/sdlengine/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_688ee/fast] Error 2
+
+File /home/zach/sdlengine/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/zach/sdlengine/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1f874/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1f874.dir/build.make CMakeFiles/cmTC_1f874.dir/build
+make[1]: Entering directory '/home/zach/sdlengine/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1f874.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1f874.dir/CheckFunctionExists.c.o   -c /opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1f874
+/opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f874.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_1f874.dir/CheckFunctionExists.c.o  -o cmTC_1f874 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_1f874.dir/build.make:87: cmTC_1f874] Error 1
+make[1]: Leaving directory '/home/zach/sdlengine/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_1f874/fast] Error 2
+
+
