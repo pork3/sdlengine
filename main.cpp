@@ -45,12 +45,12 @@ public:
 
         cam = new Camera(glm::vec3(1,0,5), 70.0f, aspectratio, 0.01f, 1000.0f);
 
-        s = new Shader("../glfiles/shaders/testshader");
+        s = new Shader("./glfiles/shaders/testshader");
 
-        te = new Textures("../glfiles/textures/illuminati.jpg");
+        te = new Textures("./glfiles/textures/illuminati.jpg");
 
         m1 = new Mesh(*v, sizeof(v)/sizeof(v[0]), ind, sizeof(ind)/sizeof(ind[0]));
-        m2 = new Mesh("../glfiles/obj/Crate1.obj");
+        m2 = new Mesh("./glfiles/obj/Crate1.obj");
 
     }
     void gameMouseButtonPressed(Events::MouseButtonEventDetails* event){
