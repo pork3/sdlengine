@@ -14,7 +14,6 @@ file(GLOB_RECURSE HDRS ${engine_SOURCE_DIR}/*.h
         ${engine_SOURCE_DIR}/*.hpp)
 #find source files
 file(GLOB_RECURSE SRCS
-        ${engine_SOURCE_DIR}/*.CXX
         ${engine_SOURCE_DIR}/core/*.cpp
         ${engine_SOURCE_DIR}/err/*.cpp
         ${engine_SOURCE_DIR}/events/*.cpp
