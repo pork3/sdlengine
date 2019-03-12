@@ -27,6 +27,7 @@ Display::Display(Engine::GameManager* g, std::string title, int w, int h) : swit
         std::cout << "Failed to initialized openGL. Reason: " << glewGetErrorString(glok) << "."<<  std::endl;
         exit(1);
     }
+    //SDL_SetRelativeMouseMode(SDL_TRUE);
     /*enable z/depth buffer*/
     glEnable(GL_DEPTH_TEST);
     /*enable back face culling open gl assistance in 'creating the illusion of 3d by not drawing

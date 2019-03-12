@@ -133,7 +133,7 @@ void Engine::GameManager::Run(){
 					// The mouse pointer has moved on the display
 					// This event is cancellable
                     Events::MouseButtonEventDetails eventD(this, "MouseMove", 8, true, startSDLTime, this->startingTime,
-                                                           e.button.state,
+                                                           SDL_GetMouseState(NULL,NULL),
                                                            Math::Vector2Int(static_cast<int>(e.motion.x),
                                                                             static_cast<int>(e.motion.y)),
                                                            Math::Vector2Int(static_cast<int>(e.motion.xrel),
