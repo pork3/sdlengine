@@ -5,6 +5,32 @@
 #include "../utils/Utils.hpp"
 
 
+// All comments shall be less than 110 characters, as displayed from the line below.
+// 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+
+/*
+ 
+ 	Last updated by: Chase Craig
+ 	Last updated on: Mar. 11, 2019
+ 
+ 	Purpose:
+		
+    Notes:
+        The known event ID's:
+            0: Game starting event
+            1: Game stopping event
+            2: Game logic/computation event
+            3: Window rendering event
+			4: Keyboard key pressed event
+			5: Keyboard key released event
+			6: Mouse button pressed event
+			7: Mouse button released event
+			8: Mouse moved event
+ 
+ 
+ */
+
+
 using namespace Listener;
 void Events::EventDispatcher::RegisterEventListener( GameEventsListener* l,Priority p){
     std::unordered_set<GameEventsListener*>* uuo = gameEventListeners.at(p);
