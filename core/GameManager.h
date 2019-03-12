@@ -1,23 +1,41 @@
-#ifndef ENGINE_GAMELOOP_H
-#define ENGINE_GAMELOOP_H
-/*This class contains the main game loop...
-  current flow:
-  init sdl
+#ifndef ENGINE_GAMEMANAGER_H
+#define ENGINE_GAMEMANAGER_H
 
-*/
+// All comments shall be less than 110 characters, as displayed from the line below.
+// 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+
+/*
+  
+  	Last updated by: Chase Craig
+  	Last updated on: Mar. 11, 2019
+  
+  	Purpose:
+        This header file is to outline the functions available for controlling the logic for handling the
+			game engine. This serves as the main controller interface for managing the game state, as well as
+			running the main game loop and dispatching rendering and logic events.
+
+	Usage:
+		To create and bind a window to this object, 
+
+ */
+
+
+
+
 #include "../sdlfiles/Event.h"
 #include "../sdlfiles/Display.h"
 #include "../glfiles/Mesh.h"
 #include "../events/EventDispatcher.hpp"
 
 namespace Engine {
-    class GameLoop {
+    class GameManager {
 
 
     public:
-        GameLoop();
+		
+        GameManager();
 
-        ~GameLoop();
+        ~GameManager();
 
         /*called to create the window*/
         void CreateWindow(std::string title, int w, int h);
@@ -74,4 +92,4 @@ namespace Engine {
     };
 }
 
-#endif //ENGINE_GAMELOOP_H
+#endif //ENGINE_GAMEMANAGER_H

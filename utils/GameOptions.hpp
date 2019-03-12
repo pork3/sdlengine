@@ -4,15 +4,22 @@
 // 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 
 /*
- *
- *	Last updated by: Chase Craig
- *	Last updated on: Feb. 24, 2019
- *
- *	Purpose:
- *      This header file is to provide a configurations class for managing game options such as frame rate.
- *      This inherits from OnlyOne, which enforces that there may only be 1 such instance of this object.
- *
- *
+ 
+ 	Last updated by: Chase Craig
+ 	Last updated on: Feb. 24, 2019
+ 
+  	Purpose:
+        This header file is to provide a configurations class for managing game options such as frame rate.
+        	This inherits from OnlyOne, which enforces that there may only be 1 such instance of this object.
+		
+		This function differs from the Settings.hpp file by being created per window/per logic handler, while
+			the classes in Settings.hpp are global settings.
+	
+	Usage:
+		In both, the constructor is for setting the target rate of the object (if the system is under load,
+			this target may be missed). Can get the target or set the target using the getters and setters.
+ 
+ 
  */
 #include "../utils/Utils.hpp"
 namespace Management{
