@@ -5,6 +5,15 @@
 
 #ifndef ENGINE_DISPLAY_H
 #define ENGINE_DISPLAY_H
+/*
+	Citation: Due to a bug where apple products could not run, we are attempting the 
+		below to give the user a last chance to run our code.
+*/
+#ifdef __APPLE__
+#define glGenVertexArrays glGenVertexArraysAPPLE
+#define glBindVertexArray glBindVertexArrayAPPLE
+#define glDeleteVertexArrays glDeleteVertexArraysAPPLE
+#endif
 
 #include <string>
 #include <SDL2/SDL.h>
