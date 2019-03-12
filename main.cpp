@@ -97,8 +97,9 @@ public:
 
 };
 
+extern int IGNORE_OPENGL_VERSION;
 int main() {
-
+	IGNORE_OPENGL_VERSION = 1;
     Engine::GameManager gl = Engine::GameManager();
     Events::EventDispatcher* ee = Events::EventDispatcher::instance();
     gl.CreateWindow("Test2", 1000, 600);

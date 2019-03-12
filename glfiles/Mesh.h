@@ -1,10 +1,22 @@
 #ifndef ENGINE_MESH_H
 #define ENGINE_MESH_H
 
+
+
 #include <glm/glm.hpp>
 #include <GL/glew.h>
 #include <string>
 #include "ObjLoader.h"
+
+
+#ifdef __APPLE__
+#undef glGenVertexArrays
+#undef glBindVertexArray
+#undef glDeleteVertexArrays
+#define glGenVertexArrays glGenVertexArraysAPPLE
+#define glBindVertexArray glBindVertexArrayAPPLE
+#define glDeleteVertexArrays glDeleteVertexArraysAPPLE
+#endif
 
 /* data class represented by vertex with
  * a x, y, z  * [1 , 2 , 3] */
