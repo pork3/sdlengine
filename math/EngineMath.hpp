@@ -1,5 +1,20 @@
 #ifndef ENGINE_MATH_HPP_
 #define ENGINE_MATH_HPP_
+// All comments shall be less than 110 characters, as displayed from the line below.
+// 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+
+/*
+ 
+ 	Last updated by: Chase Craig
+ 	Last updated on: Mar. 11, 2019
+ 
+ 	Purpose:
+		To provide useful data structures for performing normal game calculations.
+		Currently just holds a Vector2<T> object, with Vector2Float and Vector2Int
+		helper objects.
+*/
+
+
 
 #include <iostream>
 using namespace std;
@@ -54,13 +69,14 @@ namespace Math{
         T x;
         T y;
     };
-
+	// For printing out vectors
     template <class T>
     ostream& operator<<(ostream& os, const Vector2<T> &obj){
         os << "Vector2 {" << obj.x <<", "<< obj.y<<"}";
         return os;
     }
 
+	// For reading in vectors
     template <class T>
     istream& operator>>(istream& is, Vector2<T> &obj){
         is >> obj.x >> obj.y;
@@ -71,9 +87,11 @@ namespace Math{
     // A useful class of Vector2's that store only ints.
     class Vector2Int : public Vector2<int>{
     public:
+		// Default constructors from parent
         Vector2Int():Vector2<int>(){}
         Vector2Int(int x, int y):Vector2<int>(x,y){}
 
+		// Default copy and move constructors
         Vector2Int(Vector2<int>& A){
             this->x = A.getX();
             this->y = A.getY();
@@ -83,11 +101,15 @@ namespace Math{
             this->y = A.getY();
         }
     };
+	
+	// A useful class of Vector2's that store only floats.
     class Vector2Float : public Vector2<float>{
     public:
+		// Default constructors from parent
         Vector2Float():Vector2<float>(){}
         Vector2Float(float x, float y):Vector2<float>(x,y){}
 
+		// Default copy and move constructors.
         Vector2Float(Vector2<float>& A){
             this->x = A.getX();
             this->y = A.getY();
