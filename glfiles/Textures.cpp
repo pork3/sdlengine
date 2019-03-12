@@ -41,7 +41,7 @@ Textures::~Textures(){
 
 void Textures::Bind(unsigned int textnum){
 
-    if ( textnum >=0 || textnum < 32 ){
+    if ( textnum < 32 ){
 
         /*set the active texture and bind*/
         glActiveTexture(GL_TEXTURE0 + textnum);
