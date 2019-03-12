@@ -33,9 +33,9 @@ void Mesh::InitMesh(const IndexedModel &model) {
 
 	if(!GLEW_VERSION_3_0 && !GLEW_ARB_vertex_array_object && IGNORE_OPENGL_VERSION == 0){
 		// Should be logged, however for the time being it will be printed to std err
-		std::cerr << "Potential Crash Warning: OpenGL version verification error, outdated OpenGL detected. Problems may occur"
-			<< " due to using future/experimental OpenGL functions. Expected error for crash, segfault 11."<<std::endl
-			<< "	To disable this warning, set the external int IGNORE_OPENGL_VERSION to 1 in your main.";
+		std::cerr << "Potential Crash Warning: OpenGL version verification error, outdated OpenGL detected. Problems may occur";
+		std::cerr<< " due to using future/experimental OpenGL functions. Expected error for crash, segfault 11."<<std::endl;
+		std::cerr<< "	To disable this warning, set the external int IGNORE_OPENGL_VERSION to 1 in your main." << std::endl;
 	}
 	
     glGenVertexArrays(1, &vertArr);
