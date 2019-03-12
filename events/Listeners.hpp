@@ -6,21 +6,33 @@
 // 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 
 /*
- *	Last updated by: Chase Craig
- *	Last updated on: Feb. 19, 2019
- *
- *	Purpose:
- *		This header class is to provide base classes for a game script to register event handlers/
- *			intercepters for game events executed by the game engine.
- *
- *	Conventions:
- *		Classes and Namespaces should have every word Capitalized with no _
- *		Functions should have their first word lowercase, all other words are Capitalized, no _
- *			Exceptions: Constructors and Destructors must match the class name exactly.
- *		Parameters should be all lowercase with _ seperating words
- *
- *	Functions without comments are assumed to be a single line, set or get a single variable, and the
- *		comment is to be found next to the respective variable definition.
+ 	Last updated by: Chase Craig
+ 	Last updated on: Mar. 11, 2019
+ 
+ 	Purpose:
+ 		This header class is to provide base classes for a game script to register event handlers/
+ 			intercepters for game events executed by the game engine.
+ 
+ 	Conventions:
+ 		Classes and Namespaces should have every word Capitalized with no _
+ 		Functions should have their first word lowercase, all other words are Capitalized, no _
+ 			Exceptions: Constructors and Destructors must match the class name exactly.
+ 		Parameters should be all lowercase with _ seperating words
+ 
+   	Functions without comments are assumed to be a single line, set or get a single variable, and the
+ 		comment is to be found next to the respective variable definition.
+ 
+	Notes:
+		The known event ID's:
+			0: Game starting event
+			1: Game stopping event
+			2: Game logic/computation event
+			3: Window rendering event
+			4: Keyboard key pressed event
+			5: Keyboard key released event
+			6: Mouse button pressed event
+			7: Mouse button released event
+			8: Mouse moved event
  */
 
 // General includes
@@ -31,8 +43,13 @@
 #include <GL/glew.h>
 
 #include "../math/EngineMath.hpp"
-namespace Engine{class GameLoop;}
+// Forward declare the GameManager class.
+namespace Engine{class GameManager;}
+
+// Use the Engine namespace.
 using namespace Engine;
+
+// Forward declare the Display class.
 class Display;
 namespace Events{
     class EventDispatcher;

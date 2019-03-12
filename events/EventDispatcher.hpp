@@ -6,18 +6,53 @@
 
 /*
   
-  	Last updated by: Chase Craig
-  	Last updated on: Mar. 11, 2019
-  
-  	Purpose:
-  		This header class is to provide base classes for managing the game.
+  	
+ 	Last updated by: Chase Craig
+ 	Last updated on: Mar. 11, 2019
+ 
+ 	Purpose:
+		To handle the registration, management and execution of event listeners. Has a priority system to 
+			allow for some sort of ordering of importance in event execution.
+			
     Notes:
         The known event ID's:
-            0: Game START
-            1: Game STOP
-            2: Game GUI
-			3: Game TICK
-            
+            0: Game starting event
+            1: Game stopping event
+            2: Game logic/computation event
+            3: Window rendering event
+			4: Keyboard key pressed event
+			5: Keyboard key released event
+			6: Mouse button pressed event
+			7: Mouse button released event
+			8: Mouse moved event
+			
+		This will implement executors, registers and unregisters, to save on typing, the basic rundown
+			on the logic implemented in each function is as follows (slightly changed based on the 
+			function themselves)
+			
+		All events are stored in map object, which map priorities to unordered sets of pointers. 
+		Exception is user defined events, which then has an outermost map that maps strings to 
+			maps of unordered sets of pointers.
+		
+		For registration:
+			Find the map (priority -> set) that corresponds to the given register.
+			Get the set for the provided priority, insert the pointer into the set.
+			
+		For unregistration:
+			Find the map (priority -> set) that corresponds to the given unregister.
+			Goes through all possible priorities, test to see if "finding" the pointer is equal to the 
+				end pointer of the set (representing not found), if not, then remove the pointer.
+		
+		For execution:
+			Find the map (priority -> set) the corresponds to the given execution event.
+			Go through all possible priorities from HIGHEST to LOWEST, looping through all listeners
+				in the given set given by the map for the current priority and calling their respective 
+				functions. 
+			If the current priority set is finished and the event is cancelled*, stop looping throught the
+				priorities and return. 
+			Exception to the above is with the game starting event, it is cancellable to represent starting
+				paused or not. Thus, it will continue with execution through all priorities.
+ 
  
  
  */
@@ -30,19 +65,27 @@
 #include <unordered_set>
 #include <iostream>
 
+// Use the Listener and standard namespace.
 using namespace Listener;
 using namespace std;
+// Forward declare the GameManager class
 namespace Engine{
-    class GameLoop;
+    class GameManager;
 }
 namespace Events{
+	// Creates an enum to represent the Start and Stop game event
     enum GameEvent {START, STOP};
+	
+	// The EventDispatcher class
     class EventDispatcher{
-
+	
     public:
-        friend class Engine::GameLoop;
-        static EventDispatcher* &instance(){static EventDispatcher* e_d = new EventDispatcher(); return e_d;}
+		// GameManager is a friend of this class, and hence can see/modify/call protected/private fields.
+        friend class Engine::GameManager;
+        // An instance function that ensures that only one copy of event dispatcher is ever created.
+		static EventDispatcher* &instance(){static EventDispatcher* e_d = new EventDispatcher(); return e_d;}
 
+		// Register and unregister functions for given listeners.
         void RegisterEventListener( GameEventsListener* l,Priority p);
         void UnregisterEventListener( GameEventsListener* listener);
 
@@ -56,18 +99,22 @@ namespace Events{
         void RegisterMouseListener(GameMouseListener* l,Priority p);
         void UnregisterMouseListener( GameMouseListener* listener);
 
-
+		// Register for user defined events (not listeners). Returns true/false based on success of creating
+		//		an event with the given name.
         bool RegisterUserDefinedEvent(const string eventName);
 
+		// Register for register user defined event listeners.
         void RegisterUserDefinedListener( GenericEventListener* lis, string eventName, Priority p);
 
+		// Unregister for user defined event listeners.
         void UnregisterUserdefinedListener(GenericEventListener* lis, string eventName);
 
 
 
 
-
-        bool ExecuteUserDefinedEvents( string eventName, bool cancellable, EventDetails* details);
+		// A (public) executor for executing user defined events. Returns true/false based on if the event
+		// 		was not cancelled (cancelled = false).
+        bool ExecuteUserDefinedEvents( string eventName, EventDetails* details);
     protected:
         void ExecuteGameEvent(GameEvent event, EventDetails* details);
         void ExecuteTickEvent(TimedEventDetails* details);

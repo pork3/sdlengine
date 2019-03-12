@@ -99,7 +99,7 @@ public:
 
 int main() {
 
-    Engine::GameLoop gl = Engine::GameLoop();
+    Engine::GameManager gl = Engine::GameManager();
     Events::EventDispatcher* ee = Events::EventDispatcher::instance();
     gl.CreateWindow("Test2", 1000, 600);
     Display* aa = gl.getWindow();

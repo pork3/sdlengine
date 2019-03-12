@@ -2,7 +2,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
-Display::Display(Engine::GameLoop* g, std::string title, int w, int h) : swithd(w), sheight(h), game(g){
+Display::Display(Engine::GameManager* g, std::string title, int w, int h) : swithd(w), sheight(h), game(g){
     this->isDirty = false;
     for(int i = 5; i > 0; i--){
         this->gameGUIListeners.insert(pair<Events::Priority, std::unordered_set<Listener::GameGUIListener*>* >

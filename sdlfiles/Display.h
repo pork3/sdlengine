@@ -13,12 +13,12 @@
 #include <map>
 #include <unordered_set>
 namespace Engine{
-    class GameLoop;
+    class GameManager;
 }
 class Display {
 
 public:
-    Display(Engine::GameLoop* g, std::string title, int w, int h);
+    Display(Engine::GameManager* g, std::string title, int w, int h);
     ~Display();
 
     /*function used to swap between the double buffers*/
@@ -72,7 +72,7 @@ private:
     int swithd;
     int sheight;
     std::string title;
-    Engine::GameLoop* game;
+    Engine::GameManager* game;
 
     /*function used to set OpenGl attributes when creating window*/
     void set_attr();
