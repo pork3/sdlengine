@@ -5,21 +5,21 @@
 // 45678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 
 /*
- *
- *	Last updated by: Chase Craig
- *	Last updated on: Feb. 23, 2019
- *
- *	Purpose:
- *		This header class is to provide base classes for managing the game.
- *  Notes:
- *      The known event ID's:
-            0: Game INIT
-            1: Game START
-            2: Game STOP
-            3: Game TICK
-            4: Game GUI
- *
- *
+  
+  	Last updated by: Chase Craig
+  	Last updated on: Mar. 11, 2019
+  
+  	Purpose:
+  		This header class is to provide base classes for managing the game.
+    Notes:
+        The known event ID's:
+            0: Game START
+            1: Game STOP
+            2: Game GUI
+			3: Game TICK
+            
+ 
+ 
  */
 
 

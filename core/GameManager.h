@@ -15,8 +15,33 @@
 			running the main game loop and dispatching rendering and logic events.
 
 	Usage:
-		To create and bind a window to this object, 
-
+		CreateWindow creates a window with a given title, width and height.
+		
+		StartGame signals the game manager to start running the game loop. However, this method WILL RUN ON
+			THE THREAD THAT CALLED IT, AND HENCE WILL BLOCK ALL FURTHER EXECUTION UNTIL THE GAME HAS STOPPED.
+			If the startPaused argument is true, it acts as if the caller had executed a pause game request 
+			immediately after calling StartGame.
+		
+		PauseGame will stop executing game tick events, however all other events will be executed. 
+		
+		ResumeGame will resume execution of game ticks in the game loop.
+		
+		StopGame will attempt to halt execution of the game loop. This will call all listeners registered
+			to recieve this event and will see if they cancel this event (which results in an ignored
+			close request). If the "forced" argument is true, the event can not be cancelled.
+		
+		AbortGame will attempt to immediately halt the execution of the game loop and does not alert any
+			listeners for game stopping. The argument is for logging purposes, as it will be logged.
+			
+		GetOptions will return a pointer to the gameOptions object that stores the "tick" rate for the
+			game logic loop.
+		
+		GetWindow will return a pointer to the display (window) object attached to this object.
+		
+		Although hidden: 
+			Run is the internal function responsible for running the game loop.
+			Initback is the function responsible for setting up the back end SDL and OpenGL calls.
+			
  */
 
 
@@ -37,7 +62,7 @@ namespace Engine {
 
         ~GameManager();
 
-        /*called to create the window*/
+        // Called to create the window
         void CreateWindow(std::string title, int w, int h);
 
         void StartGame(bool startPaused){
@@ -78,9 +103,9 @@ namespace Engine {
         Display* getWindow(){return this->display;}
     private:
         void Run();
-        /*function called by constructor to initialize the back end*/
         void initback();
 
+		// Variables attached to this object.
         Display *display = nullptr;
         bool gameRunning;
         std::chrono::high_resolution_clock::time_point startingTime;
