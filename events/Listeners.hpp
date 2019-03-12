@@ -57,7 +57,7 @@ namespace Events{
     class EventDetails{
     protected:
         // Note: Sections below are redundant as the events are seperated into group
-        Engine::GameLoop* game;
+        Engine::GameManager* game;
         bool is_cancelled; // Is the event cancelled
         std::string event_name; // Name of event (semi-redundant)
         int event_id; // The ID of the event (semi-redundant)
@@ -65,12 +65,12 @@ namespace Events{
         std::chrono::high_resolution_clock::time_point currentGameTime; // The current game time
         std::chrono::high_resolution_clock::time_point startGameTime; // The
     public:
-        EventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime,
+        EventDetails(GameManager* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime,
                 std::chrono::high_resolution_clock::time_point startTime ) : game(g),is_cancelled(false),  event_name(event_n),
                 event_id(id),is_cancellable(is_canc), currentGameTime(currentTime), startGameTime(startTime) {}
 
         friend class Events::EventDispatcher;
-        GameLoop* getGame(){return game;}
+        GameManager* getGame(){return game;}
         bool isCancelled(){return this->is_cancelled;}
         bool isCancellable(){return this->is_cancellable;}
 
@@ -106,7 +106,7 @@ namespace Events{
         long long eventTimeDelta;
         long long eventTimeDeltaExact;
     public:
-        TimedEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+        TimedEventDetails(GameManager* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
                           long long timeDelta,long long timeDeltaNow): EventDetails(g, event_n, id, is_canc, currentTime, startTime), eventTimeDelta(timeDelta),
                                                                        eventTimeDeltaExact(timeDeltaNow){}
 
@@ -121,7 +121,7 @@ namespace Events{
     protected:
         Display* win;
     public:
-        WindowEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+        WindowEventDetails(GameManager* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
         long long timeDelta,long long timeDeltaNow, Display* w): TimedEventDetails(g, event_n, id, is_canc, currentTime, startTime, timeDelta,timeDeltaNow), win(w){}
 
 
@@ -146,7 +146,7 @@ namespace Events{
         SDL_Keymod keyMods;
         int numClicks;
     public:
-        MouseButtonEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+        MouseButtonEventDetails(GameManager* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
             int mouseB, Math::Vector2Int mouseP, Math::Vector2Int deltaMP, int numcl, SDL_Keymod keym) : EventDetails(g, event_n,id, is_canc, currentTime, startTime),mouseButton(mouseB),
             mousePos(mouseP), deltaMousePos(deltaMP), keyMods(keym), numClicks(numcl){}
 
@@ -170,7 +170,7 @@ namespace Events{
         bool isRepeated;
         SDL_Keymod keyMods;
     public:
-        KeyboardEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
+        KeyboardEventDetails(GameManager* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
             SDL_Keycode key, bool isRep, SDL_Keymod keym) : EventDetails(g, event_n,id, is_canc, currentTime, startTime), key(key), isRepeated(isRep), keyMods(keym){}
 
         int getKey(){return key;}

@@ -30,6 +30,18 @@
 
 #include <chrono>
 #include <climits>
+namespace Management{
+    class OnlyOne{
+    protected:
+        OnlyOne()=default;
+        virtual ~OnlyOne()=default;
+        OnlyOne(const OnlyOne&)=delete;
+        OnlyOne& operator=(const OnlyOne&)=delete;
+        OnlyOne(OnlyOne&&)=delete;
+        OnlyOne& operator=(OnlyOne&&)=delete;
+    };
+}
+
 using namespace std::chrono;
 namespace Engine{
     class Utilities : public Management::OnlyOne{
@@ -67,17 +79,6 @@ namespace Engine{
         }
     protected:
         Utilities(){};
-    };
-}
-namespace Management{
-    class OnlyOne{
-    protected:
-        OnlyOne()=default;
-        virtual ~OnlyOne()=default;
-        OnlyOne(const OnlyOne&)=delete;
-        OnlyOne& operator=(const OnlyOne&)=delete;
-        OnlyOne(OnlyOne&&)=delete;
-        OnlyOne& operator=(OnlyOne&&)=delete;
     };
 }
 

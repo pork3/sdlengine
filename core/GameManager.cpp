@@ -35,20 +35,20 @@ using namespace Engine;
 
 // Constructor implementation, sets the starting and last tick time points
 // NOTE: Can exit due to failure to initialize the back end rendering.
-Engine::GameLoop::GameLoop() : startingTime(std::chrono::high_resolution_clock::now()), lastTick(std::chrono::high_resolution_clock::now()){
+Engine::GameManager::GameManager() : startingTime(std::chrono::high_resolution_clock::now()), lastTick(std::chrono::high_resolution_clock::now()){
     options = new Management::GameOptions(60); // Initializes the game loop too tick at 60 ticks per second
     initback(); // Initialize the backend
 }
 
 // Deconstructor
-Engine::GameLoop::~GameLoop(){
+Engine::GameManager::~GameManager(){
 
     delete this->display;
     SDL_Quit();
 }
 
 // Initialize the backend
-void Engine::GameLoop::initback(){
+void Engine::GameManager::initback(){
 
     // Initialize SDL with everything (as per protocol from their website).
     SDL_Init(SDL_INIT_EVERYTHING);
@@ -61,7 +61,7 @@ void Engine::GameLoop::initback(){
 }
 
 // Creates a window
-void Engine::GameLoop::CreateWindow(std::string title, int w, int h){
+void Engine::GameManager::CreateWindow(std::string title, int w, int h){
 	// If the width and height are 0, set width/height to their defaults.
     (w == 0) ?w=800: w;
     (h == 0) ?h=600: h;
@@ -73,7 +73,7 @@ void Engine::GameLoop::CreateWindow(std::string title, int w, int h){
 
 
 // The main logic loop, this function will not return until the game ends. 
-void Engine::GameLoop::Run(){
+void Engine::GameManager::Run(){
 	// A SDL_Event, for capturing key, mouse, and other window/peripheral events.
     SDL_Event e;
     
