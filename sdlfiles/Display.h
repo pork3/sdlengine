@@ -10,6 +10,9 @@
 		below to give the user a last chance to run our code.
 */
 #ifdef __APPLE__
+#undef glGenVertexArrays
+#undef glBindVertexArray
+#undef glDeleteVertexArrays
 #define glGenVertexArrays glGenVertexArraysAPPLE
 #define glBindVertexArray glBindVertexArrayAPPLE
 #define glDeleteVertexArrays glDeleteVertexArraysAPPLE
