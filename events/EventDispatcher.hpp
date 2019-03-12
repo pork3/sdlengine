@@ -116,6 +116,7 @@ namespace Events{
 		// 		was not cancelled (cancelled = false).
         bool ExecuteUserDefinedEvents( string eventName, EventDetails* details);
     protected:
+		// Protected/private events for executing game events.
         void ExecuteGameEvent(GameEvent event, EventDetails* details);
         void ExecuteTickEvent(TimedEventDetails* details);
         void ExecuteKeyEvent(KeyboardEventDetails* details);
@@ -123,13 +124,22 @@ namespace Events{
 
 
     private:
+		// These variables are maps of priorities to sets of pointers of class objects to be called back
+		//		when an event occurs.
         std::map<Priority, std::unordered_set<GameEventsListener*>* > gameEventListeners{};
         std::map<Priority, std::unordered_set<GameTickListener*>* > gameTickListeners{};
         std::map<Priority, std::unordered_set<GameKeyboardListener*>* > gameKeyListeners{};
         std::map<Priority, std::unordered_set<GameMouseListener*>* > gameMouseListeners{};
+		
+		// An unordered set of string for the names of user defined events registered in the system.
         std::unordered_set<std::string> userEventNames{};
+		// A map object that maps a user defined event name (string) to a pointer of another map that
+		// takes a priority and maps that to a set of generic event listener pointers.
         std::map<std::string, std::map<Priority, std::unordered_set<GenericEventListener*>* >* > userEventListeners;
-        EventDispatcher(){
+        
+		// The constructor for the event dispatcher...it goes through all priorities and initializes the
+		//		maps with new blank set.
+		EventDispatcher(){
             for(int i = 5; i > 0; i--){
                 gameEventListeners.insert(pair<Priority, std::unordered_set<GameEventsListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameEventsListener*>{}});
                 gameTickListeners.insert(pair<Priority, std::unordered_set<GameTickListener*>* >{static_cast<Priority>(i), new std::unordered_set<GameTickListener*>{}});
