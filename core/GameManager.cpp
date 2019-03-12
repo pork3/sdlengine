@@ -146,6 +146,10 @@ void Engine::GameLoop::Run(){
                     ed->ExecuteMouseEvent(&eventD);
                     break;
                 }
+                case SDL_QUIT: {
+                    this->StopGame(false);
+                    break;
+                }
                 default:
                     break;
             }
