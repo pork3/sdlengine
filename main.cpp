@@ -1,5 +1,5 @@
 #include <iostream>
-#include "GameLoop.h"
+#include "core/GameManager.h"
 #include "sdlfiles/Display.h"
 #include "events/Listeners.hpp"
 #include "Transform.h"
@@ -8,7 +8,6 @@
 #include "glfiles/Shader.h"
 #include "glfiles/Textures.h"
 #include "glfiles/ObjLoader.h"
-
 
 class L : public Listener::GameGUIListener, public Listener::GameTickListener, public Listener::GameMouseListener, public Listener::GameKeyboardListener{
 public:
@@ -79,7 +78,6 @@ public:
     }
     void gameGUI(Events::WindowEventDetails* events){
         //std::cout << "Rend  1!" << std::endl;
-
         events->getDisplay()->Clear(0.0f,1.0f,0.5f,1.0f);
 
 
@@ -93,6 +91,7 @@ public:
         te->Bind(0);
     }
     void gameTick(Events::TimedEventDetails* e){
+        //std::cout << "Tick  1!" << std::endl;
         ff += 0.01f;
     }
 

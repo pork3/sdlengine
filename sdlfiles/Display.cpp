@@ -20,10 +20,12 @@ Display::Display(Engine::GameLoop* g, std::string title, int w, int h) : swithd(
      * over the graphics hardware*/
     this->glcontext = SDL_GL_CreateContext(this->window);
 
+    glewExperimental = GL_TRUE;
     /*set up open Glbackend*/
     GLenum glok = glewInit();
     if( glok != GLEW_OK){
-        std::cout << "Failed to initialized openGL :(" << std::endl;
+        std::cout << "Failed to initialized openGL. Reason: " << glewGetErrorString(glok) << "."<<  std::endl;
+        exit(1);
     }
     /*enable z/depth buffer*/
     glEnable(GL_DEPTH_TEST);
@@ -31,7 +33,6 @@ Display::Display(Engine::GameLoop* g, std::string title, int w, int h) : swithd(
      * items out of camera view*/
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
-    glEnable(GL_MULTISAMPLE);
 
     /*sets up a default white background*/
     glClearColor(1.0f,1.0f,1.0f,1.0f);
@@ -59,10 +60,6 @@ void Display::set_attr(){
     /*use double bufffer if available, with double buffer drawing a 'staging'
      * window and swapping what the user sees*/
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
-    /*set up anti aliasing*/
-    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
-    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
 
 }
 

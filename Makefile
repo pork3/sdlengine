@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/61/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/61/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zach/sdlengine
+CMAKE_SOURCE_DIR = /media/sf_ubuntu/cc/sdlengine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zach/sdlengine
+CMAKE_BINARY_DIR = /media/sf_ubuntu/cc/sdlengine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/zach/sdlengine
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/61/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/JetBrains/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/61/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zach/sdlengine/CMakeFiles /home/zach/sdlengine/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_ubuntu/cc/sdlengine/CMakeFiles /media/sf_ubuntu/cc/sdlengine/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zach/sdlengine/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_ubuntu/cc/sdlengine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,33 +149,6 @@ Camera.s: Camera.cpp.s
 Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Camera.cpp.s
 .PHONY : Camera.cpp.s
-
-GameLoop.o: GameLoop.cpp.o
-
-.PHONY : GameLoop.o
-
-# target to build an object file
-GameLoop.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/GameLoop.cpp.o
-.PHONY : GameLoop.cpp.o
-
-GameLoop.i: GameLoop.cpp.i
-
-.PHONY : GameLoop.i
-
-# target to preprocess a source file
-GameLoop.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/GameLoop.cpp.i
-.PHONY : GameLoop.cpp.i
-
-GameLoop.s: GameLoop.cpp.s
-
-.PHONY : GameLoop.s
-
-# target to generate assembly for a file
-GameLoop.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/GameLoop.cpp.s
-.PHONY : GameLoop.cpp.s
 
 Transform.o: Transform.cpp.o
 
@@ -284,6 +257,33 @@ events/EventDispatcher.s: events/EventDispatcher.cpp.s
 events/EventDispatcher.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/EventDispatcher.cpp.s
 .PHONY : events/EventDispatcher.cpp.s
+
+events/InputEvent.o: events/InputEvent.cpp.o
+
+.PHONY : events/InputEvent.o
+
+# target to build an object file
+events/InputEvent.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputEvent.cpp.o
+.PHONY : events/InputEvent.cpp.o
+
+events/InputEvent.i: events/InputEvent.cpp.i
+
+.PHONY : events/InputEvent.i
+
+# target to preprocess a source file
+events/InputEvent.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputEvent.cpp.i
+.PHONY : events/InputEvent.cpp.i
+
+events/InputEvent.s: events/InputEvent.cpp.s
+
+.PHONY : events/InputEvent.s
+
+# target to generate assembly for a file
+events/InputEvent.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputEvent.cpp.s
+.PHONY : events/InputEvent.cpp.s
 
 events/InputHandler.o: events/InputHandler.cpp.o
 
@@ -501,6 +501,33 @@ sdlfiles/Display.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/sdlfiles/Display.cpp.s
 .PHONY : sdlfiles/Display.cpp.s
 
+sdlfiles/Event.o: sdlfiles/Event.cpp.o
+
+.PHONY : sdlfiles/Event.o
+
+# target to build an object file
+sdlfiles/Event.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/sdlfiles/Event.cpp.o
+.PHONY : sdlfiles/Event.cpp.o
+
+sdlfiles/Event.i: sdlfiles/Event.cpp.i
+
+.PHONY : sdlfiles/Event.i
+
+# target to preprocess a source file
+sdlfiles/Event.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/sdlfiles/Event.cpp.i
+.PHONY : sdlfiles/Event.cpp.i
+
+sdlfiles/Event.s: sdlfiles/Event.cpp.s
+
+.PHONY : sdlfiles/Event.s
+
+# target to generate assembly for a file
+sdlfiles/Event.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/sdlfiles/Event.cpp.s
+.PHONY : sdlfiles/Event.cpp.s
+
 utils/Settings.o: utils/Settings.cpp.o
 
 .PHONY : utils/Settings.o
@@ -540,9 +567,6 @@ help:
 	@echo "... Camera.o"
 	@echo "... Camera.i"
 	@echo "... Camera.s"
-	@echo "... GameLoop.o"
-	@echo "... GameLoop.i"
-	@echo "... GameLoop.s"
 	@echo "... Transform.o"
 	@echo "... Transform.i"
 	@echo "... Transform.s"
@@ -555,6 +579,9 @@ help:
 	@echo "... events/EventDispatcher.o"
 	@echo "... events/EventDispatcher.i"
 	@echo "... events/EventDispatcher.s"
+	@echo "... events/InputEvent.o"
+	@echo "... events/InputEvent.i"
+	@echo "... events/InputEvent.s"
 	@echo "... events/InputHandler.o"
 	@echo "... events/InputHandler.i"
 	@echo "... events/InputHandler.s"
@@ -579,6 +606,9 @@ help:
 	@echo "... sdlfiles/Display.o"
 	@echo "... sdlfiles/Display.i"
 	@echo "... sdlfiles/Display.s"
+	@echo "... sdlfiles/Event.o"
+	@echo "... sdlfiles/Event.i"
+	@echo "... sdlfiles/Event.s"
 	@echo "... utils/Settings.o"
 	@echo "... utils/Settings.i"
 	@echo "... utils/Settings.s"

@@ -40,7 +40,6 @@ namespace Events{
     class EventDetails{
     protected:
         // Note: Sections below are redundant as the events are seperated into group
-
         Engine::GameLoop* game;
         bool is_cancelled; // Is the event cancelled
         std::string event_name; // Name of event (semi-redundant)
@@ -92,7 +91,7 @@ namespace Events{
     public:
         TimedEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
                           long long timeDelta,long long timeDeltaNow): EventDetails(g, event_n, id, is_canc, currentTime, startTime), eventTimeDelta(timeDelta),
-                                                                      eventTimeDeltaExact(timeDeltaNow){}
+                                                                       eventTimeDeltaExact(timeDeltaNow){}
 
         friend class EventDispatcher;
         long long getEventTimeDeltaExact(){return this->eventTimeDeltaExact;}
@@ -105,7 +104,6 @@ namespace Events{
     protected:
         Display* win;
     public:
-
         WindowEventDetails(GameLoop* g, std::string event_n, int id, bool is_canc,std::chrono::high_resolution_clock::time_point currentTime, std::chrono::high_resolution_clock::time_point startTime,
         long long timeDelta,long long timeDeltaNow, Display* w): TimedEventDetails(g, event_n, id, is_canc, currentTime, startTime, timeDelta,timeDeltaNow), win(w){}
 
@@ -113,7 +111,6 @@ namespace Events{
         Display* getDisplay(){return this->win;}
 
     };
-
 
     class MouseButtonEventDetails : public EventDetails {
     protected:
@@ -227,7 +224,6 @@ namespace Listener{
     class GameKeyboardListener : virtual public GameListener {
     public:
 
-
         virtual void gameKeyPressed(Events::KeyboardEventDetails* event)=0;
 
         virtual void gameKeyReleased(Events::KeyboardEventDetails* event)=0;
@@ -235,12 +231,13 @@ namespace Listener{
 
     class GameMouseListener : virtual public GameListener {
     public:
-
         virtual void gameMouseButtonPressed(Events::MouseButtonEventDetails* event)=0;
 
         virtual void gameMouseButtonReleased(Events::MouseButtonEventDetails* event)=0;
 
         virtual void gameMouseMoved(Events::MouseButtonEventDetails* event)=0;
+
+
     };
 
 

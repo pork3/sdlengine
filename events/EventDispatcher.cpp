@@ -3,7 +3,6 @@
 #include <iostream>
 #include <chrono>
 #include "../utils/Utils.hpp"
-#include "../err/Error.hpp"
 
 
 using namespace Listener;
@@ -11,7 +10,6 @@ void Events::EventDispatcher::RegisterEventListener( GameEventsListener* l,Prior
     std::unordered_set<GameEventsListener*>* uuo = gameEventListeners.at(p);
     uuo->insert(l);
 }
-
 void Events::EventDispatcher::RegisterKeyListener( GameKeyboardListener* l,Priority p){
     std::unordered_set<GameKeyboardListener*>* uuo = gameKeyListeners.at(p);
     uuo->insert(l);
@@ -20,7 +18,6 @@ void Events::EventDispatcher::RegisterMouseListener( GameMouseListener* l,Priori
     std::unordered_set<GameMouseListener*>* uuo = gameMouseListeners.at(p);
     uuo->insert(l);
 }
-
 
 void Events::EventDispatcher::RegisterTickListener(GameTickListener* l,Priority p){
     std::unordered_set<GameTickListener*>* uuo = gameTickListeners.at(p);
@@ -34,7 +31,6 @@ void Events::EventDispatcher::UnregisterTickListener(GameTickListener *list) {
         }
     }
 }
-
 
 void Events::EventDispatcher::UnregisterMouseListener(GameMouseListener *list) {
     for(int i = 5; i > 0; i--){
@@ -51,7 +47,6 @@ void Events::EventDispatcher::UnregisterKeyListener(GameKeyboardListener *list) 
         }
     }
 }
-
 
 void Events::EventDispatcher::UnregisterEventListener(GameEventsListener *list) {
 
@@ -95,7 +90,6 @@ void Events::EventDispatcher::UnregisterUserdefinedListener(GenericEventListener
     }else {
         // Silently ignore the call if the event does not exist.
         // TODO: NEED TO LOG ERROR, EVENT DOES NOT EXIST
-            Error::WriteError("Error in unregistering event, dispatcher encountered error with : " + eventName);
     }
 }
 
@@ -106,7 +100,6 @@ void Events::EventDispatcher::RegisterUserDefinedListener( GenericEventListener*
     }else {
         // Silently ignore the call if the event does not exist.
         // TODO: NEED TO LOG ERROR, EVENT DOES NOT EXIST
-        Error::WriteError("Error in registering event : " + eventName);
     }
 }
 
@@ -162,7 +155,7 @@ void Events::EventDispatcher::ExecuteMouseEvent(MouseButtonEventDetails* details
                     (*start)->gameMouseMoved(details);
                     break;
             default:
-                Error::WriteError("Error in mouse event : Unknown ID with " + std::to_string(details->getID()));
+                std::cerr << "Unknown id" << details->getID() << std::endl;
             }
         }
         if(details->isCancelled()){
@@ -186,7 +179,7 @@ void Events::EventDispatcher::ExecuteKeyEvent(KeyboardEventDetails* details){
                     (*start)->gameKeyReleased(details);
                     break;
             default:
-                Error::WriteError("Error in keyboard event : Unknown ID with " + std::to_string(details->getID()));
+                std::cerr << "Unknown id" << details->getID() << std::endl;
             }
         }
         if(details->isCancelled()){

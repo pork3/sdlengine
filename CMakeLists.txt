@@ -29,11 +29,12 @@ file(GLOB_RECURSE SRCS
         )
 
 # Define the executable
-add_executable(engine ${HDRS} ${SRCS}  GameLoop.cpp GameLoop.h main.cpp Transform.cpp Transform.h Camera.cpp Camera.h)
+add_executable(engine ${HDRS} ${SRCS} core/GameManager.cpp core/GameManager.h main.cpp Transform.cpp Transform.h Camera.cpp Camera.h)
 
 # We need a CMAKE_DIR with some code to find external dependencies
 SET(engine_CMAKE_DIR "${engine_SOURCE_DIR}/cmake")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 ######################FIND REQUIRED PACKAGES
 
 #set openglpreference to get newest it finds

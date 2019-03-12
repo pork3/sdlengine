@@ -1,5 +1,4 @@
 #include "Shader.h"
-#include "../err/Error.hpp"
 #include <iostream>
 #include <fstream>
 
@@ -126,8 +125,8 @@ void Shader::verifyshader(GLuint shader, GLuint flag, bool isprog, const std::st
         } else {
             glGetShaderInfoLog(shader, sizeof(err), nullptr, err);
         }
-        Error::WriteError("Shader failed with : " + error + " " + err);
-        //std::cout << "Shader  failed with : " << error << " : " << err << std::endl;
+
+        std::cout << "Shader  failed with : " << error << " : " << err << std::endl;
     }
 
 }
