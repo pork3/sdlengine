@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/core/GameManager.cpp.o"
   "CMakeFiles/engine.dir/err/Error.cpp.o"
   "CMakeFiles/engine.dir/events/EventDispatcher.cpp.o"
-  "CMakeFiles/engine.dir/events/InputHandler.cpp.o"
   "CMakeFiles/engine.dir/utils/Settings.cpp.o"
   "CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
   "CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"

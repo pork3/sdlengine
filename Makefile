@@ -285,33 +285,6 @@ events/EventDispatcher.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/EventDispatcher.cpp.s
 .PHONY : events/EventDispatcher.cpp.s
 
-events/InputHandler.o: events/InputHandler.cpp.o
-
-.PHONY : events/InputHandler.o
-
-# target to build an object file
-events/InputHandler.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputHandler.cpp.o
-.PHONY : events/InputHandler.cpp.o
-
-events/InputHandler.i: events/InputHandler.cpp.i
-
-.PHONY : events/InputHandler.i
-
-# target to preprocess a source file
-events/InputHandler.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputHandler.cpp.i
-.PHONY : events/InputHandler.cpp.i
-
-events/InputHandler.s: events/InputHandler.cpp.s
-
-.PHONY : events/InputHandler.s
-
-# target to generate assembly for a file
-events/InputHandler.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputHandler.cpp.s
-.PHONY : events/InputHandler.cpp.s
-
 glfiles/Mesh.o: glfiles/Mesh.cpp.o
 
 .PHONY : glfiles/Mesh.o
@@ -555,9 +528,6 @@ help:
 	@echo "... events/EventDispatcher.o"
 	@echo "... events/EventDispatcher.i"
 	@echo "... events/EventDispatcher.s"
-	@echo "... events/InputHandler.o"
-	@echo "... events/InputHandler.i"
-	@echo "... events/InputHandler.s"
 	@echo "... glfiles/Mesh.o"
 	@echo "... glfiles/Mesh.i"
 	@echo "... glfiles/Mesh.s"

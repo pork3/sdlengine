@@ -36,28 +36,30 @@ CMakeFiles/engine.dir/core/GameManager.cpp.o: utils/GameOptions.hpp
 CMakeFiles/engine.dir/core/GameManager.cpp.o: utils/Utils.hpp
 
 CMakeFiles/engine.dir/err/Error.cpp.o: err/Error.cpp
-CMakeFiles/engine.dir/err/Error.cpp.o: err/Error.h
+CMakeFiles/engine.dir/err/Error.cpp.o: err/Error.hpp
 
+CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: err/Error.hpp
 CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: events/EventDispatcher.cpp
 CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: events/EventDispatcher.hpp
 CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: events/Listeners.hpp
 CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: math/EngineMath.hpp
 CMakeFiles/engine.dir/events/EventDispatcher.cpp.o: utils/Utils.hpp
 
-CMakeFiles/engine.dir/events/InputHandler.cpp.o: events/InputHandler.cpp
-
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: glfiles/Mesh.cpp
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: glfiles/Mesh.h
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: glfiles/ObjLoader.h
 
+CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o: err/Error.hpp
 CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o: glfiles/ObjLoader.cpp
 CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o: glfiles/ObjLoader.h
 
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: Camera.h
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: Transform.h
+CMakeFiles/engine.dir/glfiles/Shader.cpp.o: err/Error.hpp
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: glfiles/Shader.cpp
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: glfiles/Shader.h
 
+CMakeFiles/engine.dir/glfiles/Textures.cpp.o: err/Error.hpp
 CMakeFiles/engine.dir/glfiles/Textures.cpp.o: glfiles/Textures.cpp
 CMakeFiles/engine.dir/glfiles/Textures.cpp.o: glfiles/Textures.h
 CMakeFiles/engine.dir/glfiles/Textures.cpp.o: lib/stb_image.h

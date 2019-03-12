@@ -129,33 +129,9 @@ CMakeFiles/engine.dir/events/EventDispatcher.cpp.o.provides: CMakeFiles/engine.d
 CMakeFiles/engine.dir/events/EventDispatcher.cpp.o.provides.build: CMakeFiles/engine.dir/events/EventDispatcher.cpp.o
 
 
-CMakeFiles/engine.dir/events/InputHandler.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/events/InputHandler.cpp.o: events/InputHandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/events/InputHandler.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/events/InputHandler.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/events/InputHandler.cpp
-
-CMakeFiles/engine.dir/events/InputHandler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/events/InputHandler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linshu/Documents/4_2CIS422/sdlengine/events/InputHandler.cpp > CMakeFiles/engine.dir/events/InputHandler.cpp.i
-
-CMakeFiles/engine.dir/events/InputHandler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/events/InputHandler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linshu/Documents/4_2CIS422/sdlengine/events/InputHandler.cpp -o CMakeFiles/engine.dir/events/InputHandler.cpp.s
-
-CMakeFiles/engine.dir/events/InputHandler.cpp.o.requires:
-
-.PHONY : CMakeFiles/engine.dir/events/InputHandler.cpp.o.requires
-
-CMakeFiles/engine.dir/events/InputHandler.cpp.o.provides: CMakeFiles/engine.dir/events/InputHandler.cpp.o.requires
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/events/InputHandler.cpp.o.provides.build
-.PHONY : CMakeFiles/engine.dir/events/InputHandler.cpp.o.provides
-
-CMakeFiles/engine.dir/events/InputHandler.cpp.o.provides.build: CMakeFiles/engine.dir/events/InputHandler.cpp.o
-
-
 CMakeFiles/engine.dir/utils/Settings.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/utils/Settings.cpp.o: utils/Settings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/utils/Settings.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/utils/Settings.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/utils/Settings.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/utils/Settings.cpp
 
 CMakeFiles/engine.dir/utils/Settings.cpp.i: cmake_force
@@ -179,7 +155,7 @@ CMakeFiles/engine.dir/utils/Settings.cpp.o.provides.build: CMakeFiles/engine.dir
 
 CMakeFiles/engine.dir/sdlfiles/Display.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/sdlfiles/Display.cpp.o: sdlfiles/Display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/sdlfiles/Display.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/sdlfiles/Display.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/sdlfiles/Display.cpp
 
 CMakeFiles/engine.dir/sdlfiles/Display.cpp.i: cmake_force
@@ -203,7 +179,7 @@ CMakeFiles/engine.dir/sdlfiles/Display.cpp.o.provides.build: CMakeFiles/engine.d
 
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.o: glfiles/Mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/glfiles/Mesh.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/Mesh.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/glfiles/Mesh.cpp
 
 CMakeFiles/engine.dir/glfiles/Mesh.cpp.i: cmake_force
@@ -227,7 +203,7 @@ CMakeFiles/engine.dir/glfiles/Mesh.cpp.o.provides.build: CMakeFiles/engine.dir/g
 
 CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o: glfiles/ObjLoader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/glfiles/ObjLoader.cpp
 
 CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.i: cmake_force
@@ -251,7 +227,7 @@ CMakeFiles/engine.dir/glfiles/ObjLoader.cpp.o.provides.build: CMakeFiles/engine.
 
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/glfiles/Shader.cpp.o: glfiles/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/glfiles/Shader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/Shader.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/glfiles/Shader.cpp
 
 CMakeFiles/engine.dir/glfiles/Shader.cpp.i: cmake_force
@@ -275,7 +251,7 @@ CMakeFiles/engine.dir/glfiles/Shader.cpp.o.provides.build: CMakeFiles/engine.dir
 
 CMakeFiles/engine.dir/glfiles/Textures.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/glfiles/Textures.cpp.o: glfiles/Textures.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/glfiles/Textures.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/glfiles/Textures.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/glfiles/Textures.cpp
 
 CMakeFiles/engine.dir/glfiles/Textures.cpp.i: cmake_force
@@ -299,7 +275,7 @@ CMakeFiles/engine.dir/glfiles/Textures.cpp.o.provides.build: CMakeFiles/engine.d
 
 CMakeFiles/engine.dir/lib/stb_image.c.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/lib/stb_image.c.o: lib/stb_image.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/engine.dir/lib/stb_image.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/engine.dir/lib/stb_image.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/engine.dir/lib/stb_image.c.o   -c /home/linshu/Documents/4_2CIS422/sdlengine/lib/stb_image.c
 
 CMakeFiles/engine.dir/lib/stb_image.c.i: cmake_force
@@ -323,7 +299,7 @@ CMakeFiles/engine.dir/lib/stb_image.c.o.provides.build: CMakeFiles/engine.dir/li
 
 CMakeFiles/engine.dir/GameLoop.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/GameLoop.cpp.o: GameLoop.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/engine.dir/GameLoop.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/engine.dir/GameLoop.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/GameLoop.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/GameLoop.cpp
 
 CMakeFiles/engine.dir/GameLoop.cpp.i: cmake_force
@@ -347,7 +323,7 @@ CMakeFiles/engine.dir/GameLoop.cpp.o.provides.build: CMakeFiles/engine.dir/GameL
 
 CMakeFiles/engine.dir/main.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/engine.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/engine.dir/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/main.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/main.cpp
 
 CMakeFiles/engine.dir/main.cpp.i: cmake_force
@@ -371,7 +347,7 @@ CMakeFiles/engine.dir/main.cpp.o.provides.build: CMakeFiles/engine.dir/main.cpp.
 
 CMakeFiles/engine.dir/Transform.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/Transform.cpp.o: Transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/engine.dir/Transform.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/engine.dir/Transform.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Transform.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/Transform.cpp
 
 CMakeFiles/engine.dir/Transform.cpp.i: cmake_force
@@ -395,7 +371,7 @@ CMakeFiles/engine.dir/Transform.cpp.o.provides.build: CMakeFiles/engine.dir/Tran
 
 CMakeFiles/engine.dir/Camera.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/Camera.cpp.o: Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/engine.dir/Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/engine.dir/Camera.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Camera.cpp.o -c /home/linshu/Documents/4_2CIS422/sdlengine/Camera.cpp
 
 CMakeFiles/engine.dir/Camera.cpp.i: cmake_force
@@ -422,7 +398,6 @@ engine_OBJECTS = \
 "CMakeFiles/engine.dir/core/GameManager.cpp.o" \
 "CMakeFiles/engine.dir/err/Error.cpp.o" \
 "CMakeFiles/engine.dir/events/EventDispatcher.cpp.o" \
-"CMakeFiles/engine.dir/events/InputHandler.cpp.o" \
 "CMakeFiles/engine.dir/utils/Settings.cpp.o" \
 "CMakeFiles/engine.dir/sdlfiles/Display.cpp.o" \
 "CMakeFiles/engine.dir/glfiles/Mesh.cpp.o" \
@@ -441,7 +416,6 @@ engine_EXTERNAL_OBJECTS =
 engine: CMakeFiles/engine.dir/core/GameManager.cpp.o
 engine: CMakeFiles/engine.dir/err/Error.cpp.o
 engine: CMakeFiles/engine.dir/events/EventDispatcher.cpp.o
-engine: CMakeFiles/engine.dir/events/InputHandler.cpp.o
 engine: CMakeFiles/engine.dir/utils/Settings.cpp.o
 engine: CMakeFiles/engine.dir/sdlfiles/Display.cpp.o
 engine: CMakeFiles/engine.dir/glfiles/Mesh.cpp.o
@@ -460,7 +434,7 @@ engine: /usr/lib/x86_64-linux-gnu/libGLU.so
 engine: /usr/lib/x86_64-linux-gnu/libGLEW.so
 engine: /usr/lib/x86_64-linux-gnu/libSDL2.so
 engine: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linshu/Documents/4_2CIS422/sdlengine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -471,7 +445,6 @@ CMakeFiles/engine.dir/build: engine
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/core/GameManager.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/err/Error.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/events/EventDispatcher.cpp.o.requires
-CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/events/InputHandler.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/utils/Settings.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/sdlfiles/Display.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/glfiles/Mesh.cpp.o.requires

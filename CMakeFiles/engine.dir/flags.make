@@ -9,7 +9,7 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/linshu/Documents/4_2CIS422/sdlengine/headers -I/home/linshu/Documents/4_2CIS422/sdlengine/sources 
 
-CXX_FLAGS =   -c -g
+CXX_FLAGS =  -std=c++11   -c -g
 
 CXX_DEFINES = 
 
