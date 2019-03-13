@@ -35,20 +35,16 @@ glm::mat4 Camera::GetProjection() const {
 }
 
 
+// Requires manipulating the vector3 objects to ensure that they are consistent with each other
+// However, unimplemented due to issues with rotations in general. Requires patching.
+void Camera::CleanupLookVectors(){}
 
-void Camera::CleanupLookVectors(){
-
-
-
-}
-
-
+// The following allow for setting the euler rotations of the camera.
 void Camera::SetEulerRotation(glm::vec3& rot){
     this->rotation = rot;
-
     glm::mat4 rotM = glm::rotate(rot[0], glm::vec3(1.0f,0.0f,0.0f));
-    rotM = glm::rotate(rotM, rot[1], glm::vec3(rotM * glm::vec4(0.0f,1.0f,0.0f,1.0f)));
-    rotM = glm::rotate(rotM, rot[2], glm::vec3(rotM * glm::vec4(0.0f,0.0f,1.0f,1.0f)));
+    rotM = glm::rotate(rotM, rot[1], glm::vec3(0.0f,1.0f,0.0f));
+    rotM = glm::rotate(rotM, rot[2], glm::vec3(0.0f,0.0f,1.0f));
     this->forward = rotM * glm::vec4(0,0,-1,1);
     this->up = rotM * glm::vec4(0,1,0,1);
 }
@@ -56,22 +52,26 @@ void Camera::SetEulerRotation(glm::vec3& rot){
 void Camera::SetEulerRotation(glm::vec3&& rot){
     this->rotation = rot;
     glm::mat4 rotM = glm::rotate(rot[0], glm::vec3(1.0f,0.0f,0.0f));
-    rotM = glm::rotate(rotM, rot[1], glm::vec3(rotM * glm::vec4(0.0f,1.0f,0.0f,1.0f)));
-    rotM = glm::rotate(rotM, rot[2], glm::vec3(rotM * glm::vec4(0.0f,0.0f,1.0f,1.0f)));
+    rotM = glm::rotate(rotM, rot[1], glm::vec3(0.0f,1.0f,0.0f));
+    rotM = glm::rotate(rotM, rot[2], glm::vec3(0.0f,0.0f,1.0f));
     this->forward = rotM * glm::vec4(0,0,-1,1);
     this->up = rotM * glm::vec4(0,1,0,1);
 }
+
+// The following allow for adding a delta to the camera's position where the delta is
+// performed on the camera as if it was from the perspective of the camera (so moving left
+// is seen as actually moving left in the camera, not left in the global space).
 void Camera::MoveRelativeToView(glm::vec3& pos){
 
     glm::mat4 rotM = glm::rotate(this->rotation[0], glm::vec3(1.0f,0.0f,0.0f));
-    rotM = glm::rotate(rotM, this->rotation[1], glm::vec3(rotM * glm::vec4(0.0f,1.0f,0.0f,1.0f)));
-    rotM = glm::rotate(rotM, this->rotation[2], glm::vec3(rotM * glm::vec4(0.0f,0.0f,1.0f,1.0f)));
+    rotM = glm::rotate(rotM, this->rotation[1], glm::vec3(0.0f,1.0f,0.0f));
+    rotM = glm::rotate(rotM, this->rotation[2], glm::vec3(0.0f,0.0f,1.0f));
     this->position += rotM * glm::vec4(pos, 1);
 }
 void Camera::MoveRelativeToView(glm::vec3&& pos){
 
     glm::mat4 rotM = glm::rotate(this->rotation[0], glm::vec3(1.0f,0.0f,0.0f));
-    rotM = glm::rotate(rotM, this->rotation[1], glm::vec3(rotM * glm::vec4(0.0f,1.0f,0.0f,1.0f)));
-    rotM = glm::rotate(rotM, this->rotation[2], glm::vec3(rotM * glm::vec4(0.0f,0.0f,1.0f,1.0f)));
+    rotM = glm::rotate(rotM, this->rotation[1], glm::vec3(0.0f,1.0f,0.0f));
+    rotM = glm::rotate(rotM, this->rotation[2], glm::vec3(0.0f,0.0f,1.0f));
     this->position += rotM * glm::vec4(pos, 1);
 }
