@@ -82,9 +82,9 @@ sdlengine
   ->\*Transform.h
   
   ->cmake    - Contains files for automated building and running of the project
-  <pre>  </pre>->FindGlew.cmake
+   -  ->FindGlew.cmake
     
-   ->->FindSDL2.cmake
+   -  ->FindSDL2.cmake
     
    ->->README.md
   
