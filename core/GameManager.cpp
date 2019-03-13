@@ -44,7 +44,7 @@ Engine::GameManager::GameManager() : startingTime(std::chrono::high_resolution_c
 Engine::GameManager::~GameManager(){
 
     delete this->display;
-    SDL_Quit();
+    SDL_Quit(); // Forces SDL to close the windows.
 }
 
 // Initialize the backend
