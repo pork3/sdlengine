@@ -82,15 +82,8 @@ sdlengine
   ->\*Transform.h
   
   ->cmake    - Contains files for automated building and running of the project
-   -  ->FindGlew.cmake
-    
-   -  ->FindSDL2.cmake
-    
-   ->->README.md
   
   ->core     - Contains files for managing the game engine, other non-specialized but still core files go here
-  
-  
   
   ->err      - Contains files for reporting/logging events/errors in the game. They are saved in this folder as error.log
   
