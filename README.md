@@ -83,11 +83,11 @@ sdlengine
   
   ->cmake    - Contains files for automated building and running of the project
   
-   ->FindGlew.cmake
+   ->->FindGlew.cmake
     
-   ->FindSDL2.cmake
+   ->->FindSDL2.cmake
     
-   ->README.md
+   ->->README.md
   
   ->core     - Contains files for managing the game engine, other non-specialized but still core files go here
   
