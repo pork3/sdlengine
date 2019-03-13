@@ -89,9 +89,9 @@ sdlengine
   
   ->events   - Contains files for managing the event listeners and event dispatching.
   
-  ->glfiles  - Contains files for handling the object, 3D collection of vertices and shader
+  ->glfiles  - Contains files for handling the object, textures and shader
   
-  ->lib      - Contains files for managing the vertices to create the 
+  ->lib      - Contains files for managing different public domain image loaders  
   
   ->sdlfiles - Contains files for creating a SDL2 window to display to the third party user.
   
