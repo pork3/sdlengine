@@ -1,30 +1,35 @@
 #include "Display.h"
+#include "../err/Error.hpp"
 #include <iostream>
 #include <GL/glew.h>
 
+
 Display::Display(Engine::GameManager* g, std::string title, int w, int h) : swithd(w), sheight(h), game(g){
+    /*sets the initial window as not dirty 'dont swap' and set up gui listeners*/
     this->isDirty = false;
     for(int i = 5; i > 0; i--){
         this->gameGUIListeners.insert(pair<Events::Priority, std::unordered_set<Listener::GameGUIListener*>* >
         {static_cast<Events::Priority>(i), new std::unordered_set<Listener::GameGUIListener*>{}});
     }
+    /*create window options*/
     this->windOpts = new Management::WindowOptions();
+    /* initialize the openGL attributes*/
     set_attr();
     this->window = SDL_CreateWindow(title.c_str(),SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
             w,h, SDL_WINDOW_OPENGL );
 
     if( window == nullptr){
-        std::cout << "Error creating window" << std::endl;
+        Error::WriteError("Error unable to crate the SDL window ");
     }
     /*creates an openglcontext ... this allows open gl to have more control
      * over the graphics hardware*/
     this->glcontext = SDL_GL_CreateContext(this->window);
-
+    /*helps cross platform support*/
     glewExperimental = GL_TRUE;
     /*set up open Glbackend*/
     GLenum glok = glewInit();
     if( glok != GLEW_OK){
-        std::cout << "Failed to initialized openGL. Reason: " << glewGetErrorString(glok) << "."<<  std::endl;
+        Error::WriteError("Failed to initialize OpenGL" );
         exit(1);
     }
     //SDL_SetRelativeMouseMode(SDL_TRUE);
@@ -42,6 +47,7 @@ Display::Display(Engine::GameManager* g, std::string title, int w, int h) : swit
 }
 
 void Display::Clear(float r, float g, float b, float a){
+    /*sets all color bits to input value, then clears the current values*/
     glClearColor(r,g,b,a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
@@ -65,11 +71,13 @@ void Display::set_attr(){
 }
 
 void Display::SwapDisp(){
-
+    /*swap the double buffer*/
     SDL_GL_SwapWindow(this->window);
     this->isDirty = false;
 }
-
+/*
+ * clear up all alocated memory
+ */
 
 Display::~Display(){
 
@@ -78,7 +86,7 @@ Display::~Display(){
 
 }
 
-
+/*look up the GUI events and execute them*/
 
 void Display::ExecuteGUIEvent(Events::WindowEventDetails* eventDetails){
     auto utilRef = Engine::Utilities::instance();

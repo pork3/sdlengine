@@ -1,4 +1,5 @@
 #include "Shader.h"
+#include "../err/Error.hpp"
 #include <iostream>
 #include <fstream>
 
@@ -52,7 +53,8 @@ Shader::~Shader(){
 }
 
 void Shader::Update(const Transform& t, const Camera& camera)  {
-
+    /*used to update a transforma and camera
+     * this give the illusion of movement*/
     glm::mat4 mdl = camera.GetProjection() * t.MatModel();
 
     /*update the shader with a transform*/
@@ -65,7 +67,7 @@ void Shader::Bind() {
 }
 
 GLuint Shader::createshader(const std::string& file, GLenum type){
-
+        /*shaders are created during program compile time*/
         GLuint shader = glCreateShader(type);
 
         if( shader == 0 ){
@@ -76,20 +78,23 @@ GLuint Shader::createshader(const std::string& file, GLenum type){
 
         shaderfile[0] = file.c_str();
         length[0] = file.length();
-
+        /*compile the shader from the input file*/
         glShaderSource(shader, 1, shaderfile, length);
         glCompileShader(shader);
-
+        /*verify the shader has been created*/
         verifyshader(shader, GL_COMPILE_STATUS,false, "COMPILE");
 
         return shader;
 }
-
+/*
+ * Parses the contents of a shader file storing them into a
+ * string
+ */
 std::string Shader::loadshader(const std::string fname){
 
     std::ifstream fstr;
     std::cout << fname << std::endl;
-
+    /*standard c++ file stream operations*/
     fstr.open((fname).c_str());
     std::string in,out;
 
@@ -101,31 +106,37 @@ std::string Shader::loadshader(const std::string fname){
             out.append(in + "\n");
         }
     } else {
-
-        std::cout << "Error while loading shader data" << std::endl;
+        /*unable to open the file*/
+        Error::WriteError("Error while loading shader data" );
     }
     return out;
 
 }
 
 void Shader::verifyshader(GLuint shader, GLuint flag, bool isprog, const std::string& error){
-
+    /*OpenGL is a c library, so useing char[] instead of a string*/
     GLint status = 0;
     GLchar err[1024] = {0};
-
+    /*the isprog is checking to see if the passed in shader is defined as a program for OpenGL to
+     * run (shader*/
     if( isprog ){
+        /*internal OpenGL functions to verify the shader*/
         glGetProgramiv(shader,flag,&status);
     } else{
+        /*internal OpenGL functions to verify the shader*/
         glGetShaderiv(shader,flag,&status);
     }
+
     if( status == GL_FALSE){
 
         if( isprog ){
+            /*internal OpenGL functions to verify the shader*/
             glGetProgramInfoLog(shader, sizeof(err), nullptr, err);
         } else {
+            /*internal OpenGL functions to verify the shader*/
             glGetShaderInfoLog(shader, sizeof(err), nullptr, err);
         }
-
+        /*verification or compilation failed*/
         std::cout << "Shader  failed with : " << error << " : " << err << std::endl;
     }
 

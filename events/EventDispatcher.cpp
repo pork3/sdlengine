@@ -3,6 +3,7 @@
 #include <iostream>
 #include <chrono>
 #include "../utils/Utils.hpp"
+#include "../err/Error.hpp"
 
 
 // All comments shall be less than 110 characters, as displayed from the line below.
@@ -131,7 +132,6 @@ void Events::EventDispatcher::UnregisterEventListener(GameEventsListener *list) 
 // Note: If the event is cancelled, it can be uncancelled by an event in the same priority.
 bool Events::EventDispatcher::ExecuteUserDefinedEvents(string eventName, Events::EventDetails* e){
     // If the event does not exist, return false and log an error.
-    // TODO: LOG ERROR!
     if(this->userEventNames.find(eventName) == this->userEventNames.end()){return false;}
 
     auto utilRef = Engine::Utilities::instance();
@@ -143,6 +143,7 @@ bool Events::EventDispatcher::ExecuteUserDefinedEvents(string eventName, Events:
             (*start)->eventExecuted(e);
         }
         if(e->isCancelled()){
+            Error::WriteError("Event " + eventName + " does not exits");
             return false;
         }
     }
@@ -161,8 +162,9 @@ void Events::EventDispatcher::UnregisterUserdefinedListener(GenericEventListener
             }
         }
     }else {
+
         // Silently ignore the call if the event does not exist.
-        // TODO: NEED TO LOG ERROR, EVENT DOES NOT EXIST
+        Error::WriteError("Error: unable to register event : " + eventName);
     }
 }
 
@@ -173,8 +175,7 @@ void Events::EventDispatcher::RegisterUserDefinedListener( GenericEventListener*
     if(enamePointer != this->userEventNames.end()){
         this->userEventListeners.at(eventName)->at(p)->insert(lis);
     }else {
-        // Silently ignore the call if the event does not exist.
-        // TODO: NEED TO LOG ERROR, EVENT DOES NOT EXIST
+        Error::WriteError("Error event " + eventName + " does not exist");
     }
 }
 
@@ -194,6 +195,7 @@ bool Events::EventDispatcher::RegisterUserDefinedEvent(const string eventName){
         }
 		return true;
     }
+    Error::WriteError("Error event "+ eventName + " already exists");
     return false;
 }
 
@@ -234,7 +236,7 @@ void Events::EventDispatcher::ExecuteMouseEvent(MouseButtonEventDetails* details
                     (*start)->gameMouseMoved(details);
                     break;
             default:
-                std::cerr << "Unknown id" << details->getID() << std::endl;
+                Error::WriteError("Unknown id in mouse handler : " + std::to_string(details->getID()) + " does not exist");
             }
         }
         if(details->isCancelled()){
@@ -259,7 +261,7 @@ void Events::EventDispatcher::ExecuteKeyEvent(KeyboardEventDetails* details){
                     (*start)->gameKeyReleased(details);
                     break;
             default:
-                std::cerr << "Unknown id" << details->getID() << std::endl;
+                Error::WriteError("Unknown id in key event" + std::to_string(details->getID()) + " does not exist");
             }
         }
         if(details->isCancelled()){

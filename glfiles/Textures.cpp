@@ -1,5 +1,6 @@
 #include "Textures.h"
 #include "../lib/stb_image.h"
+#include "../err/Error.hpp"
 #include <iostream>
 
 Textures::Textures(const std::string &fname){
@@ -9,7 +10,7 @@ Textures::Textures(const std::string &fname){
     unsigned char* imagedata = stbi_load(fname.c_str(), &iwidth, &iheight, &ncomp, 4);
 
     if( imagedata == NULL){
-        std::cout << "Unable to load texture : " << std::endl;
+    Error::WriteError("Unable to load texture : ");
     }
 
 

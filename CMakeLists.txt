@@ -28,7 +28,7 @@ file(GLOB_RECURSE SRCS
         )
 
 # Define the executable
-add_executable(engine ${HDRS} ${SRCS} core/GameManager.cpp core/GameManager.h main.cpp Transform.cpp Transform.h Camera.cpp Camera.h)
+add_executable(engine ${HDRS} ${SRCS} err/Error.hpp err/Error.cpp core/GameManager.cpp core/GameManager.h main.cpp Transform.cpp Transform.h Camera.cpp Camera.h)
 
 # We need a CMAKE_DIR with some code to find external dependencies
 SET(engine_CMAKE_DIR "${engine_SOURCE_DIR}/cmake")

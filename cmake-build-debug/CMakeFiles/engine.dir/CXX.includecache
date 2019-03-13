@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zach/fg/sdlengine/err/Error.cpp
+Error.hpp
+/home/zach/fg/sdlengine/err/Error.hpp
+chrono
+-
+ctime
+-
+fstream
+-
+
+/home/zach/fg/sdlengine/err/Error.hpp
+string
+-
+
