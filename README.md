@@ -81,13 +81,21 @@ sdlengine
   
   ->\*Transform.h
   
-  ->cmake   - Contains files for automated building and running of the project
+  ->cmake    - Contains files for automated building and running of the project
   
-  ->core    - Contains files for managing the game engine, other non-specialized but still core files go here
+  ->core     - Contains files for managing the game engine, other non-specialized but still core files go here
   
-  ->err     - Contains files for reporting/logging events/errors in the game. They are saved in this folder as error.log
+  ->err      - Contains files for reporting/logging events/errors in the game. They are saved in this folder as error.log
   
-  ->events  - Contains files for managing the event listeners and event dispatching.
+  ->events   - Contains files for managing the event listeners and event dispatching.
   
-  ->glfiles
+  ->glfiles  - Contains files for handling the object, 3D collection of vertices and shader
+  
+  ->lib      - Contains files for managing the vertices to create the 
+  
+  ->sdlfiles - Contains files for creating a SDL2 window to display to the third party user.
+  
+  ->math     - Contains files for providing useful data structures for performing normal game calculations 
+  
+  ->utils    - Contians files for managing the useful utility objects that can perform quick and redundant calculations.
     
