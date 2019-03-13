@@ -1,3 +1,0 @@
-/home/zach/fg/sdlengine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/zach/fg/sdlengine/cmake-build-debug/CMakeFiles/engine.dir
-/home/zach/fg/sdlengine/cmake-build-debug/CMakeFiles/edit_cache.dir
