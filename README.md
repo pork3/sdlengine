@@ -12,7 +12,7 @@ Panda Engine is a 2D/3D game engine that is capable of managing most processes r
 
 - Assign textures to the object
 
-- Runs under 500 ms 
+- Runs internals in well under 500 ms 
 
 - For more details, please check our project documentation: 
 
@@ -33,15 +33,17 @@ https://docs.google.com/document/d/1DK6dYiLc_Q-LdQCKlGzZRqJNqOuw3fx-PC_2qWnJovQ/
 
 ## Installation 
 
-Our engine is runnanle on MacOS and Windows.
+Our engine is runnable on MacOS and Windows.
 
 It is implemented in C++ 11 and various libraries and systems such as:
 
-- OpenGL 3.0 or newer
+- OpenGL 3.0 or newer*
 
 - GCC 4.8 or newer
 
 - SDL
+
+\*:OpenGL 2.1 may work, however it is not officially supported.
 
 For more detials, please check our user guide:
 
