@@ -1,7 +1,19 @@
-Created by Zachary Bower, Chase Craig, Linshu Huang, Benjamin Yin, Luyao Wang.
+# 422 - Panda 
 
-This software is for building a game engine that is capable of managing most processes related to building a videogame.
+Panda is a 3D/2D game engine that is capable of managing most processes related to building a videogame 
 
-See user documentation ....
+## Author 
 
-This folder is broken down into the folowing structure...
+Zachary Bower
+Chase Craig
+Linshu Huang
+Benjamin Yin
+Luyao Wang
+
+### Panda offers many features such as: 
+- 
+
+## Installation 
+
+
+## Demo 
