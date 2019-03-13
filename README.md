@@ -7,12 +7,11 @@ Panda is a 3D/2D game engine that is capable of managing most processes related 
 
 ## Author 
 
-Zachary Bower
-Chase Craig
-Linshu Huang
-Benjamin Yin
-Luyao Wang
-
+- Zachary Bower
+- Chase Craig
+- Linshu Huang
+- Benjamin Yin
+- Luyao Wang
 
 
 ## Installation 
