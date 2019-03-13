@@ -7,7 +7,7 @@
 /*
  
  	Last updated by: Chase Craig
- 	Last updated on: Mar. 11, 2019
+ 	Last updated on: Mar. 12, 2019
  
  	Purpose:
 		This file allows for setting up the projection of the user's rendering view, named a camera.
