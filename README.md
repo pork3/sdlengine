@@ -64,17 +64,30 @@ https://docs.google.com/document/d/1YBW0K1uobM-jCOjjdg-o60lzdgbmaSe_dAnYDWog8oE/
 Our engine is seperated into sections regarding each model, some classes are present in non-official locations, they are being migrated over in the next few updates.
 
 sdlengine
+
   ->.gitignore
+  
   ->README.md
+  
   ->CMakeLists.txt
+  
   ->main.cpp
+  
   ->\*Camera.cpp
+  
   ->\*Camera.h
+  
   ->\*Transform.cpp
+  
   ->\*Transform.h
+  
   ->cmake   - Contains files for automated building and running of the project
+  
   ->core    - Contains files for managing the game engine, other non-specialized but still core files go here
+  
   ->err     - Contains files for reporting/logging events/errors in the game. They are saved in this folder as error.log
+  
   ->events  - Contains files for managing the event listeners and event dispatching.
+  
   ->glfiles
     
