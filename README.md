@@ -11,8 +11,7 @@ Panda Engine is a 2D/3D game engine that is capable of managing most processes r
 - Move the object close to the camera 
 - Move the object futher away from the camera 
 
-- Fore more infomation, please check our project documentation 
-https://docs.google.com/document/d/1DK6dYiLc_Q-LdQCKlGzZRqJNqOuw3fx-PC_2qWnJovQ/edit#heading=h.ss2aglc4rymd
+- For details:https://docs.google.com/document/d/1DK6dYiLc_Q-LdQCKlGzZRqJNqOuw3fx-PC_2qWnJovQ/edit#heading=h.ss2aglc4rymd
 
 ## Author 
 
