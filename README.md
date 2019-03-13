@@ -26,5 +26,6 @@ Panda Engine is a 2D/3D game engine that is capable of managing most processes r
 
 Our C++ graphic engine requires various libraries and systems be available for use during the build procedure.
 
+
 For more detials, please check our user guide: 
 https://docs.google.com/document/d/1-DKFmecn8fAYTDddtEsXq87vIHSOzJVQIl15kWUTk1Y/edit
