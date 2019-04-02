@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zach/sdlengine/./platform/RenderedApplication.hpp
+SDL2/SDL.h
+-
+
+/home/zach/sdlengine/main.cpp
+iostream
+-
+./platform/RenderedApplication.hpp
+/home/zach/sdlengine/./platform/RenderedApplication.hpp
+platform/Window.hpp
+/home/zach/sdlengine/platform/Window.hpp
+
+/home/zach/sdlengine/platform/RenderedApplication.hpp
+SDL2/SDL.h
+-
+
+/home/zach/sdlengine/platform/Window.hpp
+SDL2/SDL.h
+-
+string
+-
+RenderedApplication.hpp
+/home/zach/sdlengine/platform/RenderedApplication.hpp
+

@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g  -rdynamic CMakeFiles/engine.dir/core/InputHandler.cpp.o CMakeFiles/engine.dir/lib/stb_image.c.o CMakeFiles/engine.dir/main.cpp.o CMakeFiles/engine.dir/platform/Window.cpp.o CMakeFiles/engine.dir/platform/RenderedApplication.cpp.o CMakeFiles/engine.dir/error/ErrorLog.cpp.o  -o engine -lOpenGL -lGLX -lGLU -lGLEW -lSDL2 -lpthread 
